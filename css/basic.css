@@ -1,0 +1,168 @@
+﻿@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	font-family: 'NanumSquareRound';
+}
+
+#paging {
+	margin: auto 0;
+    width: 160px;
+    height: 40px;
+    display: block;
+	margin-left: 180px;
+}
+
+#prev {
+    float: left;
+    width: 34px;
+}
+#page_num {
+    margin: 0px 0 0 0px;
+    float: left;
+    width: 90px;
+    color: #222;
+    font-size: 24px;
+	font-weight: 600;
+    /* font-style: italic; */
+}
+#next {
+    float: left;
+    width: 25px;
+    margin-left: 5px;
+}
+
+#btnPrev{
+    width: 20px;
+    margin-top: 8px;
+}
+
+#btnNext{
+    width: 20px;
+    margin-top: 8px;
+}
+
+
+/************* 여기부터 커스텀 플레이어 ************/
+
+
+#navBarWrap{
+	width: 1280px;
+	height: 50px;
+	display: flex;
+	justify-content: flex-start;
+	background-color: #f0f0f0;
+}
+
+.play{
+	width: 50px;
+	height: 100%;
+	background: url(../image/playBtn.png) no-repeat center;
+	background-size: 20px 20px;
+	margin-left: 15px;
+	cursor: pointer;
+}
+
+.pause{
+	width: 50px;
+	height: 100%;
+	background: url(../image/pause.png) no-repeat center;
+	background-size: 20px 20px;
+	margin-left: 15px;
+	display: none;
+	cursor: pointer;
+
+}
+
+.seek {
+	width: 500px;
+	height: 6px;
+	background-color: #fff;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	overflow: hidden;
+	margin: auto 0;
+}
+
+/* .seek .ui-slider-range {
+	top: 0px;
+	left: 0px;
+	height: 6px;
+	background-color: #FDA947;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+
+.seek .ui-slider-handle {
+	top: -7px;
+	left: 0px;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+} */
+
+.timer {
+	width: 140px;
+	margin: 0px 0px;
+	color: #111;
+	font-size: 16px;
+	line-height: 50px;
+	text-align: center;
+	letter-spacing: 0px;
+}
+
+.controls-bar{
+	width: 200px;
+	height: 100%;
+	display: flex;
+}
+
+.sound{
+	width: 40px;
+	height: 100%;
+	background: url(../image/volume.png) no-repeat center;
+	background-size: 23px 23px;
+	cursor: pointer;
+}
+
+.sound:hover{
+	background: url(../image/volumeOver.png) no-repeat center;
+	background-size: 23px 23px;
+}
+
+.widemode{
+	width: 40px;
+	height: 100%;
+	background: url(../image/expand.png) no-repeat center;
+	background-size: 24px 24px;
+	cursor: pointer;
+}
+
+.widemode:hover{
+	background: url(../image/expandOver.png) no-repeat center;
+	background-size: 24px 24px;
+}
+
+.smallmode{
+	width: 40px;
+	height: 100%;
+	background: url(../image/minimize.png) no-repeat center;
+	background-size: 20px 20px;
+	cursor: pointer;
+}
+
+.smallmode:hover{
+	background: url(../image/minimizeOver.png) no-repeat center;
+	background-size: 20px 20px;
+}
