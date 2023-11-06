@@ -94,5 +94,8 @@ function button_load(str) {
     $("#timer").text(
       `${currentPosMin}:${currentPosSec} / ${lengthMin}:${lengthSec}`
     );
+
+    let progress = (currentPos / length) * 100; // 재생 상태를 백분율로 표현
+    $("#seek-bar").css("width", progress + "%"); // css의 width 속성을 업데이트
   }
 }
