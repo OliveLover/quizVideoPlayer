@@ -1,14 +1,14 @@
-	var totpage = "06";
+	var totpage = 12;
 
 	// 토탈 페이지 수 입력
 
 	var paList = [];
-	for(var i=1; i<=10; i++){
+	for(var i=1; i<=totpage; i++){
 		paList.push(`${i<10 ? '0'+i : i}`);
 	}
 
 	var videoList = [];
-	for(var j=1; j<=10; j++){
+	for(var j=1; j<=totpage; j++){
 
 		videoList.push(`${j<10 ? '0' + j : j }.mp4`);
 		
