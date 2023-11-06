@@ -1,14 +1,14 @@
-	var totpage = 12;
+	var totalPage = 12;
 
 	// 토탈 페이지 수 입력
 
 	var paList = [];
-	for(var i=1; i<=totpage; i++){
+	for(var i=1; i<=totalPage; i++){
 		paList.push(`${i<10 ? '0'+i : i}`);
 	}
 
 	var videoList = [];
-	for(var j=1; j<=totpage; j++){
+	for(var j=1; j<=totalPage; j++){
 
 		videoList.push(`${j<10 ? '0' + j : j }.mp4`);
 		
@@ -29,7 +29,7 @@
 	function goNextPage() { //다음페이지 이동
 		var current = parseInt(page); 
 		current++; 
-		if (current > totpage){ 
+		if (current > totalPage){ 
 			alert('마지막 페이지 입니다.');
 			return false;
 		}else{
@@ -48,7 +48,7 @@
 		lxt += ' </div> ';
 		lxt += ' <div id="page_num"> ';
 
-		lxt += ' <span id="current_page">'+paList[numberPage-1]+'</span><span id="total_page"> / '+totpage+'</span> ';	
+		lxt += ' <span id="current_page">'+paList[numberPage-1]+'</span><span id="total_page"> / '+totalPage+'</span> ';	
 		 		video_tx += '<source src="./video/'+videoList[numberPage-1]+'" type="video/mp4">';
 
 		lxt += ' </div> ';
