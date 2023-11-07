@@ -42,7 +42,7 @@ function button_load(str) {
   var numberPage = Number(str);
   var video_tx = "";
   video_tx +=
-    '<video id="video-player" style="width:1280px;height:720px;" controlslist="noplaybackrate nodownload" controls>';
+    '<video id="video-player" style="width:1280px;height:720px;" controlslist="noplaybackrate nodownload">';
   var lxt = "";
   lxt += ' <div id="prev"> ';
   lxt +=
@@ -76,7 +76,7 @@ function button_load(str) {
     updateTimer();
   };
 
-  video.onloadedmetadata = function() {
+  video.onloadedmetadata = function () {
     let length = video.duration; // 비디오 총 길이 (초)
     console.log(length); // 콘솔에 비디오 길이 출력
   };

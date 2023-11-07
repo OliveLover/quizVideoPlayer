@@ -36,24 +36,35 @@
     oncontextmenu="return false"
   >
     <div style="width: 1015px">
-      <div id="myvideo"></div>
-      <div id="navBar">
-        <div id="navBarWrap">
-          <div class="play" id="video-play-btn"></div>
-          <div class="pause" id="video-pause-btn"></div>
-          <div class="seek">
-            <div id="seek-bar">
-              <div id="seek-handle"></div>
+      <div id="container">
+        <div id="wrap">
+          <div id="myvideo"></div>
+          <div id="navBar">
+            <div id="navBarWrap">
+              <div class="play" id="video-play-btn"></div>
+              <div class="pause" id="video-pause-btn"></div>
+              <div class="seek">
+                <div id="seek-bar">
+                  <div id="seek-handle"></div>
+                </div>
+              </div>
+              <div class="timer" id="timer">00:00 / 00:00</div>
+              <div class="controls-bar">
+                <div class="sound"></div>
+                <input
+                  type="range"
+                  id="sound-control"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="1"
+                />
+                <div class="widemode" id="fullscreen-btn"></div>
+                <div class="smallmode" id="pipmode"></div>
+              </div>
+              <div id="paging"></div>
             </div>
           </div>
-          <div class="timer" id="timer">00:00 / 00:00</div>
-          <div class="controls-bar">
-            <div class="sound"></div>
-            <input type="range" id="sound-control" min="0" max="100" step="1" value="1">
-            <div class="widemode" id="fullscreen-btn"></div>
-            <div class="smallmode" id="pipmode"></div>
-          </div>
-          <div id="paging"></div>
         </div>
       </div>
     </div>
