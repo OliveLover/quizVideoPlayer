@@ -91,9 +91,18 @@ body {
 }
 
 #seek-bar {
+  position:relative;
   width: 0; /* 초기 상태에서는 비디오가 재생되지 않았으므로 0 */
   height: 100%;
   background: #222;
+}
+
+#seek-handle {
+  position:absolute;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  background-color: aqua;
 }
 
 /* .seek .ui-slider-range {

@@ -36,6 +36,7 @@ function goNextPage() {
     window.location.href = win_link;
   }
 }
+
 //next, prev 버튼, 페이지 숫자 위치 시키기
 function button_load(str) {
   var numberPage = Number(str);
@@ -75,6 +76,11 @@ function button_load(str) {
     updateTimer();
   };
 
+  video.onloadedmetadata = function() {
+    let length = video.duration; // 비디오 총 길이 (초)
+    console.log(length); // 콘솔에 비디오 길이 출력
+  };
+
   function updateTimer() {
     let currentPos = video.currentTime; // 현재 재생 위치 (초)
     let length = video.duration; // 비디오 총 길이 (초)
@@ -97,5 +103,10 @@ function button_load(str) {
 
     let progress = (currentPos / length) * 100; // 재생 상태를 백분율로 표현
     $("#seek-bar").css("width", progress + "%"); // css의 width 속성을 업데이트
+
+    // let seekBarWidth = $("#seek-bar").width();
+    // let handleWidth = $("#seek-handle").width(); // seek-handle의 너비
+    // let handlePos = ((seekBarWidth - handleWidth) * progress) / 100; // seek-handle의 위치
+    // $("#seek-handle").css("left", progress + "%"); // css의 left 속성을 업데이트
   }
 }
