@@ -103,10 +103,5 @@ function button_load(str) {
 
     let progress = (currentPos / length) * 100; // 재생 상태를 백분율로 표현
     $("#seek-bar").css("width", progress + "%"); // css의 width 속성을 업데이트
-
-    // let seekBarWidth = $("#seek-bar").width();
-    // let handleWidth = $("#seek-handle").width(); // seek-handle의 너비
-    // let handlePos = ((seekBarWidth - handleWidth) * progress) / 100; // seek-handle의 위치
-    // $("#seek-handle").css("left", progress + "%"); // css의 left 속성을 업데이트
   }
 }
