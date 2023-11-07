@@ -21,6 +21,13 @@ body {
   justify-content: center;
 }
 
+.memo {
+  background-color: green;
+  height: 770px;
+  width: 300px;
+  margin-left: 0; /* 오른쪽 여백 설정 */
+}
+
 #paging {
   margin: auto 0;
   width: 160px;
