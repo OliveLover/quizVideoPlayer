@@ -37,6 +37,11 @@ function goNextPage() {
   }
 }
 
+function volumeControl(volume) {
+  let video = document.getElementById("video-player");
+  video.volume = volume / 100;
+}
+
 //next, prev 버튼, 페이지 숫자 위치 시키기
 function button_load(str) {
   var numberPage = Number(str);
@@ -104,4 +109,9 @@ function button_load(str) {
     let progress = (currentPos / length) * 100; // 재생 상태를 백분율로 표현
     $("#seek-bar").css("width", progress + "%"); // css의 width 속성을 업데이트
   }
+
+  $("#sound-control").on("input", function () {
+    var volume = $(this).val();
+    volumeControl(volume);
+  });
 }
