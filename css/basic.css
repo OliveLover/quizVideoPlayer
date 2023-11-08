@@ -29,9 +29,16 @@ body {
 }
 
 #myvideo {
-  background-color: bisque;
   height: 720px;
   width: 1280px;
+}
+
+.quiz {
+  height: 720px;
+  width: 1280px;
+  background-image: url('/image/quiz_bg.jpg');
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 #paging {

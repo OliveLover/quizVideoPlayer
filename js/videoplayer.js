@@ -25,19 +25,78 @@ $(document).ready(function () {
     }
   });
 
-  let toggleBtn = document.getElementById("#pipmode");
-  toggleBtn.addEventListener("click", togglePiPMode);
-  async function togglePiPMode(event) {
-    try {
-      if (video !== document.pictureInPictureElement) {
-        await video.requestPictureInPicture();
-        toggleBtn.textContent = "PIP 모드 종료";
-      } else {
-        await document.exitPictureInPicture();
-        toggleBtn.textContent = "PIP 모드 시작";
-      }
-    } catch (error) {
-      console.log(error);
-    }
+
+  //버그
+  // let toggleBtn = document.getElementById("pipmode");
+  // toggleBtn.addEventListener("click", togglePiPMode);
+  // async function togglePiPMode(event) {
+  //   try {
+  //     if (video !== document.pictureInPictureElement) {
+  //       await video.requestPictureInPicture();
+  //       toggleBtn.textContent = "PIP 모드 종료";
+  //     } else {
+  //       await document.exitPictureInPicture();
+  //       toggleBtn.textContent = "PIP 모드 시작";
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  // 타이머 업데이트
+  var videoPlayer = document.getElementById("video-player");
+  var timer = document.getElementById("timer");
+
+  videoPlayer.addEventListener("loadedmetadata", function () {
+    updateTimer();
+  });
+
+  videoPlayer.addEventListener("timeupdate", function () {
+    updateTimer();
+  });
+
+  function updateTimer() {
+    var currentTime = videoPlayer.currentTime;
+    var duration = videoPlayer.duration;
+    var formattedCurrentTime = formatTime(currentTime);
+    var formattedDuration = formatTime(duration);
+    timer.textContent = formattedCurrentTime + " / " + formattedDuration;
   }
+
+  function formatTime(time) {
+    var minutes = Math.floor(time / 60);
+    var seconds = Math.floor(time % 60);
+    return padZero(minutes) + ":" + padZero(seconds);
+  }
+
+  function padZero(value) {
+    return value < 10 ? "0" + value : value;
+  }
+
+  // 볼륨 조절
+  var volumeControl = document.getElementById("sound-control");
+
+  volumeControl.addEventListener("input", function () {
+    var volume = volumeControl.value / 100;
+    videoPlayer.volume = volume;
+  });
+
+  // 프로그레스 바 업데이트
+  var progressBar = document.getElementById("seek-bar");
+  var progressHandle = document.getElementById("seek-handle");
+
+  progressBar.addEventListener("click", function (event) {
+    var progressWidth = progressBar.offsetWidth;
+    var clickPosition = event.offsetX;
+    var seekTime = (clickPosition / progressWidth) * videoPlayer.duration;
+    videoPlayer.currentTime = seekTime;
+  });
+
+  videoPlayer.addEventListener("timeupdate", function () {
+    var currentTime = videoPlayer.currentTime;
+    var duration = videoPlayer.duration;
+    var progress = (currentTime / duration) * 100;
+    progressBar.style.width = progress + "%";
+  });
+
 });

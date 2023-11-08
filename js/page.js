@@ -15,12 +15,14 @@ for (var j = 1; j <= totalPage; j++) {
 var questions = [
   {
     question: "1차 산업혁명은 전기 에너지를 활용한 대량생산 혁명으로 볼 수 있다.",
-    answer: "O"
+    answer: "O",
+    explanation: "풀이1"
   },
   {
     question: "문제 2",
-    answer: "X"
-  }
+    answer: "X",
+    explanation: "풀이2"
+  },
 ];
 
 function goPrevPage() {
@@ -77,28 +79,16 @@ function button_load(str) {
 
     var currentQuestion = questions[numberPage - 8];
 
-    function checkAnswer(answer) {
-      currentQuestion = questions[numberPage - 8]; // 전역 변수인 numberPage 사용
-
-      if (answer === currentQuestion.answer) {
-        // 정답 처리 로직
-        console.log("정답입니다!");
-      } else {
-        // 오답 처리 로직
-        console.log("오답입니다!");
-      }
-
-      // 다음 문제로 이동 또는 결과 표시 등 추가적인 로직을 구현할 수 있습니다.
-    }
 
     quiz_tx +=
       '<div id="quiz" style="position: relative; width: 100%; height: 100%; background-image: url(\'./image/quiz_bg.jpg\'); background-size: cover;">';
     quiz_tx += '<div id="quiz_content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">';
-    quiz_tx += '  <h2>간단한 퀴즈</h2>';
+    quiz_tx += '  <h2>간단 퀴즈</h2>';
     quiz_tx += '  <p>' + currentQuestion.question + '</p>';
+    quiz_tx += ' <br /><br />';
     quiz_tx += '  <ul>';
-    quiz_tx += '    <input type="image" src="./image/playBtn.png" onclick="checkAnswer(\'O\')"></input>';
-    quiz_tx += '    <input type="image" src="./image/playBtn.png" onclick="checkAnswer(\'X\')"></input>';
+    quiz_tx += '    <input type="image" src="./image/playBtn.png" style="width:100px; margin-right:170px;" onclick="checkAnswer(\'O\')"></input>';
+    quiz_tx += '    <input type="image" src="./image/playBtn.png" style="width:100px;" onclick="checkAnswer(\'X\')"></input>';
     quiz_tx += '  </ul>';
     quiz_tx += '</div>';
     quiz_tx += '</div>';
