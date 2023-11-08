@@ -1,6 +1,7 @@
 ﻿@font-face {
   font-family: "NanumSquareRound";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -25,18 +26,19 @@ body {
   height: 770px;
   width: 300px;
   margin-left: 0;
-  /* 오른쪽 여백 설정 */
+  float: left;
 }
 
 #myvideo {
   height: 720px;
   width: 1280px;
+  float: left;
 }
 
 .quiz {
   height: 720px;
   width: 1280px;
-  background-image: url('/image/quiz_bg.jpg');
+  background-image: url("/image/quiz_bg.jpg");
   background-position: center;
   background-size: 100% 100%;
 }
