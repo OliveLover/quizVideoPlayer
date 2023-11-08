@@ -37,6 +37,10 @@ function checkAnswer(userAnswer) {
     console.log("퀴즈 정답 : " + quizInfo[questionNumber][0].correct);
     console.log("정답");
     questionNumber++;
-    createQuiz(questionNumber);
+    if (questionNumber > 3) {
+      window.location.href = "09.html";
+    } else {
+      createQuiz(questionNumber);
+    }
   }
 }
