@@ -1,7 +1,6 @@
 ﻿@font-face {
   font-family: "NanumSquareRound";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -25,7 +24,14 @@ body {
   background-color: green;
   height: 770px;
   width: 300px;
-  margin-left: 0; /* 오른쪽 여백 설정 */
+  margin-left: 0;
+  /* 오른쪽 여백 설정 */
+}
+
+#myvideo {
+  background-color: bisque;
+  height: 720px;
+  width: 1280px;
 }
 
 #paging {
@@ -40,6 +46,7 @@ body {
   float: left;
   width: 34px;
 }
+
 #page_num {
   margin: 0px 0 0 0px;
   float: left;
@@ -49,6 +56,7 @@ body {
   font-weight: 600;
   /* font-style: italic; */
 }
+
 #next {
   float: left;
   width: 25px;
@@ -110,7 +118,8 @@ body {
 
 #seek-bar {
   position: relative;
-  width: 0; /* 초기 상태에서는 비디오가 재생되지 않았으므로 0 */
+  width: 0;
+  /* 초기 상태에서는 비디오가 재생되지 않았으므로 0 */
   height: 100%;
   background: #222;
 }
