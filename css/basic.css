@@ -32,6 +32,7 @@ body {
 #myvideo {
   height: 720px;
   width: 1280px;
+  background-color: gainsboro;
   float: left;
 }
 
@@ -41,6 +42,41 @@ body {
   background-image: url("/image/quiz_bg.jpg");
   background-position: center;
   background-size: 100% 100%;
+}
+
+/* 추가 */
+#quizWrap {
+  width: 80%;
+  vertical-align: middle;
+  margin: 15% auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.quizQuestion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.quizChoice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30%;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.choice img {
+  margin-right: 10px;
 }
 
 #paging {

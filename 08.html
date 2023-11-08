@@ -6,13 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="./css/basic.css" />
     <!-- <script type="text/javascript" src="./js/page.js"></script> -->
+    <script src="./js/dataInfo.js"></script>
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/jquery-1.12.4.js"></script>
     <script src="./js/jquery-ui.js"></script>
     <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="./js/videoplayer.js"></script>
-    <script src="./js/quiz.js"></script>
+    <script src="./js/buildQuiz.js"></script>
+    <script>
+      var page = "1"; //page 시작
+
+      const urlParams = new URL(location.href).searchParams;
+      const urlPage = urlParams.get("page");
+
+      if (urlPage) {
+        page = urlPage;
+      }
+
+      window.onload = function () {
+        createQuiz(page);
+        console.log("onload의 페이지 :" + page);
+      };
+    </script>
   </head>
 
   <body
@@ -24,10 +40,8 @@
     <div style="width: 1280px">
       <div id="container">
         <div id="wrap">
-          <div id="myvideo" style="background-color: yellow">
-            <!-- <div class="quiz"> -->
-            <h2>하하</h2>
-            <!-- </div> -->
+          <div id="myvideo">
+            <div id="quizWrap"></div>
           </div>
           <div id="navBar">
             <div id="navBarWrap">
