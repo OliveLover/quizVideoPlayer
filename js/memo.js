@@ -15,8 +15,10 @@ document.getElementById("save_memo").addEventListener("click", function () {
 /*메모 삭제*/
 document.getElementById("delet_memo").addEventListener("click", function () {
   document.querySelector(".textarea").value = "";
+  localStorage.removeItem("memo"); // 로컬 스토리지에서 'memo' 항목을 삭제
 });
 
+/*메모 프린트*/
 function printElement(elem) {
   var mywindow = window.open("", "PRINT", "height=600,width=800");
 
@@ -37,4 +39,17 @@ function printElement(elem) {
 
 document.getElementById("print_memo").addEventListener("click", function () {
   printElement(".textarea"); // 클래스 선택자를 사용
+});
+
+// textarea의 내용이 변경될 때마다 그 내용을 로컬 스토리지에 저장합니다.
+document.querySelector(".textarea").addEventListener("input", function () {
+  localStorage.setItem("memo", this.value);
+});
+
+// 페이지가 로드될 때 저장된 메모를 textarea에 불러옵니다.
+window.addEventListener("load", function () {
+  var memo = localStorage.getItem("memo");
+  if (memo) {
+    document.querySelector(".textarea").value = memo;
+  }
 });
