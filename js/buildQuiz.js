@@ -3,7 +3,7 @@
 function createQuiz(questionNumber) {
   // 퀴즈를 생성할 요소를 선택합니다.
   var quizElement = document.querySelector(".quiz");
-  console.log(quizInfo[questionNumber][0].correct);
+  console.log(quizInfo[questionNumber][0].explain);
   console.log(questionNumber);
 
   var quiz_txt = "";
@@ -47,31 +47,43 @@ function checkAnswer(userAnswer) {
   }
 }
 
+var solutionFlag = true;
 function solutionQUiz() {
+
   var solution_txt = "";
-  solution_txt += '<div">111</div>';
+  solution_txt += '<div>' + quizInfo[questionNumber][0].explain + '</div>';
 
   var quizWrapElement = document.getElementById("quizWrap");
-  var solutionElement = document.getElementById("quizSolution");
-  quizWrapElement.appendChild(solutionElement); // quizWrap 요소에 solution 요소를 추가
+  var existingSolutionElement = document.getElementById("quizSolution");
+  var existingNextButton = document.getElementById("nextButton");
+
+  // 풀이 내용이 없는 경우에만 추가
+  if (solutionFlag) {
+    var solutionElement = document.createElement("div");
+    solutionElement.id = "quizSolution";
+    solutionElement.innerHTML = solution_txt;
+    quizWrapElement.appendChild(solutionElement);
 
 
-  document.getElementById("quizSolution").innerHTML = solution_txt;
 
-  // 다음 퀴즈로 넘어가는 버튼 생성
-  var nextButton = document.createElement("button");
-  nextButton.innerText = "다음 퀴즈로 이동";
-  nextButton.onclick = function () {
-    questionNumber++;
-    if (questionNumber > 3) {
-      window.location.href = "09.html";
-    } else {
-      createQuiz(questionNumber);
-    }
-  };
+    // 다음 퀴즈로 넘어가는 버튼 생성
+    var nextButton = document.createElement("button");
+    nextButton.id = "nextButton";
+    nextButton.innerText = "다음 퀴즈로 이동";
+    nextButton.onclick = function () {
+      questionNumber++;
+      if (questionNumber > 3) {
+        window.location.href = "09.html";
+      } else {
+        createQuiz(questionNumber);
+        solutionFlag = true;
+      }
+    };
 
-  // 버튼을 표시할 위치 선택
-  var buttonContainer = document.getElementById("quizWrap");
-  // 버튼을 위치에 추가
-  buttonContainer.appendChild(nextButton);
+    // 버튼을 표시할 위치 선택
+    var buttonContainer = document.getElementById("quizWrap");
+    // 버튼을 위치에 추가
+    buttonContainer.appendChild(nextButton);
+    solutionFlag = false;
+  }
 }
