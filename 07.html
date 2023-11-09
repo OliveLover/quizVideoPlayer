@@ -7,14 +7,29 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="./css/basic.css" />
   <!-- <script type="text/javascript" src="./js/page.js"></script> -->
+  <script src="./js/dataInfo.js"></script>
   <script src="./js/jquery-3.7.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./js/jquery-1.12.4.js"></script>
   <script src="./js/jquery-ui.js"></script>
   <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="./js/videoplayer.js"></script>
-  <script src="./js/quiz.js"></script>
+  <script src="./js/buildQuiz.js"></script>
+  <script>
+    var questionNumber = 1;
 
+    const urlParams = new URL(location.href).searchParams;
+    const urlPage = urlParams.get("questionNumber");
+
+    if (urlPage) {
+      questionNumber = urlPage;
+    }
+
+    window.onload = function () {
+      console.log("onload의 페이지 :" + questionNumber);
+      createQuiz(questionNumber);
+    };
+  </script>
 </head>
 
 <body scroll="no" ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
@@ -22,9 +37,8 @@
     <div id="container">
       <div id="wrap">
         <div id="myvideo">
-          <video id="video-player" style="width:1280px;height:720px;" controlslist="noplaybackrate nodownload">
-            <source src="./video/07.mp4" type="video/mp4">
-          </video>
+          <div id="quizWrap"></div>
+          <div id="quizSolution"></div>
         </div>
         <div id="navBar">
           <div id="navBarWrap">
@@ -45,15 +59,15 @@
             <div id="paging">
               <div id="prev">
                 <a href="06.html"><img src="./image/prevBtn.png" id="btnPrev" alt="이전 페이지" title="이전 페이지"
-                    onmouseover="this.src='./image/prevBtnOver.png'" onmouseout="this.src='./image/prevBtn.png'"></a>
+                    onmouseover="this.src='./image/prevBtnOver.png'" onmouseout="this.src='./image/prevBtn.png'" /></a>
               </div>
               <div id="page_num">
                 <span id="current_page">07</span>
-                <span id="total_page"> / 09</span>
+                <span id="total_page"> / 08</span>
               </div>
               <div id="next">
                 <a href="08.html"><img src="./image/nextBtn.png" id="btnNext" alt="다음 페이지" title="다음 페이지"
-                    onmouseover="this.src='./image/nextBtnOver.png'" onmouseout="this.src='./image/nextBtn.png'"></a>
+                    onmouseover="this.src='./image/nextBtnOver.png'" onmouseout="this.src='./image/nextBtn.png'" /></a>
               </div>
             </div>
           </div>

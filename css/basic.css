@@ -1,7 +1,6 @@
 ﻿@font-face {
   font-family: "NanumSquareRound";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -44,7 +43,7 @@ body {
   background-size: 100% 100%;
 }
 
-/* 추가 */
+/************ 퀴즈 ************/
 #quizWrap {
   width: 80%;
   vertical-align: middle;
@@ -79,6 +78,15 @@ body {
   margin-right: 10px;
 }
 
+.choice img:hover {
+  margin-right: 10px;
+}
+
+.choice p:hover {
+  color: #fff;
+}
+
+/************ paging *************/
 #paging {
   margin: auto 0;
   width: 160px;

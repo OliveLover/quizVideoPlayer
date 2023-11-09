@@ -1,6 +1,9 @@
 // 퀴즈 정보를 가져와서 퀴즈를 생성하는 함수
-
+var answerFlag = true;
+var solutionFlag = true;
 function createQuiz(questionNumber) {
+  answerFlag = true;
+  solutionFlag = true;
   // 퀴즈를 생성할 요소를 선택합니다.
   var quizElement = document.querySelector(".quiz");
   console.log(quizInfo[questionNumber][0].explain);
@@ -12,42 +15,40 @@ function createQuiz(questionNumber) {
   quiz_txt += "</div>";
   quiz_txt += '<div class="quizChoice">';
   quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png"  onclick="checkAnswer(1)">';
-  quiz_txt += "<p>" + quizInfo[questionNumber][1].select + "</p>";
+  quiz_txt += '<img src="./image/playBtn.png"  onmouseover="changeImage(this, \'./image/check.png\')" onmouseout="changeImage(this, \'./image/playBtn.png\')" onclick="checkAnswer(1)">';
+  quiz_txt += '<p onclick="checkAnswer(1)">' + quizInfo[questionNumber][1].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png"  onclick="checkAnswer(2)">';
-  quiz_txt += "<p>" + quizInfo[questionNumber][2].select + "</p>";
+  quiz_txt += '<img src="./image/playBtn.png"  onmouseover="changeImage(this, \'./image/check.png\')" onmouseout="changeImage(this, \'./image/playBtn.png\')" onclick="checkAnswer(2)">';
+  quiz_txt += '<p onclick="checkAnswer(2)">' + quizInfo[questionNumber][2].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(3)">';
-  quiz_txt += "<p>" + quizInfo[questionNumber][3].select + "</p>";
+  quiz_txt += '<img src="./image/playBtn.png" onmouseover="changeImage(this, \'./image/check.png\')" onmouseout="changeImage(this, \'./image/playBtn.png\')" onclick="checkAnswer(3)">';
+  quiz_txt += '<p onclick="checkAnswer(3)" >' + quizInfo[questionNumber][3].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(4)">';
-  quiz_txt += "<p>" + quizInfo[questionNumber][4].select + "</p>";
+  quiz_txt += '<img src="./image/playBtn.png" onmouseover="changeImage(this, \'./image/check.png\')" onmouseout="changeImage(this, \'./image/playBtn.png\')" onclick="checkAnswer(4)">';
+  quiz_txt += '<p onclick="checkAnswer(4)">' + quizInfo[questionNumber][4].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += "</div>";
   document.getElementById("quizWrap").innerHTML = quiz_txt;
 }
+
 
 function checkAnswer(userAnswer) {
   if (Number(quizInfo[questionNumber][0].correct) === Number(userAnswer)) {
     console.log("선택지 : " + userAnswer);
     console.log("퀴즈 정답 : " + quizInfo[questionNumber][0].correct);
     console.log("정답");
-    questionNumber++;
-    if (questionNumber > 3) {
-      window.location.href = "09.html";
-    } else {
-      createQuiz(questionNumber);
-    }
+    solutionQUiz();
+    showCorrectAnswer();
   } else {
     solutionQUiz();
+    showWrongAnswer();
   }
 }
 
-var solutionFlag = true;
+
 function solutionQUiz() {
 
   var solution_txt = "";
@@ -73,7 +74,7 @@ function solutionQUiz() {
     nextButton.onclick = function () {
       questionNumber++;
       if (questionNumber > 3) {
-        window.location.href = "09.html";
+        window.location.href = "08.html";
       } else {
         createQuiz(questionNumber);
         solutionFlag = true;
@@ -86,4 +87,28 @@ function solutionQUiz() {
     buttonContainer.appendChild(nextButton);
     solutionFlag = false;
   }
+}
+
+function changeImage(element, newImage) {
+  element.src = newImage;
+}
+
+function showCorrectAnswer() {
+  if (answerFlag) {
+    var quizQuestionElement = document.querySelector(".quizQuestion");
+    var correctAnswerImage = document.createElement("img");
+    correctAnswerImage.src = "./image/redCircle.png";
+    quizQuestionElement.appendChild(correctAnswerImage);
+  }
+  answerFlag = false;
+}
+
+function showWrongAnswer() {
+  if (answerFlag) {
+    var quizQuestionElement = document.querySelector(".quizQuestion");
+    var wrongAnswerImage = document.createElement("img");
+    wrongAnswerImage.src = "./image/redX.png";
+    quizQuestionElement.appendChild(wrongAnswerImage);
+  }
+  answerFlag = false;
 }
