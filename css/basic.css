@@ -21,6 +21,7 @@ body {
   justify-content: center;
 }
 
+/************ memo ************/
 .memo {
   display: flex;
   flex-direction: column;
@@ -50,6 +51,7 @@ body {
   height: 50px;
   background-color: antiquewhite;
   margin: 5px 0;
+  cursor: pointer;
 }
 
 .memoFunction:active {
@@ -63,6 +65,7 @@ body {
   float: left;
 }
 
+/************ 퀴즈 ************/
 .quiz {
   height: 720px;
   width: 1280px;
@@ -71,7 +74,6 @@ body {
   background-size: 100% 100%;
 }
 
-/************ 퀴즈 ************/
 #quizWrap {
   width: 80%;
   vertical-align: middle;
@@ -162,6 +164,15 @@ body {
   display: flex;
   justify-content: flex-start;
   background-color: #f0f0f0;
+}
+
+.index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* navBarWrap의 높이에 맞추기 위해 100%로 설정 */
+  margin-left: 15px;
+  cursor: pointer;
 }
 
 .play {
