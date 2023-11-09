@@ -25,7 +25,6 @@ $(document).ready(function () {
     }
   });
 
-
   //버그
   // let toggleBtn = document.getElementById("pipmode");
   // toggleBtn.addEventListener("click", togglePiPMode);
@@ -81,6 +80,20 @@ $(document).ready(function () {
     videoPlayer.volume = volume;
   });
 
+  // 불륨 팝업
+  document.getElementById("volume-btn").addEventListener("click", function () {
+    var popup = document.getElementById("volume-popup");
+    if (popup.style.display === "none") {
+      popup.style.display = "block";
+      popup.style.animation = "fadein 0.5s forwards";
+    } else {
+      popup.style.animation = "fadeout 0.5s forwards";
+      setTimeout(function () {
+        popup.style.display = "none";
+      }, 500);
+    }
+  });
+
   // 프로그레스 바 업데이트
   var progressBar = document.getElementById("seek-bar");
   var progressHandle = document.getElementById("seek-handle");
@@ -98,5 +111,4 @@ $(document).ready(function () {
     var progress = (currentTime / duration) * 100;
     progressBar.style.width = progress + "%";
   });
-
 });

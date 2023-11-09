@@ -255,6 +255,7 @@ body {
 }
 
 .controls-bar {
+  position: relative;
   width: 200px;
   height: 100%;
   display: flex;
@@ -271,6 +272,39 @@ body {
 .sound:hover {
   background: url(../image/volumeOver.png) no-repeat center;
   background-size: 23px 23px;
+}
+
+.volume-popup {
+  position: absolute;
+  width: 50px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  transform: translateX(-10%);
+  bottom: 90%; /* 팝업이 불륨 버튼 바로 위에 위치하도록 설정 */
+  animation: fadein 0.5s; /* 애니메이션 추가 */
+  opacity: 0; /* 초기 투명도 설정 */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.volume-popup input[type="range"] {
+  height: 30%;
+  width: 150%;
+  margin: auto 0;
+  position: absolute;
+  transform: rotate(-90deg) translateX(+20%) translateY(-126%);
+  top: 50%;
+  left: 50%;
 }
 
 .widemode {
