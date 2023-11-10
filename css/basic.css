@@ -437,6 +437,7 @@ body {
   /* 말풍선의 위치 - 조절 필요 */
   padding: 20px;
   animation: shake 1s infinite;
+  pointer-events: none;
 }
 
 .playAlarm {
