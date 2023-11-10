@@ -6,14 +6,14 @@
   <title></title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="./css/basic.css" />
-  <!-- <script type="text/javascript" src="./js/page.js"></script> -->
+  <script src="./js/dataInfo.js"></script>
   <script src="./js/jquery-3.7.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./js/jquery-1.12.4.js"></script>
   <script src="./js/jquery-ui.js"></script>
   <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="./js/videoplayer.js"></script>
-  <!-- <script src="./js/quiz.js"></script> -->
+  <script src="./js/index.js"></script>
 </head>
 
 <body scroll="no" ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
@@ -28,6 +28,19 @@
         <div id="navBar">
           <div id="navBarWrap">
             <div class="index" id="videoIndex">INDEX</div>
+            <div class="index-popup" id="index-popup">
+              <div class="indexWrap">
+                <div class="indexTitle">강의명</div>
+                <div class="indexTitle" onclick="location.href='01.html'">학습목표</div>
+                <div class="indexTitle" onclick="location.href='02.html'">학습내용</div>
+                <div id="lectureWrap">
+                  <div class="indexTitle">본강의</div>
+                </div>
+                <div class="indexTitle" onclick="location.href='06.html'">Summary</div>
+                <div class="indexTitle" onclick="location.href='07.html'">Quiz</div>
+                <div class="indexTitle" onclick="location.href='08.html'">Advanced</div>
+              </div>
+            </div>
             <div class="play" id="video-play-btn"></div>
             <div class="pause" id="video-pause-btn"></div>
             <div class="seek">

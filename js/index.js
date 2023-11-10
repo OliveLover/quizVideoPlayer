@@ -8,3 +8,9 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $.each(indexInfo, function (i, val) {
+        $('#lectureWrap').append('<div class="indexTitle" onclick="location.href=\'' + val.location + '\'">' + val.title + '</div>');
+    });
+});

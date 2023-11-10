@@ -140,6 +140,20 @@ body {
   /* 애니메이션이 끝난 후에도 마지막 상태를 유지합니다. */
 }
 
+.indexWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.indexTitle {
+  background-color: aqua;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
 @keyframes slide {
   0% {
     left: -50%;
