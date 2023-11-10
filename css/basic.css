@@ -1,7 +1,6 @@
 ﻿@font-face {
   font-family: "NanumSquareRound";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -170,7 +169,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; /* navBarWrap의 높이에 맞추기 위해 100%로 설정 */
+  height: 100%;
+  /* navBarWrap의 높이에 맞추기 위해 100%로 설정 */
   margin-left: 15px;
   cursor: pointer;
 }
@@ -283,15 +283,20 @@ body {
   padding: 10px;
   box-sizing: border-box;
   transform: translateX(-10%);
-  bottom: 90%; /* 팝업이 불륨 버튼 바로 위에 위치하도록 설정 */
-  animation: fadein 0.5s; /* 애니메이션 추가 */
-  opacity: 0; /* 초기 투명도 설정 */
+  bottom: 90%;
+  /* 팝업이 불륨 버튼 바로 위에 위치하도록 설정 */
+  animation: fadein 0.5s;
+  /* 애니메이션 추가 */
+  opacity: 0;
+  /* 초기 투명도 설정 */
+  display: none;
 }
 
 @keyframes fadein {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
