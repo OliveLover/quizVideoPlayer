@@ -122,9 +122,7 @@ body {
   z-index: 1;
   left: 0;
   bottom: 100%;
-  /* #videoIndex 바로 위에 위치하도록 설정합니다. */
   transform: translateX(-50%, -50%);
-  /* 중앙 정렬을 위해 설정합니다. */
   width: 300px;
   height: 680px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -137,7 +135,6 @@ body {
   animation-name: slide;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  /* 애니메이션이 끝난 후에도 마지막 상태를 유지합니다. */
 }
 
 .indexWrap {
@@ -161,10 +158,23 @@ body {
 .movePage {
   color: white;
   font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
   cursor: pointer;
 
+}
+
+.lectureTitle {
+  margin-bottom: 40px;
+}
+
+#lectureWrap :first-child {
+  margin-top: 15px;
+}
+
+#lectureWrap :last-child {
+  margin-bottom: 15px;
 }
 
 .movePage:hover {
@@ -180,9 +190,6 @@ body {
     left: 0%;
   }
 }
-
-/************ download ************/
-
 
 /************ paging *************/
 #paging {
@@ -240,7 +247,6 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  /* navBarWrap의 높이에 맞추기 위해 100%로 설정 */
   margin-left: 15px;
   cursor: pointer;
 }
@@ -281,7 +287,6 @@ body {
 #seek-bar {
   position: relative;
   width: 0;
-  /* 초기 상태에서는 비디오가 재생되지 않았으므로 0 */
   height: 100%;
   background: #222;
 }
@@ -354,11 +359,8 @@ body {
   box-sizing: border-box;
   transform: translateX(-10%);
   bottom: 90%;
-  /* 팝업이 불륨 버튼 바로 위에 위치하도록 설정 */
   animation: fadein 0.5s;
-  /* 애니메이션 추가 */
   opacity: 0;
-  /* 초기 투명도 설정 */
   display: none;
 }
 
