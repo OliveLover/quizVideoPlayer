@@ -2,6 +2,7 @@ $(document).ready(function () {
   // 재생,정지
 
   $("#video-play-btn").on("click", function () {
+    $(".bubbleBox").hide();
     $("#video-player").get(0).play();
     $("#video-play-btn").hide();
     $("#video-pause-btn").show();

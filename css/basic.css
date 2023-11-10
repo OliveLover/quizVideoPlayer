@@ -252,6 +252,7 @@ body {
 }
 
 .play {
+  position: relative;
   width: 50px;
   height: 100%;
   background: url(../image/playBtn.png) no-repeat center;
@@ -421,4 +422,70 @@ body {
 
 .download a:hover {
   color: yellowgreen;
+}
+
+/************ 말풍선 ************/
+.playWrapper {
+  position: relative;
+}
+
+.bubbleBox {
+  position: absolute;
+  top: -140px;
+  /* 말풍선의 위치 - 조절 필요 */
+  left: -70px;
+  /* 말풍선의 위치 - 조절 필요 */
+  padding: 20px;
+  animation: shake 1s infinite;
+}
+
+.playAlarm {
+  position: relative;
+  margin: 50px;
+  padding: 10px;
+  width: 60px;
+  height: 40px;
+  color: #FFF;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+.playAlarm:after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  right: -30px;
+  border-left: 30px solid #000;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.playAlarm.gr {
+  background-color: #22ac38;
+  font-size: 12px;
+  text-align: center;
+}
+
+.playAlarm.gr:after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid #22ac38;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
