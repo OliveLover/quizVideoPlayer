@@ -6,31 +6,32 @@ function createQuiz(questionNumber) {
   solutionFlag = true;
   // 퀴즈를 생성할 요소를 선택합니다.
   var quizElement = document.querySelector(".quiz");
-  console.log(quizInfo[questionNumber][0].explain);
-  console.log(questionNumber);
+  console.log("현재 퀴즈 질문: " + quizInfo[questionNumber][0].explain);
+  console.log("현재 퀴즈 번호: " + questionNumber);
 
   var quiz_txt = "";
   quiz_txt += '<div class="quizQuestion" >';
   quiz_txt += "<h2>" + quizInfo[questionNumber][0].question + "</h2>";
   quiz_txt += "</div>";
-  quiz_txt += '<div class="quizChoice">';
+  quiz_txt += '<div class="multipleChoice">';
   quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png"  onmouseover="changeImage(this, \'./image/check.png\')" onmouseout="changeImage(this, \'./image/playBtn.png\')" onclick="checkAnswer(1)">';
+  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(1)">';
   quiz_txt += '<p onclick="checkAnswer(1)">' + quizInfo[questionNumber][1].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png"  onmouseover="changeImage(this, \'./image/check.png\')" onmouseout="changeImage(this, \'./image/playBtn.png\')" onclick="checkAnswer(2)">';
+  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(2)">';
   quiz_txt += '<p onclick="checkAnswer(2)">' + quizInfo[questionNumber][2].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png" onmouseover="changeImage(this, \'./image/check.png\')" onmouseout="changeImage(this, \'./image/playBtn.png\')" onclick="checkAnswer(3)">';
+  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(3)">';
   quiz_txt += '<p onclick="checkAnswer(3)" >' + quizInfo[questionNumber][3].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png" onmouseover="changeImage(this, \'./image/check.png\')" onmouseout="changeImage(this, \'./image/playBtn.png\')" onclick="checkAnswer(4)">';
-  quiz_txt += '<p onclick="checkAnswer(4)">' + quizInfo[questionNumber][4].select + "</p>";
+  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(4)">';
+  quiz_txt += '<p onclick="chseckAnswer(4)">' + quizInfo[questionNumber][4].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += "</div>";
+  quiz_txt += '<div class="explainQuiz"></div>'
   document.getElementById("quizWrap").innerHTML = quiz_txt;
 }
 
@@ -54,18 +55,14 @@ function solutionQUiz() {
   var solution_txt = "";
   solution_txt += '<div>' + quizInfo[questionNumber][0].explain + '</div>';
 
-  var quizWrapElement = document.getElementById("quizWrap");
-  var existingSolutionElement = document.getElementById("quizSolution");
-  var existingNextButton = document.getElementById("nextButton");
+  // var existingSolutionElement = document.getElementById("quizSolution");
+  // var existingNextButton = document.getElementById("nextButton");
 
   // 풀이 내용이 없는 경우에만 추가
   if (solutionFlag) {
-    var solutionElement = document.createElement("div");
-    solutionElement.id = "quizSolution";
+    var solutionElement = document.getElementsByClassName("explainQuiz")[0];
+    // solutionElement.id = "quizSolution";
     solutionElement.innerHTML = solution_txt;
-    quizWrapElement.appendChild(solutionElement);
-
-
 
     // 다음 퀴즈로 넘어가는 버튼 생성
     var nextButton = document.createElement("button");
