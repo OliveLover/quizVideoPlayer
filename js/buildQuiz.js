@@ -1,13 +1,24 @@
-// 퀴즈 정보를 가져와서 퀴즈를 생성하는 함수
+// 퀴즈 초깃값
 var answerFlag = true;
 var solutionFlag = true;
+var completeQuiz = false;
+var quizSize = Object.keys(quizInfo).length;
+
+// 퀴즈 정보를 가져와서 퀴즈를 생성하는 함수
 function createQuiz(questionNumber) {
   answerFlag = true;
   solutionFlag = true;
+
+  // 마지막 문제인지 확인하고, 마지막 문제라면 completeQuiz를 true로 설정
+  if (questionNumber >= quizSize) {
+    completeQuiz = true;
+  }
+  console.log("현재 문제 번호 :" + questionNumber);
+  console.log("전체 문제 수 :" + Object.keys(quizInfo).length);
+  console.log("현재 마지막 퀴즈 여부 :" + completeQuiz);
+
   // 퀴즈를 생성할 요소를 선택합니다.
   var quizElement = document.querySelector(".quiz");
-  console.log("현재 퀴즈 질문: " + quizInfo[questionNumber][0].explain);
-  console.log("현재 퀴즈 번호: " + questionNumber);
 
   var quiz_txt = "";
   quiz_txt += '<div class="quizQuestion" >';
@@ -67,7 +78,7 @@ function solutionQUiz() {
     // 다음 퀴즈로 넘어가는 버튼 생성
     var nextButton = document.createElement("button");
     nextButton.id = "nextButton";
-    nextButton.innerText = "다음 퀴즈로 이동";
+    nextButton.innerText = completeQuiz ? "결과 확인" : "다음 퀴즈로 이동";
     nextButton.onclick = function () {
       questionNumber++;
       if (questionNumber > 3) {
