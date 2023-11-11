@@ -1,16 +1,17 @@
 /*인덱스*/
-var indexInfo = [{
-  title: "본강의1",
-  location: "03.html"
-},
-{
-  title: "본강의2",
-  location: "04.html"
-},
-{
-  title: "본강의3",
-  location: "05.html"
-}
+var indexInfo = [
+  {
+    title: "본강의1",
+    location: "03.html",
+  },
+  {
+    title: "본강의2",
+    location: "04.html",
+  },
+  {
+    title: "본강의3",
+    location: "05.html",
+  },
 ];
 
 /* 평가하기 */
