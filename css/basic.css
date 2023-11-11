@@ -80,6 +80,7 @@ body {
   display : flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   /* justify-content: center; */
 }
 
@@ -126,8 +127,15 @@ body {
 
 .explainQuiz{
   background-color: antiquewhite;
+  position: relative;
   width: 80%;
   height: 200px;
+}
+
+#nextButton {
+  position: absolute;
+  right: 70px;
+  bottom: 50px;
 }
 
 /************ index ************/

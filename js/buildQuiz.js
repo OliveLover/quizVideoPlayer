@@ -28,7 +28,7 @@ function createQuiz(questionNumber) {
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice">';
   quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(4)">';
-  quiz_txt += '<p onclick="chseckAnswer(4)">' + quizInfo[questionNumber][4].select + "</p>";
+  quiz_txt += '<p onclick="checkAnswer(4)">' + quizInfo[questionNumber][4].select + "</p>";
   quiz_txt += "</div>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="explainQuiz"></div>'
