@@ -21,7 +21,9 @@ body {
   justify-content: center;
 }
 
-/************ memo ************/
+/****************************************
+                  메모
+ ****************************************/
 .memo {
   display: flex;
   flex-direction: column;
@@ -65,29 +67,71 @@ body {
   float: left;
 }
 
-/************ 퀴즈 ************/
-.quiz {
-  height: 720px;
-  width: 1280px;
-  background-image: url("/image/quiz_bg.jpg");
-  background-position: center;
-  background-size: 100% 100%;
-}
 
-#quizWrap {
+
+/****************************************
+              사전 진단 퀴즈
+ ****************************************/
+ #pQuizWrap {
   width: 100%;
   height: 100%;
-  background-color: #22ac38;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  /* justify-content: center; */
+  background-image: url('/image/quiz_bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+ .pQuizTitle {
+  display: flex;
+  height : 80px;
+  width: 80%;
+  background-color: blueviolet;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+ }
+
+ .pQuizWrap {
+  background-color: #22ac38;
+  width: 80%;
+  height : 600px;
+ }
+
+ .pQuizQuestionWrap {
+  display: flex;
+  flex-direction: row;
+  background-color: brown;
+ }
+
+ .pQuizQuestion {
+  background-color: aqua;
+  width: 70%;
+ }
+
+ .pQuizMultipleChoice {
+  background-color: beige;
+  width:30%;
+ }
+/****************************************
+                  퀴즈
+ ****************************************/
+ #quizWrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-image: url('/image/quiz_bg.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .quizQuestion {
   display: flex;
-  background-color: blueviolet;
   width: 80%;
   height: 100px;
   align-items: center;
@@ -100,7 +144,6 @@ body {
   display: flex;
   width: 80%;
   height: 300px;
-  background-color: aqua;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 30px;
@@ -108,7 +151,6 @@ body {
 
 .choice {
   display: flex;
-  background-color: #22ac38;
   width: 100%;
   align-items: center;
   margin: 10px auto;
@@ -119,15 +161,10 @@ body {
 }
 
 .choice:hover {
-  color: #fff;
+  color: red;
 }
 
-/* .choice:hover img {
-  content: url("/image/check.png");
-} */
-
 .explainQuiz {
-  background-color: antiquewhite;
   position: relative;
   width: 80%;
   height: 200px;
@@ -141,7 +178,6 @@ body {
 
 .resultTitle {
   display: flex;
-  background-color: blueviolet;
   width: 80%;
   height: 100px;
   align-items: center;
@@ -155,7 +191,6 @@ body {
   display: flex;
   width: 80%;
   height: 400px;
-  background-color: aqua;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
@@ -183,7 +218,9 @@ body {
   font-size: 30px;
 }
 
-/************ index ************/
+/****************************************
+                  인덱스
+ ****************************************/
 .index-popup {
   display: none;
   position: absolute;
@@ -257,7 +294,9 @@ body {
   }
 }
 
-/************ paging *************/
+/****************************************
+                  페이징
+ ****************************************/
 #paging {
   margin: auto 0;
   width: 160px;
@@ -490,7 +529,9 @@ body {
   color: yellowgreen;
 }
 
-/************ 말풍선 ************/
+/****************************************
+                말풍선
+ ****************************************/
 .playWrapper {
   position: relative;
 }

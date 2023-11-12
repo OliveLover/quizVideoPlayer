@@ -14,6 +14,60 @@ var indexInfo = [
   },
 ];
 
+/* 사전평가 */
+var pQuizInfo = [
+  {
+    number: 1,
+    correct: true,
+    question: "1번 문제 질문"
+  },
+  {
+    number: 2,
+    correct: true,
+    question: "2번 문제 질문"
+  },
+  {
+    number: 3,
+    correct: true,
+    question: "3번 문제 질문"
+  },
+  {
+    number: 4,
+    correct: true,
+    question: "4번 문제 질문"
+  },
+  {
+    number: 5,
+    correct: true,
+    question: "5번 문제 질문"
+  },
+  {
+    number: 6,
+    correct: true,
+    question: "6번 문제 질문"
+  },
+  {
+    number: 7,
+    correct: true,
+    question: "7번 문제 질문"
+  },
+  {
+    number: 8,
+    correct: true,
+    question: "8번 문제 질문"
+  },
+  {
+    number: 9,
+    correct: true,
+    question: "9번 문제 질문"
+  },
+  {
+    number: 10,
+    correct: true,
+    question: "10번 문제 질문"
+  }
+];
+
 /* 평가하기 */
 var quizInfo = new Object();
 quizInfo[1] = [

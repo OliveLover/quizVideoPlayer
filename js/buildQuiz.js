@@ -26,10 +26,6 @@ function createQuiz(questionNumber) {
   if (questionNumber >= quizSize) {
     completeQuiz = true;
   }
-  console.log("quizRecord : " + JSON.stringify(quizRecord));
-
-  // 퀴즈를 생성할 요소를 선택합니다.
-  // var quizElement = document.querySelector(".quiz");
 
   var quiz_txt = "";
   quiz_txt += '<div class="quizQuestion" >';
@@ -64,7 +60,6 @@ function createQuiz(questionNumber) {
     quizInfo[questionNumber][4].select +
     "</p>";
   quiz_txt += "</div>";
-  // quiz_txt +='<button onclick="submitAnswer(userAnswer)">제출</button>';
   quiz_txt += "</div>";
   quiz_txt += '<div class="explainQuiz"></div>';
   document.getElementById("quizWrap").innerHTML = quiz_txt;
@@ -183,9 +178,6 @@ function solutionQUiz() {
   var solution_txt = "";
   solution_txt += "<div>" + quizInfo[questionNumber][0].explain + "</div>";
 
-  // var existingSolutionElement = document.getElementById("quizSolution");
-  // var existingNextButton = document.getElementById("nextButton");
-
   // 풀이 내용이 없는 경우에만 추가
   if (solutionFlag) {
     var solutionElement = document.getElementsByClassName("explainQuiz")[0];
@@ -214,8 +206,6 @@ function solutionQUiz() {
         solutionFlag = true;
       };
     }
-    // nextButton.id = "nextButton";
-    // nextButton.innerText = completeQuiz ? "결과 확인" : "다음 퀴즈로 이동";
 
     // 버튼을 표시할 위치 선택
     var buttonContainer = document.getElementById("quizWrap");
