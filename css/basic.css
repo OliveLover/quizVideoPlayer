@@ -79,7 +79,6 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-image: url('/image/quiz_bg.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -125,7 +124,7 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-image: url('/image/quiz_bg.jpg');
+  /* background-image: url('/image/quiz_bg.jpg'); */
   background-position: center;
   background-size: cover;
 }
