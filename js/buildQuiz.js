@@ -113,7 +113,7 @@ function createResult() {
   nextPageButton.className = "buttonStyle";
   nextPageButton.innerText = "다음페이지로 이동";
   nextPageButton.onclick = function () {
-    window.location.href = "08.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
+    window.location.href = "09.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
   };
 
   // 버튼을 표시할 위치 선택

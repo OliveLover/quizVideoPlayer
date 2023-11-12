@@ -2,15 +2,15 @@
 var indexInfo = [
   {
     title: "본강의1",
-    location: "03.html",
-  },
-  {
-    title: "본강의2",
     location: "04.html",
   },
   {
-    title: "본강의3",
+    title: "본강의2",
     location: "05.html",
+  },
+  {
+    title: "본강의3",
+    location: "06.html",
   },
 ];
 
