@@ -122,9 +122,9 @@ body {
   color: #fff;
 }
 
-.choice:hover img {
+/* .choice:hover img {
   content: url("/image/check.png");
-}
+} */
 
 .explainQuiz {
   background-color: antiquewhite;

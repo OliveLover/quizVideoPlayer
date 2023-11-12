@@ -2,6 +2,8 @@
 var answerFlag = true;
 var solutionFlag = true;
 var completeQuiz = false;
+var selectAnswerFlag = false;
+var userAnswer = 0;
 var quizSize = Object.keys(quizInfo).length;
 var quizRecord = Array.from({ length: quizSize }, () => ({
   userAnswer: 0,
@@ -15,6 +17,10 @@ var quizRecord = Array.from({ length: quizSize }, () => ({
 function createQuiz(questionNumber) {
   answerFlag = true;
   solutionFlag = true;
+  selectAnswerFlag = false;
+  userAnswer = 0;
+
+  console.log("createQuiz -> userAnswer :" + userAnswer);
 
   // 마지막 문제인지 확인하고, 마지막 문제라면 completeQuiz를 true로 설정
   if (questionNumber >= quizSize) {
@@ -30,34 +36,35 @@ function createQuiz(questionNumber) {
   quiz_txt += "<h2>" + quizInfo[questionNumber][0].question + "</h2>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="multipleChoice">';
-  quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(1)">';
+  quiz_txt += '<div class="choice check1">';
+  quiz_txt += '<img src="./image/playBtn.png" onclick="selectAnswer(1)">';
   quiz_txt +=
-    '<p onclick="checkAnswer(1)">' +
+    '<p onclick="selectAnswer(1)">' +
     quizInfo[questionNumber][1].select +
     "</p>";
   quiz_txt += "</div>";
-  quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(2)">';
+  quiz_txt += '<div class="choice check2">';
+  quiz_txt += '<img src="./image/playBtn.png" onclick="selectAnswer(2)">';
   quiz_txt +=
-    '<p onclick="checkAnswer(2)">' +
+    '<p onclick="selectAnswer(2)">' +
     quizInfo[questionNumber][2].select +
     "</p>";
   quiz_txt += "</div>";
-  quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(3)">';
+  quiz_txt += '<div class="choice check3">';
+  quiz_txt += '<img src="./image/playBtn.png" onclick="selectAnswer(3)">';
   quiz_txt +=
-    '<p onclick="checkAnswer(3)" >' +
+    '<p onclick="selectAnswer(3)" >' +
     quizInfo[questionNumber][3].select +
     "</p>";
   quiz_txt += "</div>";
-  quiz_txt += '<div class="choice">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="checkAnswer(4)">';
+  quiz_txt += '<div class="choice check4">';
+  quiz_txt += '<img src="./image/playBtn.png" onclick="selectAnswer(4)">';
   quiz_txt +=
-    '<p onclick="checkAnswer(4)">' +
+    '<p onclick="selectAnswer(4)">' +
     quizInfo[questionNumber][4].select +
     "</p>";
   quiz_txt += "</div>";
+  quiz_txt +='<button onclick="submitAnswer(userAnswer)">제출</button>';
   quiz_txt += "</div>";
   quiz_txt += '<div class="explainQuiz"></div>';
   document.getElementById("quizWrap").innerHTML = quiz_txt;
@@ -85,10 +92,10 @@ function createResult() {
 
     // result 값에 따라 이미지 추가
     if (quizRecord[i].result === true) {
-      result_txt += '<img src="/image/redCircle.png">';
+      result_txt += '<img src="./image/redCircle.png">';
       correctCount++;
     } else {
-      result_txt += '<img src="/image/redX.png">';
+      result_txt += '<img src="./image/redX.png">';
     }
 
     result_txt += "</div>";
@@ -115,6 +122,27 @@ function createResult() {
   buttonContainer.appendChild(nextPageButton);
 }
 
+function selectAnswer(number) {
+  console.log("selectAnswer 호출");
+  if (!selectAnswerFlag) {
+  var images = document.querySelectorAll('.choice img');
+  for (var i = 0; i < 4; i++) {
+    images[i].src ='./image/playBtn.png';
+  } 
+
+  var selectedImage = document.querySelector('.choice.check' + number + ' img' );
+  selectedImage.src = './image/check.png';
+
+  userAnswer = number;
+  }
+  console.log("selectAnswer -> userAnswer : " + userAnswer);
+}
+
+function submitAnswer(userAnswer) {
+  selectAnswerFlag = true;
+  checkAnswer(userAnswer);
+}
+
 function checkAnswer(userAnswer) {
   quizRecord[questionNumber - 1].userAnswer = userAnswer;
 
@@ -130,6 +158,7 @@ function checkAnswer(userAnswer) {
     solutionQUiz();
     showWrongAnswer();
   }
+
 }
 
 function solutionQUiz() {

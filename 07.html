@@ -17,17 +17,21 @@
   <script>
     var questionNumber = 1;
 
-    const urlParams = new URL(location.href).searchParams;
-    const urlPage = urlParams.get("questionNumber");
+    // const urlParams = new URL(location.href).searchParams;
+    // const urlPage = urlParams.get("questionNumber");
 
-    if (urlPage) {
-      questionNumber = urlPage;
+    // if (urlPage) {
+    //   questionNumber = urlPage;
+    // }
+
+    // window.onload = function () {
+    //   console.log("onload의 페이지 :" + questionNumber);
+    //   createQuiz(questionNumber);
+    // };
+    window.onload = function() {
+      createQuiz(questionNumber);
     }
 
-    window.onload = function () {
-      console.log("onload의 페이지 :" + questionNumber);
-      createQuiz(questionNumber);
-    };
   </script>
 </head>
 
