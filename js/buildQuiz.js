@@ -64,7 +64,7 @@ function createQuiz(questionNumber) {
     quizInfo[questionNumber][4].select +
     "</p>";
   quiz_txt += "</div>";
-  quiz_txt +='<button onclick="submitAnswer(userAnswer)">제출</button>';
+  // quiz_txt +='<button onclick="submitAnswer(userAnswer)">제출</button>';
   quiz_txt += "</div>";
   quiz_txt += '<div class="explainQuiz"></div>';
   document.getElementById("quizWrap").innerHTML = quiz_txt;
@@ -134,6 +134,20 @@ function selectAnswer(number) {
   selectedImage.src = './image/check.png';
 
   userAnswer = number;
+
+  // 제출 버튼 생성
+  var submitButton = document.createElement("button");
+  submitButton.className = "buttonStyle";
+  submitButton.id = "submitButton";
+  submitButton.innerText = "제출";
+  submitButton.onclick = function () {
+      submitAnswer(userAnswer);
+  };
+
+  // 버튼을 표시할 위치 선택
+  var buttonContainer = document.getElementById("quizWrap");
+  // 버튼을 위치에 추가
+  buttonContainer.appendChild(submitButton);
   }
   console.log("selectAnswer -> userAnswer : " + userAnswer);
 }
@@ -141,6 +155,10 @@ function selectAnswer(number) {
 function submitAnswer(userAnswer) {
   selectAnswerFlag = true;
   checkAnswer(userAnswer);
+
+  // 제출 버튼 제거
+  var submitButton = document.querySelector("button");
+  submitButton.remove();
 }
 
 function checkAnswer(userAnswer) {
