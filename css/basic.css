@@ -1,7 +1,6 @@
 ﻿@font-face {
   font-family: "NanumSquareRound";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -72,7 +71,7 @@ body {
 /****************************************
               사전 진단 퀴즈
  ****************************************/
- #pQuizWrap {
+#pQuizWrap {
   width: 100%;
   height: 100%;
   display: flex;
@@ -83,41 +82,43 @@ body {
   background-size: cover;
 }
 
- .pQuizTitle {
+.pQuizTitle {
   display: flex;
-  height : 80px;
+  height: 80px;
   width: 80%;
   background-color: blueviolet;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
- }
+}
 
- .pQuizWrap {
+.pQuizContainer {
   background-color: #22ac38;
   width: 80%;
-  height : 600px;
- }
+  height: 600px;
+}
 
- .pQuizQuestionWrap {
+.pQuizQuestionWrap {
   display: flex;
   flex-direction: row;
   background-color: brown;
- }
+  height: 60px;
+}
 
- .pQuizQuestion {
+.pQuizQuestion {
   background-color: aqua;
   width: 70%;
- }
+}
 
- .pQuizMultipleChoice {
+.pQuizMultipleChoice {
   background-color: beige;
-  width:30%;
- }
+  width: 30%;
+}
+
 /****************************************
                   퀴즈
  ****************************************/
- #quizWrap {
+#quizWrap {
   width: 100%;
   height: 100%;
   display: flex;
