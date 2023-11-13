@@ -1,5 +1,6 @@
 var pQuizSize = pQuizInfo.length;
 var pQuizSubmitted = false;
+var pQuizCorrect = 0;
 var pQuizRecord = Array.from({ length: pQuizSize }, () => ({
   userAnswer: null,
   result: false,
@@ -9,8 +10,7 @@ var pQuizRecord = Array.from({ length: pQuizSize }, () => ({
               사전 퀴즈 화면
  ****************************************/
 function createPQuiz() {
-  console.log("creatPQuiz 실행");
-  console.log("pQuizeRecord : " + JSON.stringify(pQuizRecord));
+  pQuizCorrect = 0;
   var pQuiz_txt = "";
   pQuiz_txt += '<div class="pQuizTitle">';
   pQuiz_txt += "<h2>사전 진단 Test!</h2>";
@@ -53,8 +53,11 @@ function createPQuiz() {
   document.getElementById("pQuizWrap").innerHTML = pQuiz_txt;
 }
 
+/****************************************
+            사전 퀴즈 결과 화면
+ ****************************************/
+
 function createPQuizResult() {
-  console.log("creatPQuiz 실행");
   console.log("pQuizeRecord : " + JSON.stringify(pQuizRecord));
   var pQuizResult_txt = "";
   pQuizResult_txt += '<div class = "pQuizTitle">';
@@ -62,12 +65,21 @@ function createPQuizResult() {
   pQuizResult_txt += "</div > ";
   pQuizResult_txt += '<div class ="pQuizContainer">';
   pQuizResult_txt += '<div class="pQuizScore">';
+  pQuizResult_txt += pQuizCorrect + "/" + pQuizSize;
   pQuizResult_txt += "</div>";
   pQuizResult_txt += '<div class ="pQuizGrade">';
+  pQuizResult_txt += getGrade(pQuizCorrect);
   pQuizResult_txt += "</div>";
+  pQuizResult_txt += '<button id="goToNextPageBtn">다음 페이지로 이동</button>';
   pQuizResult_txt += "</div>";
 
   document.getElementById("pQuizWrap").innerHTML = pQuizResult_txt;
+
+  // 버튼 클릭 이벤트 리스너 추가
+  var goToNextPageBtn = document.getElementById("goToNextPageBtn");
+  goToNextPageBtn.addEventListener("click", function () {
+    window.location.href = "02.html";
+  });
 }
 
 // 유저의 답변을 기록하는 함수
@@ -96,6 +108,7 @@ function submitQuiz() {
     var imgElement = document.getElementsByClassName("pQuizCheck")[i];
     if (pQuizRecord[i].result) {
       imgElement.src = "./image/redCircle.png";
+      pQuizCorrect++;
     } else {
       imgElement.src = "./image/redX.png";
     }
@@ -104,4 +117,17 @@ function submitQuiz() {
   console.log("pQuizRecord : " + JSON.stringify(pQuizRecord));
 
   // 여기에서 pQuizRecord를 활용하여 제출 처리 로직을 작성할 수 있습니다.
+}
+
+function getGrade(pQuizCorrect) {
+  switch (pQuizCorrect) {
+    case pQuizSize:
+      return "훌륭해요!";
+    case pQuizCorrect / pQuizSize >= 0.7:
+      return "잘하셨어요!";
+    case pQuizCorrect / pQuizSize >= 0.4:
+      return "노력하세요!";
+    default:
+      return "분발하세요!";
+  }
 }
