@@ -1,4 +1,5 @@
 var pQuizSize = pQuizInfo.length;
+var pQuizSubmitted = false;
 var pQuizRecord = Array.from({ length: pQuizSize }, () => ({
     userAnswer: null,
     result: false
@@ -37,11 +38,29 @@ function createPQuiz() {
     }
 
     pQuiz_txt += '</div>';
-    pQuiz_txt += '<button onclick="submitQuiz()">제출</button>';
+    pQuiz_txt += '<button onclick="submitQuiz()" id="submitBtn">제출</button>';
 
 
 
     document.getElementById("pQuizWrap").innerHTML = pQuiz_txt;
+}
+
+function createPQuizResult() {
+    console.log("creatPQuiz 실행");
+    console.log("pQuizeRecord : " + JSON.stringify(pQuizRecord));
+    var pQuizResult_txt = "";
+    pQuizResult_txt += '<div class = "pQuizTitle">';
+    pQuizResult_txt += '<h2>사전 진단 Test 결과</h2>';
+    pQuizResult_txt += '</div > ';
+    pQuizResult_txt += '<div class ="pQuizContainer">';
+    pQuizResult_txt += '<div class="pQuizScore" >'
+    pQuizResult_txt += '</div>';
+    pQuizResult_txt += '<div class ="pQuizGrade">';
+    pQuizResult_txt += '</div>'
+    pQuizResult_txt += '</div>';
+
+
+    document.getElementById("pQuizWrap").innerHTML = pQuizResult_txt;
 }
 
 // 유저의 답변을 기록하는 함수
@@ -52,6 +71,14 @@ function recordUserAnswer(index, answer) {
 // 퀴즈 제출 처리 함수
 function submitQuiz() {
     console.log("pQuizRecord : " + JSON.stringify(pQuizRecord));
+    var submitBtn = document.getElementById("submitBtn");
+
+    if (!pQuizSubmitted) {
+        submitBtn.textContent = "결과 확인";
+        pQuizSubmitted = true;
+    } else {
+        createPQuizResult();
+    }
 
     for (var i = 0; i < pQuizSize; i++) {
         var userAnswer = pQuizRecord[i].userAnswer;
