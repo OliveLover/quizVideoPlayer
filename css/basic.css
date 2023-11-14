@@ -20,6 +20,10 @@ body {
   justify-content: center;
 }
 
+#wrap {
+  overflow: hidden;
+}
+
 /****************************************
                   메모
  ****************************************/
@@ -264,23 +268,26 @@ body {
 .index-popup {
   display: none;
   position: absolute;
-  z-index: 1;
-  left: 0;
+  /* z-index: 1;  */
+  /*맨위에 올라오게 해야할 경우 주석 해제*/
+  left: -280px;
   bottom: 100%;
   transform: translateX(-50%, -50%);
-  width: 300px;
+  width: 280px;
   height: 680px;
+  margin: 0px;
+  padding: 0px;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 20px;
 }
 
-.index-popup.show {
+/* .index-popup.show {
   display: block;
   animation-name: slide;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-}
+} */
 
 .indexWrap {
   position: relative;
@@ -324,7 +331,7 @@ body {
   color: yellowgreen;
 }
 
-@keyframes slide {
+/* @keyframes slide {
   0% {
     left: -50%;
   }
@@ -332,7 +339,7 @@ body {
   100% {
     left: 0%;
   }
-}
+} */
 
 /****************************************
                   페이징
