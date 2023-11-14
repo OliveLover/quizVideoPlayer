@@ -18,10 +18,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 #wrap {
   overflow: hidden;
+  display: flex;
 }
 
 /****************************************
@@ -294,13 +296,6 @@ body {
   padding: 20px;
 }
 
-/* .index-popup.show {
-  display: block;
-  animation-name: slide;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-} */
-
 .indexWrap {
   position: relative;
   display: flex;
@@ -342,16 +337,6 @@ body {
 .movePage:hover {
   color: yellowgreen;
 }
-
-/* @keyframes slide {
-  0% {
-    left: -50%;
-  }
-
-  100% {
-    left: 0%;
-  }
-} */
 
 /****************************************
                   페이징
@@ -445,7 +430,7 @@ body {
   cursor: pointer;
   border: none;
   outline: none;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: auto 0;
 }
 
@@ -456,13 +441,13 @@ body {
   background: #222;
 }
 
-#seek-handle {
+/* #seek-handle {
   position: absolute;
   right: 0;
   width: 15px;
   height: 100%;
   background-color: aqua;
-}
+} */
 
 /* .seek .ui-slider-range {
   top: 0px;

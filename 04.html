@@ -24,75 +24,77 @@
           <video id="video-player" style="width: 1280px; height: 720px" controlslist="noplaybackrate nodownload">
             <source src="./video/03.mp4" type="video/mp4" />
           </video>
-        </div>
-        <div id="navBar">
-          <div id="navBarWrap">
-            <div class="index" id="videoIndex">INDEX</div>
-            <div class="index-popup" id="index-popup">
-              <div class="indexWrap">
-                <div class="indexTitle">강의제목
-                  <hr style="border: none; height: 2px; background-color: rgba(245, 245, 245, 0.8);">
+          <div id="navBar">
+            <div id="navBarWrap">
+              <div class="index" id="videoIndex">INDEX</div>
+              <div class="index-popup" id="index-popup">
+                <div class="indexWrap">
+                  <div class="indexTitle">강의제목
+                    <hr style="border: none; height: 2px; background-color: rgba(245, 245, 245, 0.8);">
+                  </div>
+                  <div class="movePage" onclick="location.href='01.html'">사전퀴즈</div>
+                  <div class="movePage" onclick="location.href='02.html'">학습목표</div>
+                  <div class="movePage" onclick="location.href='03.html'">학습내용</div>
+                  <div id="lectureWrap">
+                  </div>
+                  <div class="movePage" onclick="location.href='07.html'">Summary</div>
+                  <div class="movePage" onclick="location.href='08.html'">Quiz</div>
+                  <div class="movePage" onclick="location.href='09.html'">Advanced</div>
                 </div>
-                <div class="movePage" onclick="location.href='01.html'">사전퀴즈</div>
-                <div class="movePage" onclick="location.href='02.html'">학습목표</div>
-                <div class="movePage" onclick="location.href='03.html'">학습내용</div>
-                <div id="lectureWrap">
+              </div>
+              <div class="playWrapper">
+                <!-- 말풍선 추가 -->
+                <div class="bubbleBox">
+                  <div class="playAlarm gr">재생버튼을<br> 눌러주세요.</div>
                 </div>
-                <div class="movePage" onclick="location.href='07.html'">Summary</div>
-                <div class="movePage" onclick="location.href='08.html'">Quiz</div>
-                <div class="movePage" onclick="location.href='09.html'">Advanced</div>
+                <!--말풍선 추가 -->
+                <div class="play" id="video-play-btn"></div>
               </div>
-            </div>
-            <div class="playWrapper">
-              <!-- 말풍선 추가 -->
-              <div class="bubbleBox">
-                <div class="playAlarm gr">재생버튼을<br> 눌러주세요.</div>
+              <div class="pause" id="video-pause-btn"></div>
+              <div class="seek" id="seek-container">
+                <div id="seek-bar">
+                  <div id="seek-handle"></div>
+                </div>
               </div>
-              <!--말풍선 추가 -->
-              <div class="play" id="video-play-btn"></div>
-            </div>
-            <div class="pause" id="video-pause-btn"></div>
-            <div class="seek" id="seek-container">
-              <div id="seek-bar">
-                <div id="seek-handle"></div>
+              <div class="timer" id="timer">00:00 / 00:00</div>
+              <div class="controls-bar">
+                <div class="sound" id="volume-btn"></div>
+                <div class="volume-popup" id="volume-popup">
+                  <input type="range" id="sound-control" min="0" max="100" step="1" value="50" orient="vertical"
+                    style="writing-mode: bt-lr" />
+                </div>
+                <div class="widemode" id="fullscreen-btn"></div>
+                <div class="smallmode" id="pipmode"></div>
               </div>
-            </div>
-            <div class="timer" id="timer">00:00 / 00:00</div>
-            <div class="controls-bar">
-              <div class="sound" id="volume-btn"></div>
-              <div class="volume-popup" id="volume-popup">
-                <input type="range" id="sound-control" min="0" max="100" step="1" value="50" orient="vertical"
-                  style="writing-mode: bt-lr" />
-              </div>
-              <div class="widemode" id="fullscreen-btn"></div>
-              <div class="smallmode" id="pipmode"></div>
-            </div>
-            <div class="download"><a href="./download/summary.pdf" style="text-decoration:none;"
-                download="">학습자료<br>다운로드</a></div>
-            <div id="paging">
-              <div id="prev">
-                <a href="03.html"><img src="./image/prevBtn.png" id="btnPrev" alt="이전 페이지" title="이전 페이지"
-                    onmouseover="this.src='./image/prevBtnOver.png'" onmouseout="this.src='./image/prevBtn.png'" /></a>
-              </div>
-              <div id="page_num">
-                <span id="current_page">04</span>
-                <span id="total_page"> / 09</span>
-              </div>
-              <div id="next">
-                <a href="05.html"><img src="./image/nextBtn.png" id="btnNext" alt="다음 페이지" title="다음 페이지"
-                    onmouseover="this.src='./image/nextBtnOver.png'" onmouseout="this.src='./image/nextBtn.png'" /></a>
+              <div class="download"><a href="./download/summary.pdf" style="text-decoration:none;"
+                  download="">학습자료<br>다운로드</a></div>
+              <div id="paging">
+                <div id="prev">
+                  <a href="03.html"><img src="./image/prevBtn.png" id="btnPrev" alt="이전 페이지" title="이전 페이지"
+                      onmouseover="this.src='./image/prevBtnOver.png'"
+                      onmouseout="this.src='./image/prevBtn.png'" /></a>
+                </div>
+                <div id="page_num">
+                  <span id="current_page">04</span>
+                  <span id="total_page"> / 09</span>
+                </div>
+                <div id="next">
+                  <a href="05.html"><img src="./image/nextBtn.png" id="btnNext" alt="다음 페이지" title="다음 페이지"
+                      onmouseover="this.src='./image/nextBtnOver.png'"
+                      onmouseout="this.src='./image/nextBtn.png'" /></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="memo">
-        <div class="memoTitle">NOTE</div>
-        <div class="memoContents">- 학습한 내용을 메모해보세요!</div>
-        <textarea class="textarea" placeholder="강의를 들으며 필요한 메모를 입력해주세요."></textarea>
-        <div class="memoFunction" id="save_memo">저장하기</div>
-        <div class="memoFunction" id="delet_memo">삭제하기</div>
-        <div class="memoFunction" id="print_memo">프린트</div>
+        <div class="memo">
+          <div class="memoTitle">NOTE</div>
+          <div class="memoContents">- 학습한 내용을 메모해보세요!</div>
+          <textarea class="textarea" placeholder="강의를 들으며 필요한 메모를 입력해주세요."></textarea>
+          <div class="memoFunction" id="save_memo">저장하기</div>
+          <div class="memoFunction" id="delet_memo">삭제하기</div>
+          <div class="memoFunction" id="print_memo">프린트</div>
+        </div>
       </div>
     </div>
   </div>
