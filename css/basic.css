@@ -31,13 +31,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: green;
+  background-color: #FFA500;
   height: 770px;
   min-width: 300px;
   max-width: 100%;
   width: 300px;
   margin-left: 0;
   float: left;
+}
+
+.memoTitle {
+  font-size: 28px;
+  color: white;
+  margin: 5px auto;
+}
+
+.memoContents {
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
 .textarea {
@@ -52,15 +63,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 90%;
   height: 50px;
   background-color: antiquewhite;
   margin: 5px 0;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .memoFunction:active {
-  background-color: blueviolet;
+  background-color: rgb(248, 202, 147);
 }
 
 #myvideo {
