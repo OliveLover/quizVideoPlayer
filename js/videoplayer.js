@@ -99,18 +99,15 @@ $(document).ready(function () {
     }
   });
 
-
-
   // 프로그레스 바 업데이트
   var progressBar = document.getElementById("seek-bar");
-  var progressHandle = document.getElementById("seek-handle");
 
-  progressBar.addEventListener("click", function (event) {
-    var progressWidth = progressBar.offsetWidth;
-    var clickPosition = event.offsetX;
-    var seekTime = (clickPosition / progressWidth) * videoPlayer.duration;
-    videoPlayer.currentTime = seekTime;
-  });
+  $('#seek-container').on('click', function (e) {
+    let clickX = e.pageX - $(this).offset().left;
+    let percent = (clickX / $(this).width());
+    let newTime = $("#video-player").get(0).duration * percent;
+    $("#video-player").get(0).currentTime = newTime;
+  })
 
   videoPlayer.addEventListener("timeupdate", function () {
     var currentTime = videoPlayer.currentTime;
@@ -119,3 +116,4 @@ $(document).ready(function () {
     progressBar.style.width = progress + "%";
   });
 });
+

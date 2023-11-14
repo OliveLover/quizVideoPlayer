@@ -16,7 +16,7 @@
   <script src="./js/buildQuiz.js"></script>
   <script>
     var questionNumber = 1;
-    window.onload = function() {
+    window.onload = function () {
       createQuiz(questionNumber);
     }
   </script>
@@ -27,7 +27,9 @@
     <div id="container">
       <div id="wrap">
         <div id="myvideo">
-          <div id="quizWrap" style="background-image: url('./image/quiz_bg.jpg'); background-size: cover; background-repeat: no-repeat;"></div>
+          <div id="quizWrap"
+            style="background-image: url('./image/quiz_bg.jpg'); background-size: cover; background-repeat: no-repeat;">
+          </div>
         </div>
         <div id="navBar">
           <div id="navBarWrap">
@@ -49,7 +51,7 @@
             </div>
             <div class="play" id="video-play-btn"></div>
             <div class="pause" id="video-pause-btn"></div>
-            <div class="seek">
+            <div class="seek" id="seek-container">
               <div id="seek-bar">
                 <div id="seek-handle"></div>
               </div>
