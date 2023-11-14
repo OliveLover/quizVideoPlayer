@@ -20,8 +20,6 @@ function createQuiz(questionNumber) {
   selectAnswerFlag = false;
   userAnswer = 0;
 
-  console.log("createQuiz -> userAnswer :" + userAnswer);
-
   // 마지막 문제인지 확인하고, 마지막 문제라면 completeQuiz를 true로 설정
   if (questionNumber >= quizSize) {
     completeQuiz = true;
@@ -63,6 +61,11 @@ function createQuiz(questionNumber) {
   quiz_txt += "</div>";
   quiz_txt += '<div class="explainQuiz"></div>';
   document.getElementById("quizWrap").innerHTML = quiz_txt;
+
+  console.log(questionNumber);
+  //배경 이미지 설정
+  var backgroundImage = "url('./image/" + (questionNumber) + ".jpg')";
+  document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
 }
 
 /****************************************
@@ -103,6 +106,9 @@ function createResult() {
   result_txt += "</div>";
   document.getElementById("quizWrap").innerHTML = result_txt;
 
+  var backgroundImage = "url('./image/" + (questionNumber) + ".jpg')";
+  document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
+
   // "다음페이지로 이동" 버튼 생성
   var nextPageButton = document.createElement("button");
   nextPageButton.className = "buttonStyle";
@@ -120,29 +126,29 @@ function createResult() {
 function selectAnswer(number) {
   console.log("selectAnswer 호출");
   if (!selectAnswerFlag) {
-  var images = document.querySelectorAll('.choice img');
-  for (var i = 0; i < 4; i++) {
-    images[i].src ='./image/playBtn.png';
-  } 
+    var images = document.querySelectorAll('.choice img');
+    for (var i = 0; i < 4; i++) {
+      images[i].src = './image/playBtn.png';
+    }
 
-  var selectedImage = document.querySelector('.choice.check' + number + ' img' );
-  selectedImage.src = './image/check.png';
+    var selectedImage = document.querySelector('.choice.check' + number + ' img');
+    selectedImage.src = './image/check.png';
 
-  userAnswer = number;
+    userAnswer = number;
 
-  // 제출 버튼 생성
-  var submitButton = document.createElement("button");
-  submitButton.className = "buttonStyle";
-  submitButton.id = "submitButton";
-  submitButton.innerText = "제출";
-  submitButton.onclick = function () {
+    // 제출 버튼 생성
+    var submitButton = document.createElement("button");
+    submitButton.className = "buttonStyle";
+    submitButton.id = "submitButton";
+    submitButton.innerText = "제출";
+    submitButton.onclick = function () {
       submitAnswer(userAnswer);
-  };
+    };
 
-  // 버튼을 표시할 위치 선택
-  var buttonContainer = document.getElementById("quizWrap");
-  // 버튼을 위치에 추가
-  buttonContainer.appendChild(submitButton);
+    // 버튼을 표시할 위치 선택
+    var buttonContainer = document.getElementById("quizWrap");
+    // 버튼을 위치에 추가
+    buttonContainer.appendChild(submitButton);
   }
   console.log("selectAnswer -> userAnswer : " + userAnswer);
 }

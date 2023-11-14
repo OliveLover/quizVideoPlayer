@@ -1,6 +1,7 @@
 ﻿@font-face {
   font-family: "NanumSquareRound";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -18,7 +19,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 #wrap {
@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #FFA500;
+  background-color: #ffa500;
   height: 770px;
   min-width: 300px;
   max-width: 100%;
@@ -183,7 +183,6 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  /* background-image: url('/image/quiz_bg.jpg'); */
   background-position: center;
   background-size: cover;
 }
@@ -193,8 +192,7 @@ body {
   width: 80%;
   height: 100px;
   align-items: center;
-  margin: 50px auto;
-  margin-bottom: 20px;
+  margin: 170px auto 50px 250px;
   text-align: center;
 }
 
@@ -204,6 +202,7 @@ body {
   height: 300px;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 250px;
   margin-bottom: 30px;
 }
 
