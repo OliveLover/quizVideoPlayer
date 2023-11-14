@@ -81,6 +81,10 @@ $(document).ready(function () {
     videoPlayer.volume = volume;
   });
 
+  // 팝업 초기 상태
+  var popup = document.getElementById("volume-popup");
+  popup.style.display = "none";
+
   // 불륨 팝업
   document.getElementById("volume-btn").addEventListener("click", function () {
     var popup = document.getElementById("volume-popup");
@@ -94,6 +98,8 @@ $(document).ready(function () {
       }, 500);
     }
   });
+
+
 
   // 프로그레스 바 업데이트
   var progressBar = document.getElementById("seek-bar");
