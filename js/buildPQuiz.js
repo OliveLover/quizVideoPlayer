@@ -26,7 +26,7 @@ function createPQuiz() {
     pQuiz_txt += '<div class="pQuizMultipleChoice">';
     pQuiz_txt += "<label>";
     pQuiz_txt +=
-      '<input type="checkbox" name="pQuizAnswer_' +
+      '<input type="radio" name="pQuizAnswer_' +
       i +
       '" value="true" onclick="recordUserAnswer(' +
       i +
@@ -36,7 +36,7 @@ function createPQuiz() {
     pQuiz_txt += "</label>";
     pQuiz_txt += "<label>";
     pQuiz_txt +=
-      '<input type="checkbox" name="pQuizAnswer_' +
+      '<input type="radio" name="pQuizAnswer_' +
       i +
       '" value="false" onclick="recordUserAnswer(' +
       i +
@@ -58,7 +58,7 @@ function createPQuiz() {
  ****************************************/
 
 function createPQuizResult() {
-  console.log("pQuizeRecord : " + JSON.stringify(pQuizRecord));
+  console.log("pQuizRecord : " + JSON.stringify(pQuizRecord));
   var pQuizResult_txt = "";
   pQuizResult_txt += '<div class = "pQuizTitle">';
   pQuizResult_txt += "<h2>사전 진단 Test 결과</h2>";
@@ -84,7 +84,9 @@ function createPQuizResult() {
 
 // 유저의 답변을 기록하는 함수
 function recordUserAnswer(index, answer) {
+  // 선택된 답변을 기록합니다.
   pQuizRecord[index].userAnswer = answer;
+
 }
 
 // 퀴즈 제출 처리 함수
