@@ -51,6 +51,8 @@ function createPQuiz() {
   pQuiz_txt += '<button onclick="submitQuiz()" id="submitBtn">제출</button>';
 
   document.getElementById("pQuizWrap").innerHTML = pQuiz_txt;
+  var backgroundImage = "url('./image/" + (questionNumber) + ".jpg')";
+  document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
 }
 
 /****************************************
