@@ -1,7 +1,6 @@
 ﻿@font-face {
   font-family: "NanumSquareRound";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -315,22 +314,22 @@ body {
 .movePage {
   color: white;
   font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
   cursor: pointer;
 }
 
 .lectureTitle {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 #lectureWrap :first-child {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 #lectureWrap :last-child {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .movePage:hover {
