@@ -48,11 +48,24 @@ function createPQuiz() {
   }
 
   pQuiz_txt += "</div>";
-  pQuiz_txt += '<button onclick="submitQuiz()" id="submitBtn">제출</button>';
 
   document.getElementById("pQuizWrap").innerHTML = pQuiz_txt;
-  var backgroundImage = "url('./image/" + (questionNumber) + ".jpg')";
-  document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
+  var backgroundImage = "url('./image/pQuiz.jpg')";
+  document.getElementById("pQuizWrap").style.backgroundImage = backgroundImage;
+
+  // 제출 버튼 생성
+  var submitButton = document.createElement("button");
+  submitButton.className = "buttonStyle";
+  submitButton.id = "submitBtn";
+  submitButton.innerText = "제출";
+  submitButton.onclick = function () {
+    submitQuiz();
+  };
+
+  // 버튼을 표시할 위치 선택
+  var buttonContainer = document.getElementById("pQuizWrap");
+  // 버튼을 위치에 추가
+  buttonContainer.appendChild(submitButton);
 }
 
 /****************************************
@@ -72,16 +85,23 @@ function createPQuizResult() {
   pQuizResult_txt += '<div class ="pQuizGrade">';
   pQuizResult_txt += getGrade(pQuizCorrect);
   pQuizResult_txt += "</div>";
-  pQuizResult_txt += '<button id="goToNextPageBtn">다음 페이지로 이동</button>';
   pQuizResult_txt += "</div>";
 
   document.getElementById("pQuizWrap").innerHTML = pQuizResult_txt;
 
-  // 버튼 클릭 이벤트 리스너 추가
-  var goToNextPageBtn = document.getElementById("goToNextPageBtn");
-  goToNextPageBtn.addEventListener("click", function () {
-    window.location.href = "02.html";
-  });
+  // 제출 버튼 생성
+  var goToNextPageBtn = document.createElement("button");
+  goToNextPageBtn.className = "buttonStyle";
+  goToNextPageBtn.id = "goToNextPageBtn";
+  goToNextPageBtn.innerText = "다음페이지로 이동";
+  goToNextPageBtn.onclick = function () {
+    window.location.href = "03.html";
+  };
+
+  // 버튼을 표시할 위치 선택
+  var buttonContainer = document.getElementById("pQuizWrap");
+  // 버튼을 위치에 추가
+  buttonContainer.appendChild(goToNextPageBtn);
 }
 
 // 유저의 답변을 기록하는 함수
@@ -124,14 +144,15 @@ function submitQuiz() {
 }
 
 function getGrade(pQuizCorrect) {
-  switch (pQuizCorrect) {
-    case pQuizSize:
-      return "훌륭해요!";
-    case pQuizCorrect / pQuizSize >= 0.7:
-      return "잘하셨어요!";
-    case pQuizCorrect / pQuizSize >= 0.4:
-      return "노력하세요!";
-    default:
-      return "분발하세요!";
+  console.log(pQuizCorrect);
+  console.log(pQuizSize);
+  if (pQuizCorrect === pQuizSize) {
+    return "훌륭해요!";
+  } else if (pQuizCorrect / pQuizSize >= 0.7) {
+    return "잘하셨어요!";
+  } else if (pQuizCorrect / pQuizSize >= 0.4) {
+    return "노력하세요!";
+  } else {
+    return "분발하세요!";
   }
 }

@@ -101,7 +101,6 @@ body {
   display: flex;
   height: 80px;
   width: 80%;
-  background-color: blueviolet;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
@@ -112,7 +111,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #22ac38;
   width: 80%;
   height: 600px;
 }
@@ -120,23 +118,19 @@ body {
 .pQuizQuestionWrap {
   display: flex;
   flex-direction: row;
-  background-color: black;
   height: 100%;
   width: 100%;
 }
 
 .pQuizQuestion {
-  background-color: aqua;
   width: 70%;
 }
 
 .pQuizMultipleChoice {
-  background-color: beige;
   width: 30%;
 }
 
 .pQuizCheck {
-  background-color: #fff;
   width: 50px;
   height: 100%;
   flex-shrink: 0;
