@@ -50,7 +50,7 @@ function createPQuiz() {
   pQuiz_txt += "</div>";
 
   document.getElementById("pQuizWrap").innerHTML = pQuiz_txt;
-  var backgroundImage = "url('./image/pQuiz.jpg')";
+  var backgroundImage = "url('./image/pQuiz_bg.png')";
   document.getElementById("pQuizWrap").style.backgroundImage = backgroundImage;
 
   // 제출 버튼 생성
