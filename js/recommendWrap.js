@@ -9,16 +9,19 @@ function createRecommend() {
     recommend_txt += '</div >';
     recommend_txt += '<div class="recommendLinkWrap">';
     recommend_txt += '<div class="recommendLink">';
-    recommend_txt += '<div img src="./image/recommend_01.jpg" style="background-position:"></div>';
+    recommend_txt += '<div class="recommendImg">';
+    recommend_txt += '<img src="./image/recommend_01.png" style="background-position:">'
+    recommend_txt += '</div >';
     recommend_txt += '</div >';
     recommend_txt += '<div class="recommendLink">';
-    recommend_txt += '<div class="recommendImg"></div>';
+    recommend_txt += '<div class="recommendImg">';
+    recommend_txt += '<img src="./image/recommend_01.png" style="background-position:">'
+    recommend_txt += '</div >';
     recommend_txt += '</div >';
     recommend_txt += '<div class="recommendLink">';
-    recommend_txt += '<div class="recommendText">추천 강의</div>';
+    recommend_txt += '<div class="recommendImg">';
+    recommend_txt += '<img src="./image/recommend_01.png" style="background-position:">'
     recommend_txt += '</div >';
-    recommend_txt += '<div class="recommendLink">';
-    recommend_txt += '<div class="recommendImg"></div>';
     recommend_txt += '</div > ';
     recommend_txt += '</div >';
 
