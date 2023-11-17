@@ -114,3 +114,6 @@ quizInfo[3] = [
   { select: "가죽제 안전화는 물에 젖지 않도록 관리" },
   { select: "정전화는 감전 위험 장소에서 착용" },
 ];
+
+/* 추천영상 사이트 */
+var recommendInfo = [{ link: "https://www.eniedu.co.kr/course" }];
