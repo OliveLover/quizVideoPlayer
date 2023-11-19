@@ -62,6 +62,13 @@ $(document).ready(function () {
     var formattedCurrentTime = formatTime(currentTime);
     var formattedDuration = formatTime(duration);
     timer.textContent = formattedCurrentTime + " / " + formattedDuration;
+
+    // 영상을 다 본 경우 콘솔에 메시지 출력
+    if (currentTime === duration) {
+      console.log("다봤다!");
+      var bubbleBoxNext = document.querySelector(".bubbleBoxNext");
+    bubbleBoxNext.style.display = "block";
+    }
   }
 
   function formatTime(time) {
@@ -117,4 +124,3 @@ $(document).ready(function () {
     progressBar.style.width = progress + "%";
   });
 });
-
