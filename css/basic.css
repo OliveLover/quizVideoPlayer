@@ -408,7 +408,7 @@ body {
   margin: 0px auto 0px auto;
 }
 
-.recommendLink {
+.recommendPreview {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -417,7 +417,6 @@ body {
   background-color: #222;
   border-style: solid;
   overflow: hidden;
-
 }
 
 .recommendImg {
@@ -428,6 +427,11 @@ body {
   background-size: contain;
 }
 
+.recommendLink {
+  background-color: green;
+  width:90%;
+  text-align: center;
+}
 /************* 여기부터 커스텀 플레이어 ************/
 
 #navBarWrap {
