@@ -12,14 +12,13 @@ var pQuizRecord = Array.from({ length: pQuizSize }, () => ({
 function createPQuiz() {
   pQuizCorrect = 0;
   var pQuiz_txt = "";
-  pQuiz_txt += '<div class="pQuizTitle">';
-  pQuiz_txt += "<h2>사전 진단 Test!</h2>";
-  pQuiz_txt += "</div>";
   pQuiz_txt += '<div class="pQuizContainer">';
 
   for (var i = 0; i < pQuizSize; i++) {
     pQuiz_txt += '<div class="pQuizQuestionWrap">';
-    pQuiz_txt += '<img class="pQuizCheck"></img>';
+    pQuiz_txt += '<div class="pQuizCheck">';
+    pQuiz_txt += '<img class="pQuizCheckImage" src=""></img>';
+    pQuiz_txt += '</div>';
     pQuiz_txt += '<div class="pQuizQuestion">';
     pQuiz_txt += pQuizInfo[i].question;
     pQuiz_txt += "</div>";
@@ -75,9 +74,6 @@ function createPQuiz() {
 function createPQuizResult() {
   console.log("pQuizRecord : " + JSON.stringify(pQuizRecord));
   var pQuizResult_txt = "";
-  pQuizResult_txt += '<div class = "pQuizTitle">';
-  pQuizResult_txt += "<h2>사전 진단 Test 결과</h2>";
-  pQuizResult_txt += "</div > ";
   pQuizResult_txt += '<div class ="pQuizContainer">';
   pQuizResult_txt += '<div class="pQuizScore">';
   pQuizResult_txt += pQuizCorrect + "/" + pQuizSize;
@@ -129,7 +125,7 @@ function submitQuiz() {
     pQuizRecord[i].result = userAnswer === correctAnswer;
 
     // 이미지 src 변경
-    var imgElement = document.getElementsByClassName("pQuizCheck")[i];
+    var imgElement = document.getElementsByClassName("pQuizCheckImage")[i];
     if (pQuizRecord[i].result) {
       imgElement.src = "./image/redCircle.png";
       pQuizCorrect++;

@@ -103,42 +103,38 @@ body {
   background-size: cover;
 }
 
-.pQuizTitle {
-  display: flex;
-  height: 80px;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-}
-
 .pQuizContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 80%;
-  height: 600px;
+  margin-top: 185px;
+  width: 1080px;
+  height: 465px;
 }
 
 .pQuizQuestionWrap {
   display: flex;
   flex-direction: row;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
 
 .pQuizQuestion {
-  width: 70%;
+  width: 87%;
+  padding-left: 10px;
 }
 
 .pQuizMultipleChoice {
-  width: 30%;
+  width: 13%;
 }
 
 .pQuizCheck {
-  width: 50px;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
   flex-shrink: 0;
 }
 
