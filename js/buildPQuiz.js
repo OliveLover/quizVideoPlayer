@@ -31,7 +31,7 @@ function createPQuiz() {
       i +
       ', true)">';
     pQuiz_txt +=
-      '<img class="pQuizChoiceImage" src="./image/redCircle.png"></img>';
+      '<img class="pQuizChoiceImage" src="./image/o.png"></img>';
     pQuiz_txt += "</label>";
     pQuiz_txt += "<label>";
     pQuiz_txt +=
@@ -40,7 +40,7 @@ function createPQuiz() {
       '" value="false" onclick="recordUserAnswer(' +
       i +
       ', false)">';
-    pQuiz_txt += '<img class="pQuizChoiceImage" src="./image/redX.png"></img>';
+    pQuiz_txt += '<img class="pQuizChoiceImage" src="./image/x.png"></img>';
     pQuiz_txt += "</label>";
     pQuiz_txt += "</div>";
     pQuiz_txt += "</div>";

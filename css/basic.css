@@ -298,20 +298,22 @@ body {
 }
 
 .indexTitle {
-  font-size: 30px;
-  color: red;
+  display: flex;
+  font-size: 25px;
+  color: #fff;
   font-weight: bold;
   height: 30px;
   margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
 }
 
 .movePage {
   color: white;
   font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
   text-align: center;
   cursor: pointer;
 }
@@ -321,15 +323,15 @@ body {
 }
 
 #lectureWrap :first-child {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 #lectureWrap :last-child {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .movePage:hover {
-  color: yellowgreen;
+  color: #78B1FF;
 }
 
 /****************************************
@@ -429,9 +431,10 @@ body {
 
 .recommendLink {
   background-color: green;
-  width:90%;
+  width: 90%;
   text-align: center;
 }
+
 /************* 여기부터 커스텀 플레이어 ************/
 
 #navBarWrap {
