@@ -31,28 +31,32 @@ function createQuiz(questionNumber) {
   quiz_txt += "</div>";
   quiz_txt += '<div class="multipleChoice">';
   quiz_txt += '<div class="choice check1">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="selectAnswer(1)">';
+  // quiz_txt += '<img src="./image/choice1.png" style="height:35px; width:35px;" onclick="selectAnswer(1)">';
+  quiz_txt += '<div class="choiceImg1" onclick="selectAnswer(1)"></div>'
   quiz_txt +=
     '<p onclick="selectAnswer(1)">' +
     quizInfo[questionNumber][1].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check2">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="selectAnswer(2)">';
+  // quiz_txt += '<img src="./image/choice2.png" style="height:35px; width:35px;" onclick="selectAnswer(2)">';
+  quiz_txt += '<div class="choiceImg2" onclick="selectAnswer(2)"></div>'
   quiz_txt +=
     '<p onclick="selectAnswer(2)">' +
     quizInfo[questionNumber][2].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check3">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="selectAnswer(3)">';
+  // quiz_txt += '<img src="./image/choice3.png" style="height:35px; width:35px;" onclick="selectAnswer(3)">';
+  quiz_txt += '<div class="choiceImg3" onclick="selectAnswer(3)"></div>'
   quiz_txt +=
     '<p onclick="selectAnswer(3)" >' +
     quizInfo[questionNumber][3].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check4">';
-  quiz_txt += '<img src="./image/playBtn.png" onclick="selectAnswer(4)">';
+  // quiz_txt += '<img src="./image/choice4.png" style="height:35px; width:35px;" onclick="selectAnswer(4)">';
+  quiz_txt += '<div class="choiceImg4" onclick="selectAnswer(4)"></div>'
   quiz_txt +=
     '<p onclick="selectAnswer(4)">' +
     quizInfo[questionNumber][4].select +
@@ -64,7 +68,7 @@ function createQuiz(questionNumber) {
 
   console.log(questionNumber);
   //배경 이미지 설정
-  var backgroundImage = "url('./image/" + (questionNumber) + ".jpg')";
+  var backgroundImage = "url('./image/afterQuiz.png')";
   document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
 }
 
@@ -126,13 +130,20 @@ function createResult() {
 function selectAnswer(number) {
   console.log("selectAnswer 호출");
   if (!selectAnswerFlag) {
-    var images = document.querySelectorAll('.choice img');
-    for (var i = 0; i < 4; i++) {
-      images[i].src = './image/playBtn.png';
-    }
+    var image1 = document.querySelector('.choiceImg1');
+    var image2 = document.querySelector('.choiceImg2');
+    var image3 = document.querySelector('.choiceImg3');
+    var image4 = document.querySelector('.choiceImg4');
 
-    var selectedImage = document.querySelector('.choice.check' + number + ' img');
-    selectedImage.src = './image/check.png';
+    // 기존에 체크된 이미지의 'checked' 클래스 제거
+    image1.classList.remove('checked');
+    image2.classList.remove('checked');
+    image3.classList.remove('checked');
+    image4.classList.remove('checked');
+
+    // 선택한 이미지에 'checked' 클래스 추가
+    var selectedImage = document.querySelector('.choiceImg' + number);
+    selectedImage.classList.add('checked');
 
     userAnswer = number;
 
@@ -177,7 +188,6 @@ function checkAnswer(userAnswer) {
     solutionQUiz();
     showWrongAnswer();
   }
-
 }
 
 function solutionQUiz() {

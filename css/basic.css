@@ -71,7 +71,7 @@ body {
   justify-content: center;
   width: 90%;
   height: 50px;
-  background-color: #3d3d3d;
+  background-color: #222222;
   color: #fff;
   margin: 5px 0;
   cursor: pointer;
@@ -154,7 +154,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
   width: 100%;
   height: 50%;
 }
@@ -163,7 +162,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: beige;
   width: 100%;
   height: 50%;
 }
@@ -187,7 +185,7 @@ body {
   width: 80%;
   height: 100px;
   align-items: center;
-  margin: 170px auto 50px 250px;
+  margin: 167px auto 30px 250px;
   text-align: center;
 }
 
@@ -202,18 +200,79 @@ body {
 }
 
 .choice {
+  position: relative;
   display: flex;
   width: 100%;
   align-items: center;
-  margin: 10px auto;
+  margin: 0px auto;
+  font-size: 20px;
 }
 
-.choice img {
+.choiceImg1 {
+  width: 35px;
+  height: 35px;
+  background: url(../image/choice1.png) no-repeat center;
+  background-size: cover;
   margin-right: 10px;
 }
 
+.choiceImg2 {
+  width: 35px;
+  height: 35px;
+  background: url(../image/choice2.png) no-repeat center;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.choiceImg3 {
+  width: 35px;
+  height: 35px;
+  background: url(../image/choice3.png) no-repeat center;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.choiceImg4 {
+  width: 35px;
+  height: 35px;
+  background: url(../image/choice4.png) no-repeat center;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+
 .choice:hover {
   color: red;
+}
+
+.choice:hover .choiceImg1 {
+  background-image: url(../image/selected1.png);
+}
+
+.choice:hover .choiceImg2 {
+  background-image: url(../image/selected2.png);
+}
+
+.choice:hover .choiceImg3 {
+  background-image: url(../image/selected3.png);
+}
+
+.choice:hover .choiceImg4 {
+  background-image: url(../image/selected4.png);
+}
+
+.choiceImg1.checked,
+.choiceImg2.checked,
+.choiceImg3.checked,
+.choiceImg4.checked {
+  background-image: url(../image/check.png);
+}
+
+.choiceImg1.checked:hover,
+.choiceImg2.checked:hover,
+.choiceImg3.checked:hover,
+.choiceImg4.checked:hover {
+  background-image: url(../image/check.png);
 }
 
 .explainQuiz {
@@ -224,7 +283,7 @@ body {
 
 .buttonStyle {
   position: absolute;
-  right: 70px;
+  right: 150px;
   bottom: 50px;
 }
 
