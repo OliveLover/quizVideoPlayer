@@ -458,18 +458,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: green;
   margin: 100px auto 0px auto;
 }
 
 .recommendLinkWrap {
   width: 90%;
   height: 400px;
-  background-color: #ffa500;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: 0px auto 0px auto;
+  margin: 200px auto 0px auto;
 }
 
 .recommendPreview {
@@ -478,23 +476,24 @@ body {
   align-items: center;
   width: 33%;
   height: 100%;
-  background-color: #222;
-  border-style: solid;
   overflow: hidden;
 }
 
 .recommendImg {
   width: 320px;
   height: 200px;
-  background-color: #ffa500;
   background-position: center;
   background-size: contain;
 }
 
 .recommendLink {
-  background-color: green;
-  width: 90%;
+  width: 350px;
+  height: 50px;
   text-align: center;
+  background-color: #78B1FF;
+  border: #fff 3px solid;
+  border-radius: 30px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 /************* 여기부터 커스텀 플레이어 ************/
