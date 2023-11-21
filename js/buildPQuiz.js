@@ -13,43 +13,48 @@ function createPQuiz() {
   pQuizCorrect = 0;
   var pQuiz_txt = "";
   pQuiz_txt += '<div class="pQuizContainer">';
+  pQuiz_txt += '<div class="pQuizSubHeading">';
+  pQuiz_txt += '<div>차시</div>';
+  pQuiz_txt += '<div>번호</div>';
+  pQuiz_txt += '<div>문항</div>';
+  pQuiz_txt += '<div>그렇다</div>';
+  pQuiz_txt += '<div>아니다</div>';
+  pQuiz_txt += '</div>';
 
   for (var i = 0; i < pQuizSize; i++) {
     pQuiz_txt += '<div class="pQuizQuestionWrap">';
     pQuiz_txt += '<div class="pQuizCheck">';
-    pQuiz_txt += '<img class="pQuizCheckImage" src=""></img>';
+    pQuiz_txt += pQuizInfo[i].number;
     pQuiz_txt += '</div>';
+    pQuiz_txt += '<div class="pQuizNumber"></div>';
     pQuiz_txt += '<div class="pQuizQuestion">';
     pQuiz_txt += pQuizInfo[i].question;
     pQuiz_txt += "</div>";
-    pQuiz_txt += '<div class="pQuizMultipleChoice">';
-    pQuiz_txt += "<label style='margin-right: 30px'>";
+    // pQuiz_txt += '<div class="pQuizMultipleChoiceY">';
+    pQuiz_txt += "<div class='pQuizMultipleChoiceY'>";
     pQuiz_txt +=
       '<input type="radio" name="pQuizAnswer_' +
       i +
       '" value="true" onclick="recordUserAnswer(' +
       i +
       ', true)">';
-    pQuiz_txt +=
-      '그렇다';
-    pQuiz_txt += "</label>";
-    pQuiz_txt += "<label>";
+    pQuiz_txt += "</div>";
+    pQuiz_txt += "<div class='pQuizMultipleChoiceN'>";
     pQuiz_txt +=
       '<input type="radio" name="pQuizAnswer_' +
       i +
       '" value="false" onclick="recordUserAnswer(' +
       i +
       ', false)">';
-    pQuiz_txt += '그렇지않다';
-    pQuiz_txt += "</label>";
     pQuiz_txt += "</div>";
+    // pQuiz_txt += "</div>";
     pQuiz_txt += "</div>";
   }
 
   pQuiz_txt += "</div>";
 
   document.getElementById("pQuizWrap").innerHTML = pQuiz_txt;
-  var backgroundImage = "url('./image/pQuiz_bg.png')";
+  var backgroundImage = "url('./image/pQuiz_bg_empty.png')";
   document.getElementById("pQuizWrap").style.backgroundImage = backgroundImage;
 
   // 제출 버튼 생성
