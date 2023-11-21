@@ -115,7 +115,7 @@ function createResult() {
 
   // "다음페이지로 이동" 버튼 생성
   var nextPageButton = document.createElement("button");
-  nextPageButton.className = "buttonStyle";
+  nextPageButton.className = "quizButtonStyle";
   nextPageButton.innerText = "다음페이지로 이동";
   nextPageButton.onclick = function () {
     window.location.href = "10.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
@@ -149,7 +149,7 @@ function selectAnswer(number) {
 
     // 제출 버튼 생성
     var submitButton = document.createElement("button");
-    submitButton.className = "buttonStyle";
+    submitButton.className = "quizButtonStyle";
     submitButton.id = "submitButton";
     submitButton.innerText = "제출";
     submitButton.onclick = function () {
@@ -201,7 +201,7 @@ function solutionQUiz() {
     solutionElement.innerHTML = solution_txt;
     // 다음 퀴즈로 넘어가는 버튼 생성
     var nextButton = document.createElement("button");
-    nextButton.className = "buttonStyle";
+    nextButton.className = "quizButtonStyle";
 
     if (completeQuiz) {
       nextButton.id = "resultButton";

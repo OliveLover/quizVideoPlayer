@@ -54,7 +54,7 @@ function createPQuiz() {
 
   // 제출 버튼 생성
   var submitButton = document.createElement("button");
-  submitButton.className = "buttonStyle";
+  submitButton.className = "pQuizButtonStyle";
   submitButton.id = "submitBtn";
   submitButton.innerText = "제출";
   submitButton.onclick = function () {
@@ -87,7 +87,7 @@ function createPQuizResult() {
 
   // 제출 버튼 생성
   var goToNextPageBtn = document.createElement("button");
-  goToNextPageBtn.className = "buttonStyle";
+  goToNextPageBtn.className = "quizButtonStyle";
   goToNextPageBtn.id = "goToNextPageBtn";
   goToNextPageBtn.innerText = "다음페이지로 이동";
   goToNextPageBtn.onclick = function () {

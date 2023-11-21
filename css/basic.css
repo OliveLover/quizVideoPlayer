@@ -166,6 +166,20 @@ body {
   height: 50%;
 }
 
+.pQuizButtonStyle {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  right: 570px;
+  bottom: 15px;
+  background-color: #222222;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 15px;
+  font-family: "NanumSquareRound", sans-serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
 /****************************************
                   퀴즈
  ****************************************/
@@ -185,7 +199,7 @@ body {
   width: 80%;
   height: 100px;
   align-items: center;
-  margin: 167px auto 30px 250px;
+  margin: 155px auto 30px 250px;
   text-align: center;
 }
 
@@ -276,10 +290,18 @@ body {
   height: 100px;
 }
 
-.buttonStyle {
+.quizButtonStyle {
+  width: 150px;
+  height: 50px;
   position: absolute;
-  right: 150px;
-  bottom: 50px;
+  right: 90px;
+  bottom: 30px;
+  background-color: #222222;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 15px;
+  font-family: "NanumSquareRound", sans-serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .resultTitle {
