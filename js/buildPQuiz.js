@@ -26,7 +26,9 @@ function createPQuiz() {
     pQuiz_txt += '<div class="pQuizCheck">';
     pQuiz_txt += pQuizInfo[i].number;
     pQuiz_txt += '</div>';
-    pQuiz_txt += '<div class="pQuizNumber"></div>';
+    pQuiz_txt += '<div class="pQuizNumber">';
+    pQuiz_txt += i + 1;
+    pQuiz_txt += '</div>';
     pQuiz_txt += '<div class="pQuizQuestion">';
     pQuiz_txt += pQuizInfo[i].question;
     pQuiz_txt += "</div>";
