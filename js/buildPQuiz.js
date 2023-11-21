@@ -23,7 +23,7 @@ function createPQuiz() {
     pQuiz_txt += pQuizInfo[i].question;
     pQuiz_txt += "</div>";
     pQuiz_txt += '<div class="pQuizMultipleChoice">';
-    pQuiz_txt += "<label>";
+    pQuiz_txt += "<label style='margin-right: 30px'>";
     pQuiz_txt +=
       '<input type="radio" name="pQuizAnswer_' +
       i +
@@ -31,7 +31,7 @@ function createPQuiz() {
       i +
       ', true)">';
     pQuiz_txt +=
-      '<img class="pQuizChoiceImage" src="./image/o.png"></img>';
+      '그렇다';
     pQuiz_txt += "</label>";
     pQuiz_txt += "<label>";
     pQuiz_txt +=
@@ -40,7 +40,7 @@ function createPQuiz() {
       '" value="false" onclick="recordUserAnswer(' +
       i +
       ', false)">';
-    pQuiz_txt += '<img class="pQuizChoiceImage" src="./image/x.png"></img>';
+    pQuiz_txt += '그렇지않다';
     pQuiz_txt += "</label>";
     pQuiz_txt += "</div>";
     pQuiz_txt += "</div>";
@@ -63,7 +63,7 @@ function createPQuiz() {
 
   // 버튼을 표시할 위치 선택
   var buttonContainer = document.getElementById("pQuizWrap");
-  // 버튼을 위치에 추가
+  // 모든 정답지에 체크되었을 때만 제출 버튼을 추가
   buttonContainer.appendChild(submitButton);
 }
 
