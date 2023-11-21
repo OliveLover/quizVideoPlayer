@@ -192,7 +192,7 @@ function checkAnswer(userAnswer) {
 
 function solutionQUiz() {
   var solution_txt = "";
-  solution_txt += "<div>" + quizInfo[questionNumber][0].explain + "</div>";
+  solution_txt += "<div>" + "<span style='color:red'>해설 : </span>" + quizInfo[questionNumber][0].explain + "</div>";
 
   // 풀이 내용이 없는 경우에만 추가
   if (solutionFlag) {
