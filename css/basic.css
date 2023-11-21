@@ -104,6 +104,7 @@ body {
 }
 
 .pQuizContainer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,6 +248,28 @@ body {
   height: 150px;
   margin-right: 100px;
 }
+
+/****************************************
+            사전퀴즈 결과 팝업
+ ****************************************/
+ .pQuizResult-popUp {
+  width: 1080px;
+  height: 495px;
+  background-color: green;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  z-index: 1;
+ }
+
+ .coverImageStyle {
+  width: 100%;
+  height: 100%;
+  background: url() no-repeat center;
+  background-size: cover;
+}
+
 
 /****************************************
                   퀴즈
