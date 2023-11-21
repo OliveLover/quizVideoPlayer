@@ -76,14 +76,28 @@ function createPQuizResult() {
   var pQuizResult_txt = "";
   pQuizResult_txt += '<div class ="pQuizContainer">';
   pQuizResult_txt += '<div class="pQuizScore">';
-  pQuizResult_txt += pQuizCorrect + "/" + pQuizSize;
+  pQuizResult_txt += pQuizCorrect + " / " + pQuizSize;
   pQuizResult_txt += "</div>";
   pQuizResult_txt += '<div class ="pQuizGrade">';
+  pQuizResult_txt += '<img class="emoticon" src=""></img >';
   pQuizResult_txt += getGrade(pQuizCorrect);
   pQuizResult_txt += "</div>";
   pQuizResult_txt += "</div>";
 
   document.getElementById("pQuizWrap").innerHTML = pQuizResult_txt;
+  // 배경 이미지 설정
+  var backgroundImage = "url('./image/pQuizResult.png')";
+  document.getElementById("pQuizWrap").style.backgroundImage = backgroundImage;
+
+  // Emoticon 이미지 설정
+  var emoticonImg = document.querySelector(".emoticon");
+  if (pQuizCorrect === pQuizSize) {
+    emoticonImg.src = "./image/smile.png";
+  } else if (pQuizCorrect / pQuizSize >= 0.6) {
+    emoticonImg.src = "./image/neutral.png";
+  } else {
+    emoticonImg.src = "./image/sad.png";
+  }
 
   // 제출 버튼 생성
   var goToNextPageBtn = document.createElement("button");
@@ -144,9 +158,7 @@ function getGrade(pQuizCorrect) {
   console.log(pQuizSize);
   if (pQuizCorrect === pQuizSize) {
     return "훌륭해요!";
-  } else if (pQuizCorrect / pQuizSize >= 0.7) {
-    return "잘하셨어요!";
-  } else if (pQuizCorrect / pQuizSize >= 0.4) {
+  } else if (pQuizCorrect / pQuizSize >= 0.6) {
     return "노력하세요!";
   } else {
     return "분발하세요!";

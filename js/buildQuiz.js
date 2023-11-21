@@ -106,11 +106,11 @@ function createResult() {
   result_txt += "</div>";
 
   result_txt += '<div class="quizGrade">';
-  result_txt += "정답률: " + ((correctCount / quizSize) * 100).toFixed(2) + "%";
+  result_txt += '<span style="color:red;margin-top: 5px;">' + correctCount + '</span >개 정답입니다.';
   result_txt += "</div>";
   document.getElementById("quizWrap").innerHTML = result_txt;
 
-  var backgroundImage = "url('./image/" + (questionNumber) + ".jpg')";
+  var backgroundImage = "url('./image/PQuizResult.png')";
   document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
 
   // "다음페이지로 이동" 버튼 생성
