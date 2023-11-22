@@ -69,8 +69,8 @@ var pQuizInfo = [
 ];
 
 /* 평가하기 */
-var quizInfo = new Object();
-quizInfo[1] = [
+var quizInfo_1 = new Object();
+quizInfo_1[1] = [
   {
     correct: "3",
     layout: "column",
@@ -84,7 +84,7 @@ quizInfo[1] = [
   { select: "디자인은 중요하지 않음" },
   { select: "유해위험물질로부터 보호성능이 충분할 것" },
 ];
-quizInfo[2] = [
+quizInfo_1[2] = [
   {
     correct: "1",
     layout: "column",
@@ -100,7 +100,7 @@ quizInfo[2] = [
   { select: "방한복" },
   { select: "방한장갑" },
 ];
-quizInfo[3] = [
+quizInfo_1[3] = [
   {
     correct: "4",
     layout: "column",
@@ -113,6 +113,53 @@ quizInfo[3] = [
   { select: "내부 항상 건조 관리" },
   { select: "가죽제 안전화는 물에 젖지 않도록 관리" },
   { select: "정전화는 감전 위험 장소에서 착용" },
+];
+
+/* 평가하기 */
+var quizInfo_2 = new Object();
+quizInfo_2[1] = [
+  {
+    correct: "3",
+    layout: "column",
+    question: "문제 1",
+    rubric: "",
+    explain: "문제 1 해설",
+    scroll: "none",
+  },
+  { select: "선택지 1" },
+  { select: "선택지 2" },
+  { select: "선택지 3 (정답)" },
+  { select: "선택지 4" },
+];
+quizInfo_2[2] = [
+  {
+    correct: "1",
+    layout: "column",
+    question:
+      "문제 2",
+    rubric: "",
+    explain:
+      "문제 2 해설",
+    scroll: "none",
+  },
+  { select: "선택지 1 (정답)" },
+  { select: "선택지 2" },
+  { select: "선택지 3" },
+  { select: "선택지 4" },
+];
+quizInfo_2[3] = [
+  {
+    correct: "4",
+    layout: "column",
+    question: "문제 3",
+    rubric: "",
+    explain: "문제 3 해설",
+    scroll: "none",
+  },
+  { select: "선택지 1" },
+  { select: "선택지 2" },
+  { select: "선택지 3" },
+  { select: "선택지 4 (정답)" },
 ];
 
 /* 추천영상 사이트 */

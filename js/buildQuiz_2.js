@@ -4,7 +4,7 @@ var solutionFlag = true;
 var completeQuiz = false;
 var selectAnswerFlag = false;
 var userAnswer = 0;
-var quizSize = Object.keys(quizInfo).length;
+var quizSize = Object.keys(quizInfo_2).length;
 var quizRecord = Array.from({ length: quizSize }, () => ({
   userAnswer: 0,
   result: false,
@@ -27,7 +27,7 @@ function createQuiz(questionNumber) {
 
   var quiz_txt = "";
   quiz_txt += '<div class="quizQuestion" >';
-  quiz_txt += "<h2>" + quizInfo[questionNumber][0].question + "</h2>";
+  quiz_txt += "<h2>" + quizInfo_2[questionNumber][0].question + "</h2>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="multipleChoice">';
   quiz_txt += '<div class="choice check1">';
@@ -35,7 +35,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="choiceImg1" onclick="selectAnswer(1)"></div>'
   quiz_txt +=
     '<p onclick="selectAnswer(1)">' +
-    quizInfo[questionNumber][1].select +
+    quizInfo_2[questionNumber][1].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check2">';
@@ -43,7 +43,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="choiceImg2" onclick="selectAnswer(2)"></div>'
   quiz_txt +=
     '<p onclick="selectAnswer(2)">' +
-    quizInfo[questionNumber][2].select +
+    quizInfo_2[questionNumber][2].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check3">';
@@ -51,7 +51,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="choiceImg3" onclick="selectAnswer(3)"></div>'
   quiz_txt +=
     '<p onclick="selectAnswer(3)" >' +
-    quizInfo[questionNumber][3].select +
+    quizInfo_2[questionNumber][3].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check4">';
@@ -59,7 +59,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="choiceImg4" onclick="selectAnswer(4)"></div>'
   quiz_txt +=
     '<p onclick="selectAnswer(4)">' +
-    quizInfo[questionNumber][4].select +
+    quizInfo_2[questionNumber][4].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += "</div>";
@@ -176,9 +176,9 @@ function submitAnswer(userAnswer) {
 function checkAnswer(userAnswer) {
   quizRecord[questionNumber - 1].userAnswer = userAnswer;
 
-  if (Number(quizInfo[questionNumber][0].correct) === Number(userAnswer)) {
+  if (Number(quizInfo_2[questionNumber][0].correct) === Number(userAnswer)) {
     console.log("선택지 : " + userAnswer);
-    console.log("퀴즈 정답 : " + quizInfo[questionNumber][0].correct);
+    console.log("퀴즈 정답 : " + quizInfo_2[questionNumber][0].correct);
     console.log("정답");
     quizRecord[questionNumber - 1].result = true;
     solutionQUiz();
@@ -192,7 +192,7 @@ function checkAnswer(userAnswer) {
 
 function solutionQUiz() {
   var solution_txt = "";
-  solution_txt += "<div>" + "<span style='color:red'>해설 : </span>" + quizInfo[questionNumber][0].explain + "</div>";
+  solution_txt += "<div>" + "<span style='color:red'>해설 : </span>" + quizInfo_2[questionNumber][0].explain + "</div>";
 
   // 풀이 내용이 없는 경우에만 추가
   if (solutionFlag) {
