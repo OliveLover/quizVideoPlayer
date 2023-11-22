@@ -618,6 +618,18 @@ body {
   overflow: hidden;
 }
 
+.recommendPreview div:nth-child(2)>a {
+  text-decoration: none;
+  color: #222222;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.recommendPreview div:nth-child(2)>a:hover {
+  color: #3266AE;
+}
+
 .recommendImg {
   width: 320px;
   height: 200px;
