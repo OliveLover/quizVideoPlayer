@@ -27,13 +27,13 @@ function createScreenView() {
   startQuizButton.className = "quizButtonStyle";
   startQuizButton.innerText = "퀴즈시작";
   startQuizButton.onclick = function () {
-    screenView.style.display = "none";
-    createQuiz(questionNumber);
+  screenView.style.display = "none";
+  createQuiz(questionNumber);
   };
  
-   // 버튼을 표시할 위치 선택
+  // 버튼을 표시할 위치 선택
   var buttonContainer = document.getElementById("screenView");
-   // 버튼을 위치에 추가
+  // 버튼을 위치에 추가
   buttonContainer.appendChild(startQuizButton);
 }
 

@@ -650,14 +650,26 @@ body {
   color: #3266AE;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
 .recommendImg {
   width: 320px;
   height: 200px;
   background-position: center;
   background-size: cover;
+  animation: bounce 0.5s infinite alternate;
 }
 
 .recommendLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 350px;
   height: 50px;
   text-align: center;

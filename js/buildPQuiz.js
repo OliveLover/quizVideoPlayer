@@ -67,8 +67,6 @@ function createPQuiz() {
   var backgroundImage = "url('./image/pQuiz_bg_empty.png')";
   document.getElementById("pQuizWrap").style.backgroundImage = backgroundImage;
 
-
-
 }
 
 /****************************************

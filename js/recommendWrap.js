@@ -7,7 +7,9 @@ function createRecommend() {
     recommend_txt += '<div class="recommendLinkWrap">';
     recommend_txt += '<div class="recommendPreview">';
     recommend_txt += '<div class="recommendImg">';
+    recommend_txt += '<a href="' + recommendInfo[0].link + '">';
     recommend_txt += '<img src="./image/recommend_01.png" style="background-position:">';
+    recommend_txt += '</a>';
     recommend_txt += '</div >';
     recommend_txt += '<div><a href=';
     recommend_txt += recommendInfo[0].link;
@@ -17,7 +19,9 @@ function createRecommend() {
     recommend_txt += '</div >';
     recommend_txt += '<div class="recommendPreview">';
     recommend_txt += '<div class="recommendImg">';
+    recommend_txt += '<a href="' + recommendInfo[1].link + '">';
     recommend_txt += '<img src="./image/recommend_02.png" style="background-position:">';
+    recommend_txt += '</a>';
     recommend_txt += '</div >';
     recommend_txt += '<div><a href=';
     recommend_txt += recommendInfo[1].link;
@@ -27,7 +31,9 @@ function createRecommend() {
     recommend_txt += '</div >';
     recommend_txt += '<div class="recommendPreview">';
     recommend_txt += '<div class="recommendImg">';
+    recommend_txt += '<a href="' + recommendInfo[1].link + '">';
     recommend_txt += '<img src="./image/recommend_03.png" style="background-position:">';
+    recommend_txt += '</a>';
     recommend_txt += '</div >';
     recommend_txt += '<div><a href=';
     recommend_txt += recommendInfo[2].link;
@@ -40,4 +46,3 @@ function createRecommend() {
 
     document.getElementById("recommendWrap").innerHTML = recommend_txt;
 }
-// style="text-decoration:none; font-size:30px; color:black;"
