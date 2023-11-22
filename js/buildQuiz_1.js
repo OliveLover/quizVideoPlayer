@@ -3,6 +3,7 @@ var answerFlag = true;
 var solutionFlag = true;
 var completeQuiz = false;
 var selectAnswerFlag = false;
+var questionNumber = 1;
 var userAnswer = 0;
 var quizSize = Object.keys(quizInfo_1).length;
 var quizRecord = Array.from({ length: quizSize }, () => ({
@@ -15,8 +16,25 @@ var quizRecord = Array.from({ length: quizSize }, () => ({
  ****************************************/
 function createScreenView() {
   var screen_txt = "";
-  screen_txt = "1111";
+  screen_txt += "<div id='screenView'>";
+  screen_txt += "<div class='screenViewTitle'>사전 진단 테스트</div>";
+  screen_txt += "</div>";
   document.getElementById("quizWrap").innerHTML = screen_txt;
+
+  var screenView = document.getElementById("screenView");
+   
+  var startQuizButton = document.createElement("button");
+  startQuizButton.className = "quizButtonStyle";
+  startQuizButton.innerText = "퀴즈시작";
+  startQuizButton.onclick = function () {
+    screenView.style.display = "none";
+    createQuiz(questionNumber);
+  };
+ 
+   // 버튼을 표시할 위치 선택
+  var buttonContainer = document.getElementById("screenView");
+   // 버튼을 위치에 추가
+  buttonContainer.appendChild(startQuizButton);
 }
 
 /****************************************
@@ -262,4 +280,8 @@ function showWrongAnswer() {
     quizQuestionElement.appendChild(wrongAnswerImage);
   }
   answerFlag = false;
+}
+
+window.onload = function () {
+  createScreenView();
 }

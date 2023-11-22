@@ -296,7 +296,27 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
+/****************************************
+                퀴즈 스크린
+ ****************************************/
+ #screenView {
+  display: flex;
+  justify-content: center;
+  background-color: green;
+  width: 1280px;
+  height: 720px;
+ }
 
+ .screenViewTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3266AE;
+  width: 1100px;
+  height: 200px;
+  margin-top: 100px;
+  font-size: 30px;
+ }
 /****************************************
                   퀴즈
  ****************************************/
