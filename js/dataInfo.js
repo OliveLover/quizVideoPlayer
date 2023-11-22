@@ -23,27 +23,27 @@ var pQuizInfo = [
   },
   {
     number: 2,
-    correct: false,
+    correct: true,
     question: "2번 문제 질문"
   },
   {
-    number: 3,
-    correct: false,
+    number: 23,
+    correct: true,
     question: "3번 문제 질문"
   },
   {
     number: 4,
-    correct: false,
+    correct: true,
     question: "4번 문제 질문"
   },
   {
-    number: 5,
+    number: 6,
     correct: true,
     question: "5번 문제 질문"
   },
   {
-    number: 6,
-    correct: false,
+    number: 16,
+    correct: true,
     question: "6번 문제 질문"
   },
   {
@@ -53,17 +53,17 @@ var pQuizInfo = [
   },
   {
     number: 8,
-    correct: false,
+    correct: true,
     question: "8번 문제 질문"
   },
   {
-    number: 9,
+    number: 25,
     correct: true,
     question: "9번 문제 질문"
   },
   {
-    number: 10,
-    correct: false,
+    number: 21,
+    correct: true,
     question: "10번 문제 질문"
   }
 ];
