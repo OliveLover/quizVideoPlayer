@@ -32,10 +32,9 @@ function createPQuiz() {
     pQuiz_txt += '<div class="pQuizQuestion">';
     pQuiz_txt += pQuizInfo[i].question;
     pQuiz_txt += "</div>";
-    // pQuiz_txt += '<div class="pQuizMultipleChoiceY">';
     pQuiz_txt += "<div class='pQuizMultipleChoiceY'>";
     pQuiz_txt +=
-      '<input type="radio" name="pQuizAnswer_' +
+      '<input type="radio" style="width:20px; height:20px;" name="pQuizAnswer_' +
       i +
       '" value="true" onclick="recordUserAnswer(' +
       i +
@@ -43,13 +42,12 @@ function createPQuiz() {
     pQuiz_txt += "</div>";
     pQuiz_txt += "<div class='pQuizMultipleChoiceN'>";
     pQuiz_txt +=
-      '<input type="radio" name="pQuizAnswer_' +
+      '<input type="radio" style="width:20px; height:20px;" name="pQuizAnswer_' +
       i +
       '" value="false" onclick="recordUserAnswer(' +
       i +
       ', false)">';
     pQuiz_txt += "</div>";
-    // pQuiz_txt += "</div>";
     pQuiz_txt += "</div>";
   }
 
