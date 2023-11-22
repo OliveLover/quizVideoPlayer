@@ -15,24 +15,18 @@
   <script src="./js/jquery-1.12.4.js"></script>
   <script src="./js/jquery-ui.js"></script>
   <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script src="./js/recommendWrap.js"></script>
+  <script src="./js/videoplayer.js"></script>
   <script src="./js/index.js"></script>
-  <script>
-    window.onload = function () {
-      createRecommend();
-    }
-  </script>
 </head>
-
 
 <body scroll="no" ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
   <div style="width: 1280px">
     <div id="container">
       <div id="wrap">
         <div id="myvideo">
-          <div id="recommendWrap"
-            style="background-image: url('./image/recommend_bg.png'); background-size: cover; background-repeat: no-repeat;">
-          </div>
+          <video id="video-player" style="width: 1280px; height: 720px" controlslist="noplaybackrate nodownload">
+            <source src="./video/07.mp4" type="video/mp4" />
+          </video>
           <div id="navBar">
             <div id="navBarWrap">
               <div class="index" id="videoIndex">INDEX</div>
@@ -43,18 +37,29 @@
                   <div>
                     <hr style="border: none; height: 2px; background-color: rgba(245, 245, 245, 0.8);">
                     <div class="movePage" onclick="location.href='01.html'">인트로</div>
-                    <div class="movePage" onclick="location.href='02.html'">사전퀴즈</div>
+                    <div class="movePage" onclick="location.href='02.html'">사전진단 TEST</div>
                     <div class="movePage" onclick="location.href='03.html'">학습목표</div>
                     <div class="movePage" onclick="location.href='04.html'">학습내용</div>
+                    <div class="movePage" onclick="location.href='05.html'">학습 전 QUIZ</div>
                     <div id="lectureWrap">
                     </div>
-                    <div class="movePage" onclick="location.href='08.html'">Summary</div>
-                    <div class="movePage" onclick="location.href='09.html'">Quiz</div>
-                    <div class="movePage" onclick="location.href='10.html'">Advanced</div>
+                    <div class="movePage" onclick="location.href='09.html'">마무리 Quiz</div>
+                    <div class="movePage" onclick="location.href='10.html'">Summary</div>
+                    <div class="movePage" onclick="location.href='11.html'">Advanced</div>
                   </div>
                 </div>
               </div>
               <div class="playWrapper">
+                <!-- 말풍선 추가 -->
+                <div class="bubbleBox">
+                  <div class="playAlarm gr">재생버튼을<br> 눌러주세요.</div>
+                </div>
+                <!--말풍선 추가 -->
+                <!-- 말풍선 추가 -->
+                <div class="bubbleBoxNext">
+                  <div class="playAlarm gr">다음 버튼을<br> 눌러주세요.</div>
+                </div>
+                <!--말풍선 추가 -->
                 <div class="play" id="video-play-btn"></div>
               </div>
               <div class="pause" id="video-pause-btn"></div>
@@ -85,10 +90,12 @@
                 </div>
                 <div id="page_num">
                   <span id="current_page">11</span>
-                  <span id="total_page"> / 11</span>
+                  <span id="total_page"> / 12</span>
                 </div>
                 <div id="next">
-                  <img src="./image/emptyNextBtn.png" id="btnNext" alt="다음 페이지" title="다음 페이지">
+                  <a href="12.html"><img src="./image/nextBtn.png" id="btnNext" alt="다음 페이지" title="다음 페이지"
+                      onmouseover="this.src='./image/nextBtnOver.png'"
+                      onmouseout="this.src='./image/nextBtn.png'" /></a>
                 </div>
               </div>
             </div>
