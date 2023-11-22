@@ -163,4 +163,17 @@ quizInfo_2[3] = [
 ];
 
 /* 추천영상 사이트 */
-var recommendInfo = [{ link: "https://www.eniedu.co.kr/course" }];
+var recommendInfo = [
+  {
+    link: "https://www.eniedu.co.kr/course",
+    title: "추천강의 영상 1"
+  },
+  {
+    link: "https://www.eniedu.co.kr/course",
+    title: "추천강의 영상2"
+  },
+  {
+    link: "https://www.eniedu.co.kr/course",
+    title: "추천강의 영상3"
+  }
+];

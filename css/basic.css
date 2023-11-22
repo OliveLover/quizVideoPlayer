@@ -611,6 +611,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
   width: 33%;
   height: 100%;
   overflow: hidden;
@@ -620,7 +622,7 @@ body {
   width: 320px;
   height: 200px;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .recommendLink {
