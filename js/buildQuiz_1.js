@@ -11,6 +11,15 @@ var quizRecord = Array.from({ length: quizSize }, () => ({
 }));
 
 /****************************************
+              퀴즈 준비 화면
+ ****************************************/
+function createScreenView() {
+  var screen_txt = "";
+  screen_txt = "1111";
+  document.getElementById("quizWrap").innerHTML = screen_txt;
+}
+
+/****************************************
                 퀴즈 화면
  ****************************************/
 
