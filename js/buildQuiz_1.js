@@ -214,19 +214,7 @@ function selectAnswer(number) {
     var selectedLook = document.querySelector('.look' + number);
     selectedLook.style.color = "red";
 
-    // 제출 버튼 생성
-    var submitButton = document.createElement("button");
-    submitButton.className = "quizButtonStyle";
-    submitButton.id = "submitButton";
-    submitButton.innerText = "제출";
-    submitButton.onclick = function () {
-      submitAnswer(userAnswer);
-    };
-
-    // 버튼을 표시할 위치 선택
-    var buttonContainer = document.getElementById("quizWrap");
-    // 버튼을 위치에 추가
-    buttonContainer.appendChild(submitButton);
+    submitAnswer(userAnswer);
   }
   console.log("selectAnswer -> userAnswer : " + userAnswer);
 }
@@ -235,9 +223,6 @@ function submitAnswer(userAnswer) {
   selectAnswerFlag = true;
   checkAnswer(userAnswer);
 
-  // 제출 버튼 제거
-  var submitButton = document.querySelector("button");
-  submitButton.remove();
 }
 
 function checkAnswer(userAnswer) {
@@ -307,8 +292,7 @@ function solutionQUiz() {
 
   // 풀이 내용이 없는 경우에만 추가
   if (solutionFlag) {
-    var solutionElement = document.getElementsByClassName("explainQuiz")[0];
-    // solutionElement.id = "quizSolution";
+    var solutionElement = document.getElementsByClassName("explainQuiz")[0];;
     solutionElement.innerHTML = solution_txt;
     // 다음 퀴즈로 넘어가는 버튼 생성
     var nextButton = document.createElement("button");
