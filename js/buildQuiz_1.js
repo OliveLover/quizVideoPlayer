@@ -116,22 +116,44 @@ function createResult() {
   var correctCount = 0;
 
   // 퀴즈의 개수만큼 quizReview div를 생성
+  // for (var i = 0; i < quizSize; i++) {
+  //   result_txt += '<div class="quizReview">';
+  //   result_txt += '<div class="quizNumber">';
+  //   result_txt += "<h2>";
+  //   result_txt += "Q" + (i + 1);
+  //   result_txt += "</h2>";
+  //   result_txt += '</div>';
+  //   result_txt += '<div class="quizCheck">';
+
+  //   // result 값에 따라 이미지 추가
+  //   if (quizRecord[i].result === true) {
+  //     result_txt += '<img src="./image/redCircle.png">';
+  //     correctCount++;
+  //   } else {
+  //     result_txt += '<img src="./image/redX.png">';
+  //   }
+  //   result_txt += "</div>";
+  // }
+
+  result_txt += '<div class="quizReview">';
   for (var i = 0; i < quizSize; i++) {
     result_txt += '<div class="quizReview">';
-    result_txt += "<h2>";
-    result_txt += i + 1;
-    result_txt += "</h2>";
-
-    // result 값에 따라 이미지 추가
+    result_txt += '<div class="quizCheckWrap">';
+    result_txt += '<div class="quizNumber">';
+    result_txt += "Q" + (i + 1);
+    result_txt += '</div>';
+    result_txt += '<div class="quizCheck">';
     if (quizRecord[i].result === true) {
       result_txt += '<img src="./image/redCircle.png">';
       correctCount++;
     } else {
       result_txt += '<img src="./image/redX.png">';
     }
-
-    result_txt += "</div>";
+    result_txt += '</div>';
+    result_txt += '</div>';
+    result_txt += '</div>';
   }
+  result_txt += '</div>';
 
   result_txt += "</div>";
 

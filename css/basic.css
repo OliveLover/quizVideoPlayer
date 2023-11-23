@@ -486,7 +486,8 @@ body {
 
 .quizReview {
   display: flex;
-  width: 100%;
+  flex-direction: row;
+  width: 75%;
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -496,6 +497,35 @@ body {
 
 .quizReview>h2 {
   margin-right: 20px;
+}
+
+.quizCheckWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 200px;
+  border: 2px solid black;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.quizNumber {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 30%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.quizCheck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70%;
 }
 
 .quizGrade {
