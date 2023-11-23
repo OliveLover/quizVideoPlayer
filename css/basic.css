@@ -259,16 +259,59 @@ body {
             사전퀴즈 결과 팝업
  ****************************************/
 .pQuizResult-popUp {
-  width: 960px;
-  height: 490px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 1280px;
+  height: 720px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -45%);
-  z-index: 1;
-  box-shadow: 2px, 2px, 5px, rgba(0, 0, 0, 0.7);
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
+.pQuizResultWrap {
+  display:flex;
+  flex-direction: column;
+  width: 1000px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(13.5%, 22%);
+  background-color: white;
+}
+
+.pQuizResultTitleWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:50%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.pQuizResultImgWrap {
+  width: 300px;
+  height: 200px;
+  background-color: #3266AE;
+}
+
+.pQuizResultGradeWrap {
+  width: 600px;
+  height: 200px;
+  background-color: red;
+}
+
+.pQuizResultContentWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
 .coverImageStyle {
   width: 100%;
   height: 100%;
@@ -277,7 +320,7 @@ body {
 }
 
 .learning-materials {
-  display: flex;
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
