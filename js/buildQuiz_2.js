@@ -62,6 +62,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '</div>';
   quiz_txt += '<div class="multipleChoice">';
   quiz_txt += '<div class="choice check1">';
+  quiz_txt += '<div class=viewAnswer1><p>정답</p></div>';
   quiz_txt += '<div class="checkImg1"></div>';
   quiz_txt += '<div class="choiceImg1" onclick="selectAnswer(1)"></div>'
   quiz_txt +=
@@ -70,6 +71,7 @@ function createQuiz(questionNumber) {
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check2">';
+  quiz_txt += '<div class=viewAnswer2><p>정답</p></div>';
   quiz_txt += '<div class="checkImg2"></div>';
   quiz_txt += '<div class="choiceImg2" onclick="selectAnswer(2)"></div>'
   quiz_txt +=
@@ -78,6 +80,7 @@ function createQuiz(questionNumber) {
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check3">';
+  quiz_txt += '<div class=viewAnswer3><p>정답</p></div>';
   quiz_txt += '<div class="checkImg3"></div>';
   quiz_txt += '<div class="choiceImg3" onclick="selectAnswer(3)"></div>'
   quiz_txt +=
@@ -86,6 +89,7 @@ function createQuiz(questionNumber) {
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check4">';
+  quiz_txt += '<div class=viewAnswer4><p>정답</p></div>';
   quiz_txt += '<div class="checkImg4"></div>';
   quiz_txt += '<div class="choiceImg4" onclick="selectAnswer(4)"></div>'
   quiz_txt +=
@@ -148,10 +152,8 @@ function createResult() {
   result_txt += '</span>';
   result_txt += '문제를 맞히셨습니다.';
   result_txt += "</div>";
-  document.getElementById("quizWrap").innerHTML = result_txt;
 
-  var backgroundImage = "url('./image/PQuizResult.png')";
-  document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
+  document.getElementById("quizWrap").innerHTML = result_txt;
 
   var replayQuizBtn = document.createElement("button");
   replayQuizBtn.className = "quizButtonStyle2";
@@ -164,6 +166,9 @@ function createResult() {
   var buttonContainer = document.getElementById("quizWrap");
   // 버튼을 위치에 추가
   buttonContainer.appendChild(replayQuizBtn);
+
+  var backgroundImage = "url('./image/PQuizResult.png')";
+  document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
 
   // "다음페이지로 이동" 버튼 생성
   var nextPageButton = document.createElement("button");
@@ -197,10 +202,10 @@ function selectAnswer(number) {
     var choiceImg3 = document.querySelector('.choiceImg3');
     var choiceImg4 = document.querySelector('.choiceImg4');
 
-    choiceImg1.style.backgroundImage = 'url("../image/choice1.png")';
-    choiceImg2.style.backgroundImage = 'url("../image/choice2.png")';
-    choiceImg3.style.backgroundImage = 'url("../image/choice3.png")';
-    choiceImg4.style.backgroundImage = 'url("../image/choice4.png")';
+    choiceImg1.style.backgroundImage = 'url("./image/choice1.png")';
+    choiceImg2.style.backgroundImage = 'url("./image/choice2.png")';
+    choiceImg3.style.backgroundImage = 'url("./image/choice3.png")';
+    choiceImg4.style.backgroundImage = 'url("./image/choice4.png")';
 
     var look1 = document.querySelector('.look1');
     var look2 = document.querySelector('.look2');
@@ -220,7 +225,7 @@ function selectAnswer(number) {
 
     // 체크한 숫자 표시
     var selectChoiceImg = document.querySelector('.choiceImg' + number);
-    selectChoiceImg.style.backgroundImage = 'url("../image/selected' + number + '.png")';
+    selectChoiceImg.style.backgroundImage = 'url("./image/selected' + number + '.png")';
 
     // 체크한 답안 표시
     var selectedLook = document.querySelector('.look' + number);
@@ -239,14 +244,14 @@ function submitAnswer(userAnswer) {
 
 function checkAnswer(userAnswer) {
   quizRecord[questionNumber - 1].userAnswer = userAnswer;
-
+  var answer = quizInfo_2[questionNumber][0].correct;
   if (Number(quizInfo_2[questionNumber][0].correct) === Number(userAnswer)) {
     console.log("선택지 : " + userAnswer);
-    console.log("퀴즈 정답 : " + quizInfo_2[questionNumber][0].correct);
+    console.log("퀴즈 정답 : " + answer);
     console.log("정답");
     quizRecord[questionNumber - 1].result = true;
     solutionQUiz();
-    showCorrectAnswer();
+    showCorrectAnswer(answer);
   } else {
     quizRecord[questionNumber - 1].result = false;
 
@@ -257,7 +262,7 @@ function checkAnswer(userAnswer) {
     } else {
       chance = 1;
       solutionQUiz();
-      showWrongAnswer();
+      showWrongAnswer(answer);
 
       if (completeQuiz) {
         // 결과 확인 버튼 생성
@@ -340,25 +345,30 @@ function changeImage(element, newImage) {
   element.src = newImage;
 }
 
-function showCorrectAnswer() {
+function showCorrectAnswer(answer) {
   if (answerFlag) {
     var quizQuestionElement = document.querySelector(".answerResultCheck");
     var correctAnswerImage = document.createElement("img");
     correctAnswerImage.src = "./image/redCircle1.png";
     quizQuestionElement.appendChild(correctAnswerImage);
     chance = 1;
-    console.log("맞춰서 찬스 초기화: " + chance);
+
+    var answerView = document.querySelector(".viewAnswer" + answer + ">p");
+    answerView.style.display = "flex";
   }
+
   answerFlag = false;
 }
 
-function showWrongAnswer() {
+function showWrongAnswer(answer) {
   if (answerFlag) {
     var quizQuestionElement = document.querySelector(".answerResultCheck");
     var wrongAnswerImage = document.createElement("img");
     wrongAnswerImage.src = "./image/wrongCheck.png";
     quizQuestionElement.appendChild(wrongAnswerImage);
-    console.log("남은 찬스:" + chance);
+
+    var answerView = document.querySelector(".viewAnswer" + answer + ">p");
+    answerView.style.display = "flex";
   }
   answerFlag = false;
 }
