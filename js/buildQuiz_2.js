@@ -5,6 +5,7 @@ var completeQuiz = false;
 var selectAnswerFlag = false;
 var questionNumber = 1;
 var userAnswer = 0;
+var chance = 1;
 var quizSize = Object.keys(quizInfo_2).length;
 var quizRecord = Array.from({ length: quizSize }, () => ({
   userAnswer: 0,
@@ -58,7 +59,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="quizQuestion" >';
   quiz_txt += "<h2>" + quizInfo_2[questionNumber][0].question + "</h2>";
   quiz_txt += "</div>";
-  quiz_txt += "</div>";
+  quiz_txt += '</div>';
   quiz_txt += '<div class="multipleChoice">';
   quiz_txt += '<div class="choice check1">';
   // quiz_txt += '<img src="./image/choice1.png" style="height:35px; width:35px;" onclick="selectAnswer(1)">';
@@ -115,28 +116,37 @@ function createResult() {
 
   var correctCount = 0;
 
-  // 퀴즈의 개수만큼 quizReview div를 생성
+  result_txt += '<div class="quizReview">';
   for (var i = 0; i < quizSize; i++) {
     result_txt += '<div class="quizReview">';
-    result_txt += "<h2>";
-    result_txt += i + 1;
-    result_txt += "</h2>";
-
-    // result 값에 따라 이미지 추가
+    result_txt += '<div class="quizCheckWrap">';
+    result_txt += '<div class="quizNumber">';
+    result_txt += "Q" + (i + 1);
+    result_txt += '</div>';
+    result_txt += '<div class="quizCheck">';
     if (quizRecord[i].result === true) {
       result_txt += '<img src="./image/redCircle.png">';
       correctCount++;
     } else {
       result_txt += '<img src="./image/redX.png">';
     }
-
-    result_txt += "</div>";
+    result_txt += '</div>';
+    result_txt += '</div>';
+    result_txt += '</div>';
   }
+  result_txt += '</div>';
 
   result_txt += "</div>";
 
   result_txt += '<div class="quizGrade">';
-  result_txt += '<span style="color:red;margin-top: 5px;">' + correctCount + '</span >개 정답입니다.';
+  result_txt += '총 <span style="color:red; margin-top:5px;">';
+  result_txt += quizSize;
+  result_txt += '</span>';
+  result_txt += ' 개의 문제 중';
+  result_txt += '<span style="color:red;margin-top: 5px;" >';
+  result_txt += correctCount;
+  result_txt += '</span>';
+  result_txt += '문제를 맞히셨습니다.';
   result_txt += "</div>";
   document.getElementById("quizWrap").innerHTML = result_txt;
 
@@ -215,14 +225,58 @@ function checkAnswer(userAnswer) {
     showCorrectAnswer();
   } else {
     quizRecord[questionNumber - 1].result = false;
-    solutionQUiz();
-    showWrongAnswer();
+
+    if (chance > 0) {
+      chance--;
+      selectAnswerFlag = false;
+      window.alert("틀렸습니다. 1번의 기회가 남았습니다.");
+    } else {
+      chance = 1;
+      solutionQUiz();
+      showWrongAnswer();
+
+      if (completeQuiz) {
+        // 결과 확인 버튼 생성
+        var resultButton = document.createElement("button");
+        resultButton.className = "quizButtonStyle";
+        resultButton.id = "resultButton";
+        resultButton.innerText = "결과 확인";
+        resultButton.onclick = function () {
+          var result_txt = "";
+          document.getElementById("quizWrap").innerHTML = result_txt;
+          createResult();
+        };
+
+        // 버튼을 표시할 위치 선택
+        var buttonContainer = document.getElementById("quizWrap");
+        // 버튼을 위치에 추가
+        buttonContainer.appendChild(resultButton);
+      } else {
+        // 다음 퀴즈로 이동하는 버튼 생성
+        var nextButton = document.createElement("button");
+        nextButton.className = "quizButtonStyle";
+        nextButton.id = "nextButton";
+        nextButton.innerText = "다음 퀴즈로 이동";
+
+        nextButton.onclick = function () {
+          questionNumber++;
+          createQuiz(questionNumber);
+          solutionFlag = true;
+        };
+
+        // 버튼을 표시할 위치 선택
+        var buttonContainer = document.getElementById("quizWrap");
+        // 버튼을 위치에 추가
+        buttonContainer.appendChild(nextButton);
+      }
+    }
   }
 }
 
+
 function solutionQUiz() {
   var solution_txt = "";
-  solution_txt += "<div>" + "<span style='color:red'>해설 : </span>" + quizInfo_2[questionNumber][0].explain + "</div>";
+  solution_txt += "<div>" + "<span style='color:red; font-weight:bold;'>해설 <br></span>" + quizInfo_2[questionNumber][0].explain + "</div>";
 
   // 풀이 내용이 없는 경우에만 추가
   if (solutionFlag) {
@@ -271,6 +325,8 @@ function showCorrectAnswer() {
     var correctAnswerImage = document.createElement("img");
     correctAnswerImage.src = "./image/redCircle.png";
     quizQuestionElement.appendChild(correctAnswerImage);
+    chance = 1;
+    console.log("맞춰서 찬스 초기화: " + chance);
   }
   answerFlag = false;
 }
@@ -279,8 +335,9 @@ function showWrongAnswer() {
   if (answerFlag) {
     var quizQuestionElement = document.querySelector(".answerResultCheck");
     var wrongAnswerImage = document.createElement("img");
-    wrongAnswerImage.src = "./image/redX.png";
+    wrongAnswerImage.src = "./image/wrongCheck.png";
     quizQuestionElement.appendChild(wrongAnswerImage);
+    console.log("남은 찬스:" + chance);
   }
   answerFlag = false;
 }

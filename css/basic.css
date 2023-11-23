@@ -442,7 +442,7 @@ body {
   margin-left: 140px;
   font-size: 20px;
   width: 900px;
-  height: 100px;
+  height: 80px;
   overflow: auto;
   word-wrap: break-word;
 }
@@ -452,8 +452,8 @@ body {
   width: 150px;
   height: 50px;
   position: absolute;
-  right: 90px;
-  bottom: 30px;
+  right: 0px;
+  bottom: 10px;
   background-color: #222222;
   color: #fff;
   border-radius: 50px;
@@ -464,14 +464,15 @@ body {
 
 .resultTitle {
   display: flex;
-  width: 80%;
-  height: 100px;
+  width: 78.6%;
+  height: 170px;
   align-items: center;
   justify-content: center;
-  margin: 150px auto;
-  margin-bottom: 0px;
+  margin: 88px auto;
+  margin-bottom: 30px;
   text-align: center;
   font-size: 30px;
+  background-color: green;
 }
 
 .quizResult {
