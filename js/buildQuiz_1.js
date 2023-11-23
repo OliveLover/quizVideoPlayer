@@ -185,10 +185,10 @@ function selectAnswer(number) {
     var choiceImg3 = document.querySelector('.choiceImg3');
     var choiceImg4 = document.querySelector('.choiceImg4');
 
-    choiceImg1.style.backgroundImage = 'url("../image/choice1.png")';
-    choiceImg2.style.backgroundImage = 'url("../image/choice2.png")';
-    choiceImg3.style.backgroundImage = 'url("../image/choice3.png")';
-    choiceImg4.style.backgroundImage = 'url("../image/choice4.png")';
+    choiceImg1.style.backgroundImage = 'url("./image/choice1.png")';
+    choiceImg2.style.backgroundImage = 'url("./image/choice2.png")';
+    choiceImg3.style.backgroundImage = 'url("./image/choice3.png")';
+    choiceImg4.style.backgroundImage = 'url("./image/choice4.png")';
 
     var look1 = document.querySelector('.look1');
     var look2 = document.querySelector('.look2');
@@ -208,7 +208,7 @@ function selectAnswer(number) {
 
     // 체크한 숫자 표시
     var selectChoiceImg = document.querySelector('.choiceImg' + number);
-    selectChoiceImg.style.backgroundImage = 'url("../image/selected' + number + '.png")';
+    selectChoiceImg.style.backgroundImage = 'url("./image/selected' + number + '.png")';
 
     // 체크한 답안 표시
     var selectedLook = document.querySelector('.look' + number);
