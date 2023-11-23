@@ -375,6 +375,7 @@ body {
   align-items: center;
   margin: 0px auto;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .choice.check1,
