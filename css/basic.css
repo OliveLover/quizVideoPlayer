@@ -377,6 +377,28 @@ body {
   font-size: 20px;
 }
 
+.choice.check1,
+.choice.check2,
+.choice.check3,
+.choice.check4 {
+  position: relative;
+}
+
+.choice.check1 .checkImg1,
+.choice.check2 .checkImg2,
+.choice.check3 .checkImg3,
+.choice.check4 .checkImg4 {
+  display: none;
+  background-color: green;
+  width: 35px;
+  height: 35px;
+  background: url(../image/check.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .choiceImg1 {
   width: 35px;
   height: 35px;

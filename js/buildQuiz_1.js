@@ -62,34 +62,34 @@ function createQuiz(questionNumber) {
   quiz_txt += '</div>';
   quiz_txt += '<div class="multipleChoice">';
   quiz_txt += '<div class="choice check1">';
-  // quiz_txt += '<img src="./image/choice1.png" style="height:35px; width:35px;" onclick="selectAnswer(1)">';
+  quiz_txt += '<div class="checkImg1"></div>';
   quiz_txt += '<div class="choiceImg1" onclick="selectAnswer(1)"></div>'
   quiz_txt +=
-    '<p onclick="selectAnswer(1)">' +
+    '<p class="look1" onclick="selectAnswer(1)">' +
     quizInfo_1[questionNumber][1].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check2">';
-  // quiz_txt += '<img src="./image/choice2.png" style="height:35px; width:35px;" onclick="selectAnswer(2)">';
+  quiz_txt += '<div class="checkImg2"></div>';
   quiz_txt += '<div class="choiceImg2" onclick="selectAnswer(2)"></div>'
   quiz_txt +=
-    '<p onclick="selectAnswer(2)">' +
+    '<p class="look2" onclick="selectAnswer(2)">' +
     quizInfo_1[questionNumber][2].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check3">';
-  // quiz_txt += '<img src="./image/choice3.png" style="height:35px; width:35px;" onclick="selectAnswer(3)">';
+  quiz_txt += '<div class="checkImg3"></div>';
   quiz_txt += '<div class="choiceImg3" onclick="selectAnswer(3)"></div>'
   quiz_txt +=
-    '<p onclick="selectAnswer(3)" >' +
+    '<p class="look3" onclick="selectAnswer(3)" >' +
     quizInfo_1[questionNumber][3].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check4">';
-  // quiz_txt += '<img src="./image/choice4.png" style="height:35px; width:35px;" onclick="selectAnswer(4)">';
+  quiz_txt += '<div class="checkImg4"></div>';
   quiz_txt += '<div class="choiceImg4" onclick="selectAnswer(4)"></div>'
   quiz_txt +=
-    '<p onclick="selectAnswer(4)">' +
+    '<p class="look4" onclick="selectAnswer(4)">' +
     quizInfo_1[questionNumber][4].select +
     "</p>";
   quiz_txt += "</div>";
@@ -170,22 +170,49 @@ function createResult() {
 function selectAnswer(number) {
   console.log("selectAnswer 호출");
   if (!selectAnswerFlag) {
-    var image1 = document.querySelector('.choiceImg1');
-    var image2 = document.querySelector('.choiceImg2');
-    var image3 = document.querySelector('.choiceImg3');
-    var image4 = document.querySelector('.choiceImg4');
+    var checkImage1 = document.querySelector('.checkImg1');
+    var checkImage2 = document.querySelector('.checkImg2');
+    var checkImage3 = document.querySelector('.checkImg3');
+    var checkImage4 = document.querySelector('.checkImg4');
 
-    // 기존에 체크된 이미지의 'checked' 클래스 제거
-    image1.classList.remove('checked');
-    image2.classList.remove('checked');
-    image3.classList.remove('checked');
-    image4.classList.remove('checked');
+    checkImage1.style.display = "none";
+    checkImage2.style.display = "none";
+    checkImage3.style.display = "none";
+    checkImage4.style.display = "none";
 
-    // 선택한 이미지에 'checked' 클래스 추가
-    var selectedImage = document.querySelector('.choiceImg' + number);
-    selectedImage.classList.add('checked');
+    var choiceImg1 = document.querySelector('.choiceImg1');
+    var choiceImg2 = document.querySelector('.choiceImg2');
+    var choiceImg3 = document.querySelector('.choiceImg3');
+    var choiceImg4 = document.querySelector('.choiceImg4');
+
+    choiceImg1.style.backgroundImage = 'url("../image/choice1.png")';
+    choiceImg2.style.backgroundImage = 'url("../image/choice2.png")';
+    choiceImg3.style.backgroundImage = 'url("../image/choice3.png")';
+    choiceImg4.style.backgroundImage = 'url("../image/choice4.png")';
+
+    var look1 = document.querySelector('.look1');
+    var look2 = document.querySelector('.look2');
+    var look3 = document.querySelector('.look3');
+    var look4 = document.querySelector('.look4');
+
+    look1.style.color = "black";
+    look2.style.color = "black";
+    look3.style.color = "black";
+    look4.style.color = "black";
 
     userAnswer = number;
+
+    // 체크 이미지 표시
+    var checkImg = document.querySelector('.checkImg' + number);
+    checkImg.style.display = 'block';
+
+    // 체크한 숫자 표시
+    var selectChoiceImg = document.querySelector('.choiceImg' + number);
+    selectChoiceImg.style.backgroundImage = 'url("../image/selected' + number + '.png")';
+
+    // 체크한 답안 표시
+    var selectedLook = document.querySelector('.look' + number);
+    selectedLook.style.color = "red";
 
     // 제출 버튼 생성
     var submitButton = document.createElement("button");
@@ -323,7 +350,7 @@ function showCorrectAnswer() {
   if (answerFlag) {
     var quizQuestionElement = document.querySelector(".answerResultCheck");
     var correctAnswerImage = document.createElement("img");
-    correctAnswerImage.src = "./image/redCircle.png";
+    correctAnswerImage.src = "./image/redCircle1.png";
     quizQuestionElement.appendChild(correctAnswerImage);
     chance = 1;
     console.log("맞춰서 찬스 초기화: " + chance);
