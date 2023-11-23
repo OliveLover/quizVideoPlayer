@@ -57,7 +57,7 @@ function createPQuiz() {
   pQuiz_txt += "<div class='pQuizResult-popUp' id='pQuizResultPopUp' style='display: none;'>";
   pQuiz_txt += "<div id='coverImage' class='coverImageStyle'></div>";
   pQuiz_txt += "<div class='learning-materials'>";
-  pQuiz_txt += "<img src='../image/file-icon.png' style='margin-right:10px'></img>";
+  pQuiz_txt += "<img src='./image/fileDownload.png' style='margin-right:10px'></img>";
   pQuiz_txt += "<a href='#' id='downloadLink' download>학습자료 다운로드</a></div > ";
   pQuiz_txt += "</div>";
 
