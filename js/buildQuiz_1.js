@@ -136,7 +136,14 @@ function createResult() {
   result_txt += "</div>";
 
   result_txt += '<div class="quizGrade">';
-  result_txt += '<span style="color:red;margin-top: 5px;">' + correctCount + '</span >개 정답입니다.';
+  result_txt += '총 <span style="color:red; margin-top:5px;">';
+  result_txt += quizSize;
+  result_txt += '</span>';
+  result_txt += ' 개의 문제 중';
+  result_txt += '<span style="color:red;margin-top: 5px;" >';
+  result_txt += correctCount;
+  result_txt += '</span>';
+  result_txt += '문제를 맞히셨습니다.';
   result_txt += "</div>";
   document.getElementById("quizWrap").innerHTML = result_txt;
 

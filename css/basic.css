@@ -443,6 +443,8 @@ body {
   font-size: 20px;
   width: 900px;
   height: 100px;
+  overflow: auto;
+  word-wrap: break-word;
 }
 
 
