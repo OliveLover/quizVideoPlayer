@@ -333,12 +333,28 @@ body {
   background-size: cover;
 }
 
+.questionWrap {
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 30px;
+  height: 100px;
+  width: 1110px;
+}
+
+.answerResultCheck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+
 .quizQuestion {
   display: flex;
-  width: 80%;
+  width: 90%;
   height: 100px;
   align-items: center;
-  margin: 155px auto 30px 250px;
+  margin-left: 70px;
   text-align: center;
 }
 
@@ -428,6 +444,7 @@ body {
   width: 900px;
   height: 100px;
 }
+
 
 .quizButtonStyle {
   width: 150px;
