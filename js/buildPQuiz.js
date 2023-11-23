@@ -68,7 +68,7 @@ function createPQuiz() {
   pQuiz_txt += "</div>";
 
   /************ 결과별 학습자료 다운로드 ************/
-  pQuiz_txt += "<div class='learning-materials'>";
+  pQuiz_txt += "<div id='learning-materials'>";
   pQuiz_txt += "<img src='./image/fileDownload.png' style='margin-right:10px'></img>";
   pQuiz_txt += "<a href='#' id='downloadLink' download>학습자료 다운로드</a>";
   pQuiz_txt += "</div>";
@@ -118,6 +118,7 @@ function submitQuiz() {
   var submitBtn = document.getElementById("submitBtn");
   var popUp = document.getElementById("pQuizResultPopUp");
   var numberCheck = document.getElementsByClassName("numberCheck");
+  var materials = document.getElementById("learning-materials");
 
   popUp.style.display = "block";
 
@@ -129,6 +130,7 @@ function submitQuiz() {
       numberCheck[i].style.display = "block";
     }
     popUp.style.display = "none";
+    materials.style.display ="flex";
     submitBtn.remove();
 
     // "다음페이지로 이동" 버튼 생성

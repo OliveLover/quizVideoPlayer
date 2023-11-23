@@ -319,12 +319,12 @@ body {
   background-size: cover;
 }
 
-.learning-materials {
+#learning-materials {
   display: none;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-30%, -190%);
+  transform: translate(90%, -370%);
   justify-content: center;
   align-items: center;
   width: 300px;
@@ -333,7 +333,7 @@ body {
   border-radius: 40px;
 }
 
-.learning-materials>a {
+#learning-materials>a {
   text-decoration: none;
   color: white;
   font-size: 20px;
