@@ -122,32 +122,38 @@ function submitQuiz() {
 
   popUp.style.display = "block";
 
-  if (!pQuizSubmitted) {
-    submitBtn.textContent = "결과 확인";
-    pQuizSubmitted = true;
-  } else {
-    for (var i = 0; i < numberCheck.length; i++) {
-      numberCheck[i].style.display = "block";
-    }
-    popUp.style.display = "none";
-    materials.style.display ="flex";
+  // if (!pQuizSubmitted) {
     submitBtn.remove();
+    // submitBtn.textContent = "결과 확인";
 
-    // "다음페이지로 이동" 버튼 생성
-    var nextPageButton = document.createElement("button");
-    nextPageButton.className = "pQuizButtonStyle";
-    nextPageButton.innerText = "다음페이지로 이동";
-    nextPageButton.onclick = function () {
-      window.location.href = "03.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
+    var resultButton = document.createElement("button");
+    resultButton.className = "pQuizButtonStyle";
+    resultButton.id - "resultBtn";
+    resultButton.innerText = "결과 확인";
+    resultButton.onclick = function () {
+      for (var i = 0; i < numberCheck.length; i++) {
+        numberCheck[i].style.display = "block";
+      }
+      popUp.style.display = "none";
+      materials.style.display ="flex";
+      resultButton.remove();
+  
+      // "다음페이지로 이동" 버튼 생성
+      var nextPageButton = document.createElement("button");
+      nextPageButton.className = "pQuizButtonStyle";
+      nextPageButton.innerText = "다음페이지로 이동";
+      nextPageButton.onclick = function () {
+        window.location.href = "03.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
+      };
+  
+      // 버튼을 표시할 위치 선택
+      var buttonContainer = document.getElementById("pQuizWrap");
+      // 버튼을 위치에 추가
+      buttonContainer.appendChild(nextPageButton);
     };
 
-    // 버튼을 표시할 위치 선택
     var buttonContainer = document.getElementById("pQuizWrap");
-    // 버튼을 위치에 추가
-    buttonContainer.appendChild(nextPageButton);
-  }
-
-
+    buttonContainer.appendChild(resultButton);
 
   for (var i = 0; i < pQuizSize; i++) {
     var userAnswer = pQuizRecord[i].userAnswer;
