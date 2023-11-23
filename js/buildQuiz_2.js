@@ -20,17 +20,17 @@ function createScreenView() {
   screen_txt += "<div class='screenViewTitle'>사전 진단 테스트</div>";
   screen_txt += "</div>";
   document.getElementById("quizWrap").innerHTML = screen_txt;
-              
+
   var screenView = document.getElementById("screenView");
-                 
+
   var startQuizButton = document.createElement("button");
   startQuizButton.className = "quizButtonStyle";
   startQuizButton.innerText = "퀴즈시작";
   startQuizButton.onclick = function () {
-  screenView.style.display = "none";
-  createQuiz(questionNumber);
+    screenView.style.display = "none";
+    createQuiz(questionNumber);
   };
-               
+
   // 버튼을 표시할 위치 선택
   var buttonContainer = document.getElementById("screenView");
   // 버튼을 위치에 추가
@@ -53,8 +53,11 @@ function createQuiz(questionNumber) {
   }
 
   var quiz_txt = "";
+  quiz_txt += '<div class = "questionWrap">';
+  quiz_txt += '<div class="answerResultCheck"></div>';
   quiz_txt += '<div class="quizQuestion" >';
   quiz_txt += "<h2>" + quizInfo_2[questionNumber][0].question + "</h2>";
+  quiz_txt += "</div>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="multipleChoice">';
   quiz_txt += '<div class="choice check1">';
@@ -264,7 +267,7 @@ function changeImage(element, newImage) {
 
 function showCorrectAnswer() {
   if (answerFlag) {
-    var quizQuestionElement = document.querySelector(".quizQuestion");
+    var quizQuestionElement = document.querySelector(".answerResultCheck");
     var correctAnswerImage = document.createElement("img");
     correctAnswerImage.src = "./image/redCircle.png";
     quizQuestionElement.appendChild(correctAnswerImage);
@@ -274,7 +277,7 @@ function showCorrectAnswer() {
 
 function showWrongAnswer() {
   if (answerFlag) {
-    var quizQuestionElement = document.querySelector(".quizQuestion");
+    var quizQuestionElement = document.querySelector(".answerResultCheck");
     var wrongAnswerImage = document.createElement("img");
     wrongAnswerImage.src = "./image/redX.png";
     quizQuestionElement.appendChild(wrongAnswerImage);
