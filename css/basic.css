@@ -1009,13 +1009,13 @@ body {
   width: 40px;
   height: 100%;
   background: url(../image/download.png) no-repeat center;
-  background-size: 20px 20px;
+  background-size: 24px 24px;
   cursor: pointer;
 }
 
 .download:hover {
   background: url(../image/downloadOver.png) no-repeat center;
-  background-size: 20px 20px;
+  background-size: 24px 24px;
 }
 
 /****************************************
