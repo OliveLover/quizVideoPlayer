@@ -69,8 +69,13 @@ function createPQuiz() {
 
   /************ 결과별 학습자료 다운로드 ************/
   pQuiz_txt += "<div id='learning-materials'>";
-  pQuiz_txt += "<img src='./image/fileDownload.png' style='margin-right:10px'></img>";
+  pQuiz_txt += "<div class='pointWrap'>";
   pQuiz_txt += "<a href='#' id='downloadLink' download>학습자료 다운로드</a>";
+  pQuiz_txt += "<div style='width:140px; height:1px; border-bottom:2px solid;margin-top:4px;'></div>";
+  pQuiz_txt += "</div>";
+  pQuiz_txt += "<div class='pointImgWrap'>";
+  pQuiz_txt += "<img src='./image/click.png' style='margin-left:10px width:45px;height:45px'></img>";
+  pQuiz_txt += "</div>";
   pQuiz_txt += "</div>";
 
   document.getElementById("pQuizWrap").innerHTML = pQuiz_txt;
