@@ -14,6 +14,14 @@ $(document).ready(function () {
     $("#video-pause-btn").hide();
   });
 
+  // 영상 다시 시작 버튼 클릭 이벤트
+  $("#video-reload-btn").on("click", function () {
+    $("#video-player").get(0).currentTime = 0; // 영상 재생 시간을 0으로 설정
+    $("#video-player").get(0).play(); // 영상 재생 시작
+    $("#video-reload-btn").hide(); // 버튼 숨기기
+    $("#video-pause-btn").show(); // 일시정지 버튼 보이기
+  });
+
   // 전체화면
 
   $("#fullscreen-btn").on("click", function () {
@@ -30,7 +38,7 @@ $(document).ready(function () {
   let toggleBtn = document.getElementById("pipmode");
   toggleBtn.addEventListener("click", togglePiPMode);
   async function togglePiPMode() {
-    console.log("실행되니");  
+    console.log("실행되니");
     try {
       const video = document.getElementById("video-player"); // 비디오 요소의 ID를 적절히 변경해주세요
       if (!document.pictureInPictureElement) {
@@ -42,7 +50,7 @@ $(document).ready(function () {
       console.log(error);
     }
   }
-  
+
 
   // 타이머 업데이트
   var videoPlayer = document.getElementById("video-player");
@@ -65,9 +73,11 @@ $(document).ready(function () {
 
     // 영상을 다 본 경우 콘솔에 메시지 출력
     if (currentTime === duration) {
-      console.log("다봤다!");
       var bubbleBoxNext = document.querySelector(".bubbleBoxNext");
-    bubbleBoxNext.style.display = "block";
+      bubbleBoxNext.style.display = "block";
+      $("#video-play-btn").hide();
+      $("#video-pause-btn").hide();
+      $("#video-reload-btn").show();
     }
   }
 
