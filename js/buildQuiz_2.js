@@ -153,6 +153,18 @@ function createResult() {
   var backgroundImage = "url('./image/PQuizResult.png')";
   document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
 
+  var replayQuizBtn = document.createElement("button");
+  replayQuizBtn.className = "quizButtonStyle2";
+  replayQuizBtn.innerText = "다시 풀기";
+  replayQuizBtn.onclick = function () {
+    window.location.href = "09.html";
+  };
+
+  // 버튼을 표시할 위치 선택
+  var buttonContainer = document.getElementById("quizWrap");
+  // 버튼을 위치에 추가
+  buttonContainer.appendChild(replayQuizBtn);
+
   // "다음페이지로 이동" 버튼 생성
   var nextPageButton = document.createElement("button");
   nextPageButton.className = "quizButtonStyle";

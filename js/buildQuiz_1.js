@@ -148,7 +148,20 @@ function createResult() {
   result_txt += '</span>';
   result_txt += '문제를 맞히셨습니다.';
   result_txt += "</div>";
+
   document.getElementById("quizWrap").innerHTML = result_txt;
+
+  var replayQuizBtn = document.createElement("button");
+  replayQuizBtn.className = "quizButtonStyle2";
+  replayQuizBtn.innerText = "다시 풀기";
+  replayQuizBtn.onclick = function () {
+    window.location.href = "05.html";
+  };
+
+  // 버튼을 표시할 위치 선택
+  var buttonContainer = document.getElementById("quizWrap");
+  // 버튼을 위치에 추가
+  buttonContainer.appendChild(replayQuizBtn);
 
   var backgroundImage = "url('./image/PQuizResult.png')";
   document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
