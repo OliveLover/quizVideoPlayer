@@ -241,7 +241,7 @@ function checkAnswer(userAnswer) {
     if (chance > 0) {
       chance--;
       selectAnswerFlag = false;
-      window.alert("틀렸습니다. 1번의 기회가 남았습니다.");
+      window.alert("틀렸습니다. 한 번의 기회가 남았습니다.");
     } else {
       chance = 1;
       solutionQUiz();

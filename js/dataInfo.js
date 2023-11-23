@@ -19,52 +19,52 @@ var pQuizInfo = [
   {
     number: 1,
     correct: true,
-    question: "1번 문제 질문"
+    question: "IT 기술영업의 주요 상품과 서비스를 알고 있다."
   },
   {
     number: 2,
     correct: true,
-    question: "2번 문제 질문"
+    question: "IT기술영업의 주요 직무역량을 이해하고 있다."
   },
   {
-    number: 23,
+    number: 3,
     correct: true,
-    question: "3번 문제 질문"
+    question: "ChatGPT를 영업에 활용할 수 있다."
   },
   {
     number: 4,
     correct: true,
-    question: "4번 문제 질문"
+    question: "고객의 니즈를 분석하여 회사의 강점을 설명할 수 있다."
+  },
+  {
+    number: 5,
+    correct: true,
+    question: "경쟁사 대비 자사의 강점을 파악하고 있다."
   },
   {
     number: 6,
     correct: true,
-    question: "5번 문제 질문"
-  },
-  {
-    number: 16,
-    correct: true,
-    question: "6번 문제 질문"
+    question: "타겟고객의 주요 니즈를 파악할 수 있다."
   },
   {
     number: 7,
     correct: true,
-    question: "7번 문제 질문"
+    question: "IT기술영업 목표를 수립할 수 있다."
   },
   {
     number: 8,
     correct: true,
-    question: "8번 문제 질문"
+    question: "사업계획서에 맞춤형 솔루션의 내용을 작성할 수 있다."
   },
   {
-    number: 25,
+    number: 9,
     correct: true,
-    question: "9번 문제 질문"
+    question: "경쟁사 대비 자사 제안의 매력을 알고 있다."
   },
   {
-    number: 21,
+    number: 10,
     correct: true,
-    question: "10번 문제 질문"
+    question: "우리 서비스의 적적 가격을 알고 있다."
   }
 ];
 
