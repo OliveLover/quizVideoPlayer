@@ -16,6 +16,8 @@ $(document).ready(function () {
 
   // 영상 다시 시작 버튼 클릭 이벤트
   $("#video-reload-btn").on("click", function () {
+    var bubbleBoxNext = document.querySelector(".bubbleBoxNext");
+    bubbleBoxNext.style.display = "none";
     $("#video-player").get(0).currentTime = 0; // 영상 재생 시간을 0으로 설정
     $("#video-player").get(0).play(); // 영상 재생 시작
     $("#video-reload-btn").hide(); // 버튼 숨기기
