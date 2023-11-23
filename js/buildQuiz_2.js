@@ -314,8 +314,6 @@ function solutionQUiz() {
       nextButton.id = "resultButton";
       nextButton.innerText = "결과 확인";
       nextButton.onclick = function () {
-        var result_txt = "";
-        document.getElementById("quizWrap").innerHTML = result_txt;
         createResult();
       };
     } else {

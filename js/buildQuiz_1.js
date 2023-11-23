@@ -315,8 +315,6 @@ function solutionQUiz() {
       nextButton.id = "resultButton";
       nextButton.innerText = "결과 확인";
       nextButton.onclick = function () {
-        var result_txt = "";
-        document.getElementById("quizWrap").innerHTML = result_txt;
         createResult();
       };
     } else {
@@ -350,7 +348,6 @@ function showCorrectAnswer() {
     correctAnswerImage.src = "./image/redCircle1.png";
     quizQuestionElement.appendChild(correctAnswerImage);
     chance = 1;
-    console.log("맞춰서 찬스 초기화: " + chance);
   }
   answerFlag = false;
 }
@@ -361,7 +358,6 @@ function showWrongAnswer() {
     var wrongAnswerImage = document.createElement("img");
     wrongAnswerImage.src = "./image/wrongCheck.png";
     quizQuestionElement.appendChild(wrongAnswerImage);
-    console.log("남은 찬스:" + chance);
   }
   answerFlag = false;
 }
