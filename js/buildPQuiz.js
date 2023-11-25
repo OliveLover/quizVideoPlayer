@@ -185,11 +185,11 @@ function getGrade(pQuizCorrect) {
   var downloadLink = document.getElementById("downloadLink");
   if (pQuizCorrect / pQuizSize >= 0.8) {
     // image.style.backgroundImage = "url('./image/level3.png')";
-    downloadLink.href = "../download/[사전진단학습] 수준별 학습자료 - 우수.pdf";
+    downloadLink.href = "./download/[사전진단학습] 수준별 학습자료 - 우수.pdf";
     return "우수";
   }  else {
     // image.style.backgroundImage = "url('./image/level1.png')";
-    downloadLink.href = "../download/[사전진단학습] 수준별 학습자료 - 미흡.pdf";
+    downloadLink.href = "./download/[사전진단학습] 수준별 학습자료 - 미흡.pdf";
     return "미흡";
   }
 }
