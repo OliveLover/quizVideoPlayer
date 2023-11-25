@@ -292,10 +292,12 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.pQuizResultImgWrap {
-  width: 300px;
+#pQuizResultImgWrap {
+  display: felx;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
   height: 200px;
-  background-color: #3266AE;
 }
 
 .pQuizResultGradeWrap {
@@ -310,7 +312,7 @@ body {
   align-items: center;
   background-color: white;
   width: 100%;
-  height: 100%;
+  height: 50%;
 }
 
 .coverImageStyle {

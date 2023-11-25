@@ -57,7 +57,8 @@ function createPQuiz() {
   pQuiz_txt += "<div class='pQuizResult-popUp' id='pQuizResultPopUp'>";
   pQuiz_txt += "<div class='pQuizResultWrap'>";
   pQuiz_txt += "<div class='pQuizResultTitleWrap'>";
-  pQuiz_txt += "<div class='pQuizResultImgWrap'>dddddd";
+  pQuiz_txt += "<div id='pQuizResultImgWrap'>";
+  // pQuiz_txt += "<img id='pQuizResultImg' src='' alt='Img'>";
   pQuiz_txt += "</div>";
   pQuiz_txt += "<div class='pQuizResultGradeWrap'>";
   pQuiz_txt += "ddd";
@@ -170,7 +171,7 @@ function submitQuiz() {
     }
   }
 
-  var grade = getGrade(pQuizCorrect);
+  getGrade(pQuizCorrect);
 
   console.log(pQuizCorrect);
 
@@ -181,14 +182,16 @@ function submitQuiz() {
 function getGrade(pQuizCorrect) {
   console.log(pQuizCorrect);
   console.log(pQuizSize);
-  // var image = document.getElementById("coverImage");
+  var image = document.getElementById("pQuizResultImgWrap");
   var downloadLink = document.getElementById("downloadLink");
   if (pQuizCorrect / pQuizSize >= 0.8) {
-    // image.style.backgroundImage = "url('./image/level3.png')";
+    image.style.background = "url('./image/smile.png') no-repeat";
+    image.style.backgroundSize = "cover";
     downloadLink.href = "./download/[사전진단학습] 수준별 학습자료 - 우수.pdf";
     return "우수";
   }  else {
-    // image.style.backgroundImage = "url('./image/level1.png')";
+    image.style.background = "url('./image/neutral.png') no-repeat";
+    image.style.backgroundSize = "cover";
     downloadLink.href = "./download/[사전진단학습] 수준별 학습자료 - 미흡.pdf";
     return "미흡";
   }
