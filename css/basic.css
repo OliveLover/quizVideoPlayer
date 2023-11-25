@@ -300,10 +300,15 @@ body {
   height: 200px;
 }
 
-.pQuizResultGradeWrap {
+#pQuizResultGradeWrap {
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 100px;
+  color: white;
   width: 600px;
   height: 200px;
-  background-color: red;
 }
 
 .pQuizResultContentWrap {

@@ -58,10 +58,8 @@ function createPQuiz() {
   pQuiz_txt += "<div class='pQuizResultWrap'>";
   pQuiz_txt += "<div class='pQuizResultTitleWrap'>";
   pQuiz_txt += "<div id='pQuizResultImgWrap'>";
-  // pQuiz_txt += "<img id='pQuizResultImg' src='' alt='Img'>";
   pQuiz_txt += "</div>";
-  pQuiz_txt += "<div class='pQuizResultGradeWrap'>";
-  pQuiz_txt += "ddd";
+  pQuiz_txt += "<div id='pQuizResultGradeWrap'>";
   pQuiz_txt += "</div>";
   pQuiz_txt += "</div>";
   pQuiz_txt += "<div class='pQuizResultContentWrap'>dddddd</div>";
@@ -128,38 +126,36 @@ function submitQuiz() {
 
   popUp.style.display = "block";
 
-  // if (!pQuizSubmitted) {
-    submitBtn.remove();
-    // submitBtn.textContent = "결과 확인";
+  submitBtn.remove();
 
-    var resultButton = document.createElement("button");
-    resultButton.className = "pQuizButtonStyle";
-    resultButton.id - "resultBtn";
-    resultButton.innerText = "결과 확인";
-    resultButton.onclick = function () {
-      for (var i = 0; i < numberCheck.length; i++) {
-        numberCheck[i].style.display = "block";
-      }
-      popUp.style.display = "none";
-      materials.style.display ="flex";
-      resultButton.remove();
+  var resultButton = document.createElement("button");
+  resultButton.className = "pQuizButtonStyle";
+  resultButton.id - "resultBtn";
+  resultButton.innerText = "결과 확인";
+  resultButton.onclick = function () {
+    for (var i = 0; i < numberCheck.length; i++) {
+      numberCheck[i].style.display = "block";
+    }
+    popUp.style.display = "none";
+    materials.style.display ="flex";
+    resultButton.remove();
   
-      // "다음페이지로 이동" 버튼 생성
-      var nextPageButton = document.createElement("button");
-      nextPageButton.className = "pQuizButtonStyle";
-      nextPageButton.innerText = "다음페이지로 이동";
-      nextPageButton.onclick = function () {
-        window.location.href = "03.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
-      };
+  // "다음페이지로 이동" 버튼 생성
+  var nextPageButton = document.createElement("button");
+  nextPageButton.className = "pQuizButtonStyle";
+  nextPageButton.innerText = "다음페이지로 이동";
+  nextPageButton.onclick = function () {
+    window.location.href = "03.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
+  };
   
-      // 버튼을 표시할 위치 선택
-      var buttonContainer = document.getElementById("pQuizWrap");
-      // 버튼을 위치에 추가
-      buttonContainer.appendChild(nextPageButton);
-    };
+  // 버튼을 표시할 위치 선택
+  var buttonContainer = document.getElementById("pQuizWrap");
+  // 버튼을 위치에 추가
+  buttonContainer.appendChild(nextPageButton);
+  };
 
-    var buttonContainer = document.getElementById("pQuizWrap");
-    buttonContainer.appendChild(resultButton);
+  var buttonContainer = document.getElementById("pQuizWrap");
+  buttonContainer.appendChild(resultButton);
 
   for (var i = 0; i < pQuizSize; i++) {
     var userAnswer = pQuizRecord[i].userAnswer;
@@ -184,15 +180,18 @@ function getGrade(pQuizCorrect) {
   console.log(pQuizSize);
   var image = document.getElementById("pQuizResultImgWrap");
   var downloadLink = document.getElementById("downloadLink");
+  var gradeText = document.getElementById("pQuizResultGradeWrap");
   if (pQuizCorrect / pQuizSize >= 0.8) {
     image.style.background = "url('./image/smile.png') no-repeat";
     image.style.backgroundSize = "cover";
     downloadLink.href = "./download/[사전진단학습] 수준별 학습자료 - 우수.pdf";
+    gradeText.textContent = "\"우수\"";
     return "우수";
   }  else {
     image.style.background = "url('./image/neutral.png') no-repeat";
     image.style.backgroundSize = "cover";
     downloadLink.href = "./download/[사전진단학습] 수준별 학습자료 - 미흡.pdf";
+    gradeText.textContent = "\"미흡\"";
     return "미흡";
   }
 }
