@@ -118,7 +118,6 @@ function recordUserAnswer(index, answer) {
 
 // 퀴즈 제출 처리 함수
 function submitQuiz() {
-  console.log("pQuizRecord : " + JSON.stringify(pQuizRecord));
   var submitBtn = document.getElementById("submitBtn");
   var popUp = document.getElementById("pQuizResultPopUp");
   var numberCheck = document.getElementsByClassName("numberCheck");
@@ -168,16 +167,9 @@ function submitQuiz() {
   }
 
   getGrade(pQuizCorrect);
-
-  console.log(pQuizCorrect);
-
-
-  console.log("pQuizRecord : " + JSON.stringify(pQuizRecord));
 }
 
 function getGrade(pQuizCorrect) {
-  console.log(pQuizCorrect);
-  console.log(pQuizSize);
   var image = document.getElementById("pQuizResultImgWrap");
   var downloadLink = document.getElementById("downloadLink");
   var gradeText = document.getElementById("pQuizResultGradeWrap");

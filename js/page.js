@@ -58,19 +58,13 @@ function volumeControl(volume) {
 var numberPage = 0;
 //next, prev 버튼, 페이지 숫자 위치 시키기
 function button_load(str) {
-  console.log(str);
 
   let isQuiz = false;
   if (Number(str) > Number(totalPage) - 2) {
-    console.log('퀴즈입니다.');
     isQuiz = true;
-    console.log(isQuiz);
     numberPage = Number(str);
   } else {
     numberPage = Number(str);
-    console.log("퀴즈가 아닙니다.");
-    console.log(str);
-    console.log(str.includes('q'));
   }
 
   if (isQuiz) {
@@ -152,7 +146,6 @@ function button_load(str) {
 
   video.onloadedmetadata = function () {
     let length = video.duration; // 비디오 총 길이 (초)
-    console.log(length); // 콘솔에 비디오 길이 출력
   };
 
   function updateTimer() {

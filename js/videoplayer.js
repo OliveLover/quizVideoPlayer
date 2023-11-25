@@ -40,7 +40,6 @@ $(document).ready(function () {
   let toggleBtn = document.getElementById("pipmode");
   toggleBtn.addEventListener("click", togglePiPMode);
   async function togglePiPMode() {
-    console.log("실행되니");
     try {
       const video = document.getElementById("video-player"); // 비디오 요소의 ID를 적절히 변경해주세요
       if (!document.pictureInPictureElement) {

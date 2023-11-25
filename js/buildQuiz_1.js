@@ -1,4 +1,3 @@
-// 퀴즈 초깃값
 var answerFlag = true;
 var solutionFlag = true;
 var completeQuiz = false;
@@ -32,9 +31,7 @@ function createScreenView() {
     createQuiz(questionNumber);
   };
 
-  // 버튼을 표시할 위치 선택
   var buttonContainer = document.getElementById("screenView");
-  // 버튼을 위치에 추가
   buttonContainer.appendChild(startQuizButton);
 }
 
@@ -101,8 +98,6 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="explainQuiz"></div>';
   document.getElementById("quizWrap").innerHTML = quiz_txt;
 
-  console.log(questionNumber);
-  //배경 이미지 설정
   var backgroundImage = "url('./image/afterQuiz.png')";
   document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
 }
@@ -113,6 +108,8 @@ function createQuiz(questionNumber) {
 
 function createResult() {
   var result_txt = "";
+  result_txt += '<div class="createResultBackground">';
+  result_txt += '<div class="createResultWrap">';
   result_txt += '<div class="resultTitle">';
   result_txt += "<h2>퀴즈 결과</h2>";
   result_txt += "</div>";
@@ -151,7 +148,9 @@ function createResult() {
   result_txt += correctCount;
   result_txt += '</span>';
   result_txt += '문제를 맞히셨습니다.';
-  result_txt += "</div>";
+  result_txt += '</div>';
+  result_txt += '</div>';
+  result_txt += '</div>';
 
   document.getElementById("quizWrap").innerHTML = result_txt;
 
@@ -162,15 +161,9 @@ function createResult() {
     window.location.href = "05.html";
   };
 
-  // 버튼을 표시할 위치 선택
   var buttonContainer = document.getElementById("quizWrap");
-  // 버튼을 위치에 추가
   buttonContainer.appendChild(replayQuizBtn);
 
-  var backgroundImage = "url('./image/PQuizResult.png')";
-  document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
-
-  // "다음페이지로 이동" 버튼 생성
   var nextPageButton = document.createElement("button");
   nextPageButton.className = "quizButtonStyle";
   nextPageButton.innerText = "다음페이지로 이동";
@@ -178,14 +171,11 @@ function createResult() {
     window.location.href = "06.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
   };
 
-  // 버튼을 표시할 위치 선택
   var buttonContainer = document.getElementById("quizWrap");
-  // 버튼을 위치에 추가
   buttonContainer.appendChild(nextPageButton);
 }
 
 function selectAnswer(number) {
-  console.log("selectAnswer 호출");
   if (!selectAnswerFlag) {
     var checkImage1 = document.querySelector('.checkImg1');
     var checkImage2 = document.querySelector('.checkImg2');
@@ -233,7 +223,6 @@ function selectAnswer(number) {
 
     submitAnswer(userAnswer);
   }
-  console.log("selectAnswer -> userAnswer : " + userAnswer);
 }
 
 function submitAnswer(userAnswer) {
@@ -246,9 +235,6 @@ function checkAnswer(userAnswer) {
   quizRecord[questionNumber - 1].userAnswer = userAnswer;
   var answer = quizInfo_1[questionNumber][0].correct;
   if (Number(quizInfo_1[questionNumber][0].correct) === Number(userAnswer)) {
-    console.log("선택지 : " + userAnswer);
-    console.log("퀴즈 정답 : " + answer);
-    console.log("정답");
     quizRecord[questionNumber - 1].result = true;
     solutionQUiz();
     showCorrectAnswer(answer);
@@ -265,7 +251,6 @@ function checkAnswer(userAnswer) {
       showWrongAnswer(answer);
 
       if (completeQuiz) {
-        // 결과 확인 버튼 생성
         var resultButton = document.createElement("button");
         resultButton.className = "quizButtonStyle";
         resultButton.id = "resultButton";
@@ -276,12 +261,9 @@ function checkAnswer(userAnswer) {
           createResult();
         };
 
-        // 버튼을 표시할 위치 선택
         var buttonContainer = document.getElementById("quizWrap");
-        // 버튼을 위치에 추가
         buttonContainer.appendChild(resultButton);
       } else {
-        // 다음 퀴즈로 이동하는 버튼 생성
         var nextButton = document.createElement("button");
         nextButton.className = "quizButtonStyle";
         nextButton.id = "nextButton";
@@ -293,9 +275,7 @@ function checkAnswer(userAnswer) {
           solutionFlag = true;
         };
 
-        // 버튼을 표시할 위치 선택
         var buttonContainer = document.getElementById("quizWrap");
-        // 버튼을 위치에 추가
         buttonContainer.appendChild(nextButton);
       }
     }
@@ -311,7 +291,6 @@ function solutionQUiz() {
   if (solutionFlag) {
     var solutionElement = document.getElementsByClassName("explainQuiz")[0];;
     solutionElement.innerHTML = solution_txt;
-    // 다음 퀴즈로 넘어가는 버튼 생성
     var nextButton = document.createElement("button");
     nextButton.className = "quizButtonStyle";
 
@@ -333,9 +312,7 @@ function solutionQUiz() {
       };
     }
 
-    // 버튼을 표시할 위치 선택
     var buttonContainer = document.getElementById("quizWrap");
-    // 버튼을 위치에 추가
     buttonContainer.appendChild(nextButton);
     solutionFlag = false;
   }
