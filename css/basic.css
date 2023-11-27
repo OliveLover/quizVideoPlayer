@@ -110,14 +110,14 @@ body {
   background-size: cover;
 }
 
-.pQuizTitleWrap {
+/* .pQuizTitleWrap {
   display: flex;
   flex-direction: row;
   margin-top: 5px;
   height: 120px;
-}
+} */
 
-.pQuizTitle {
+/* .pQuizTitle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,9 +131,9 @@ body {
   border-right: none;
   border-bottom: 3px solid #fff;
   border-left: none;
-}
+} */
 
-.pQuizGuide {
+/* .pQuizGuide {
   margin-top: 60px;
   padding-top: 10px;
   width: 580px;
@@ -141,7 +141,7 @@ body {
   margin-right: 300px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.1);
-}
+} */
 
 .pQuizContainer {
   position: relative;
@@ -149,7 +149,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 0px;
+  margin-top: 160px;
   width: 1080px;
   height: 495px;
 }
