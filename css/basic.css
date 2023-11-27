@@ -580,6 +580,16 @@ body {
   word-wrap: break-word;
 }
 
+.explainOXQuiz {
+  position: relative;
+  margin-left: 40px;
+  font-size: 20px;
+  width: 900px;
+  height: 200px;
+  overflow: auto;
+  word-wrap: break-word;
+}
+
 
 .quizButtonStyle {
   width: 150px;

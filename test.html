@@ -16,8 +16,8 @@
   <script src="./js/jquery-1.12.4.js"></script>
   <script src="./js/jquery-ui.js"></script>
   <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script src="./js/videoplayer.js"></script>
   <script src="./js/index.js"></script>
+  <script src="./js/buildQuiz_ox.js"></script>
 </head>
 
 <body scroll="no" ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
@@ -25,10 +25,9 @@
     <div id="container">
       <div id="wrap">
         <div id="myvideo">
-          <video id="video-player" style="width: 1280px; height: 720px" controlslist="noplaybackrate nodownload">
-            <source src="./video/02.mp4" type="video/mp4" />
-          </video>
-
+          <div id="quizWrap"
+            style="background-image: url('./image/quiz_bg.jpg'); background-size: cover; background-repeat: no-repeat;">
+          </div>
           <div id="navBar">
             <div id="navBarWrap">
               <div class="index" id="videoIndex">INDEX</div>
@@ -51,19 +50,7 @@
                   </div>
                 </div>
               </div>
-              <div class="playWrapper">
-                <!-- 말풍선 추가 -->
-                <div class="bubbleBox">
-                  <div class="playAlarm gr">재생버튼을<br> 눌러주세요.</div>
-                </div>
-                <!--말풍선 추가 -->
-                <!-- 말풍선 추가 -->
-                <div class="bubbleBoxNext">
-                  <div class="playAlarm gr">다음 버튼을<br> 눌러주세요.</div>
-                </div>
-                <!--말풍선 추가 -->
-                <div class="play" id="video-play-btn"></div>
-              </div>
+              <div class="play" id="video-play-btn"></div>
               <div class="pause" id="video-pause-btn"></div>
               <div class="reload" id="video-reload-btn"></div>
               <div class="seek" id="seek-container">
@@ -87,16 +74,16 @@
               </div>
               <div id="paging">
                 <div id="prev">
-                  <a href="03.html"><img src="./image/prevBtn.png" id="btnPrev" alt="이전 페이지" title="이전 페이지"
+                  <a href="08.html"><img src="./image/prevBtn.png" id="btnPrev" alt="이전 페이지" title="이전 페이지"
                       onmouseover="this.src='./image/prevBtnOver.png'"
                       onmouseout="this.src='./image/prevBtn.png'" /></a>
                 </div>
                 <div id="page_num">
-                  <span id="current_page">04</span>
+                  <span id="current_page">09</span>
                   <span id="total_page"> / 12</span>
                 </div>
                 <div id="next">
-                  <a href="05.html"><img src="./image/nextBtn.png" id="btnNext" alt="다음 페이지" title="다음 페이지"
+                  <a href="10.html"><img src="./image/nextBtn.png" id="btnNext" alt="다음 페이지" title="다음 페이지"
                       onmouseover="this.src='./image/nextBtnOver.png'"
                       onmouseout="this.src='./image/nextBtn.png'" /></a>
                 </div>
