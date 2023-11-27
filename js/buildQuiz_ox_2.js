@@ -17,7 +17,7 @@ var quizRecord = Array.from({ length: quizSize }, () => ({
 function createScreenView() {
   var screen_txt = "";
   screen_txt += "<div id='screenView_2'>";
-  screen_txt += "<div class=screenViewWrap>";
+  screen_txt += "<div class=screenViewWrap_2>";
   screen_txt += "</div>";
   screen_txt += "</div >";
   document.getElementById("quizWrap").innerHTML = screen_txt;
