@@ -7,6 +7,8 @@
 
 body {
   font-family: "NanumSquareRound";
+  width: 100%;
+  height: 100%;
 }
 
 #container {
@@ -301,7 +303,7 @@ body {
 }
 
 #pQuizResultGradeWrap {
-  display : flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
