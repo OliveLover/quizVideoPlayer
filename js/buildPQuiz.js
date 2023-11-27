@@ -12,6 +12,10 @@ var pQuizRecord = Array.from({ length: pQuizSize }, () => ({
 function createPQuiz() {
   pQuizCorrect = 0;
   var pQuiz_txt = "";
+  pQuiz_txt += '<div class="pQuizTitleWrap">';
+  pQuiz_txt += '<div class="pQuizTitle">사전 진단 TEST</div>';
+  pQuiz_txt += '<div class="pQuizGuide">문항에 따라 맞으면 <span style="color:red; font-weight:bold">O</span>, 틀리면 <span style="color:red; font-weight:bold">X</span>를 선택하여 주세요.<br> 사전 지식 테스트 결과에 따라 학습 가이드가 제시되니 신중하게 참여해 주세요.</div>';
+  pQuiz_txt += '</div>';
   pQuiz_txt += '<div class="pQuizContainer">';
   pQuiz_txt += '<div class="pQuizSubHeading">';
   pQuiz_txt += '<div>차시</div>';
