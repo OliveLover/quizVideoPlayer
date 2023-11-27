@@ -16,15 +16,13 @@ var quizRecord = Array.from({ length: quizSize }, () => ({
  ****************************************/
 function createScreenView() {
   var screen_txt = "";
-  screen_txt += "<div id='screenView'>";
+  screen_txt += "<div id='screenView_1'>";
   screen_txt += "<div class=screenViewWrap>";
-  screen_txt += "<div class='screenViewTitle'>학습전 Quiz</div>";
-  screen_txt += "<div class='screenQuizGuide'>이번 시간에 학습할 내용은 퀴즈를 통해 확인해보겠습니다.<br>총 <span style='color:red;font-weight:bold;'>세 개</span>의 문제가 주어지며 기회는 <span style='color:red;font-weight:bold;'>두 번</span>입니다.<br>신중하게 참여해주세요!</div>";
   screen_txt += "</div>";
   screen_txt += "</div >";
   document.getElementById("quizWrap").innerHTML = screen_txt;
 
-  var screenView = document.getElementById("screenView");
+  var screenView = document.getElementById("screenView_1");
 
   var startQuizButton = document.createElement("button");
   startQuizButton.className = "screenButtonStyle";
@@ -34,7 +32,7 @@ function createScreenView() {
     createQuiz(questionNumber);
   };
 
-  var buttonContainer = document.getElementById("screenView");
+  var buttonContainer = document.getElementById("screenView_1");
   buttonContainer.appendChild(startQuizButton);
 }
 
