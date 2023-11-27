@@ -17,7 +17,7 @@ var quizRecord = Array.from({ length: quizSize }, () => ({
 function createScreenView() {
   var screen_txt = "";
   screen_txt += "<div id='screenView'>";
-  screen_txt += "<div class='screenViewTitle'>사전 진단 테스트</div>";
+  screen_txt += "<div class='screenViewTitle'>학습전 Quiz</div>";
   screen_txt += "</div>";
   document.getElementById("quizWrap").innerHTML = screen_txt;
 
@@ -294,7 +294,7 @@ function showCorrectAnswer(answer) {
   if (answerFlag) {
     var quizQuestionElement = document.querySelector(".answerResultCheck");
     var correctAnswerImage = document.createElement("img");
-    correctAnswerImage.src = "./image/redCircle1.png";
+    correctAnswerImage.src = "./image/correct.png";
     quizQuestionElement.appendChild(correctAnswerImage);
     chance = 1;
 
@@ -309,7 +309,7 @@ function showWrongAnswer(answer) {
   if (answerFlag) {
     var quizQuestionElement = document.querySelector(".answerResultCheck");
     var wrongAnswerImage = document.createElement("img");
-    wrongAnswerImage.src = "./image/wrongCheck.png";
+    wrongAnswerImage.src = "./image/wrong.png";
     quizQuestionElement.appendChild(wrongAnswerImage);
 
     var answerView = document.querySelector(".viewAnswer" + answer + ">p");
