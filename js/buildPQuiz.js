@@ -59,14 +59,7 @@ function createPQuiz() {
 
   /************ 퀴즈 결과 팝업 ************/
   pQuiz_txt += "<div class='pQuizResult-popUp' id='pQuizResultPopUp'>";
-  pQuiz_txt += "<div class='pQuizResultWrap'>";
-  pQuiz_txt += "<div class='pQuizResultTitleWrap'>";
-  pQuiz_txt += "<div id='pQuizResultImgWrap'>";
-  pQuiz_txt += "</div>";
-  pQuiz_txt += "<div id='pQuizResultGradeWrap'>";
-  pQuiz_txt += "</div>";
-  pQuiz_txt += "</div>";
-  pQuiz_txt += "<div class='pQuizResultContentWrap'>dddddd</div>";
+  pQuiz_txt += "<div class='pQuizResultWrap' id=pQuizResultWrap>";
   pQuiz_txt += "</div>";
   pQuiz_txt += "</div>";
 
@@ -174,20 +167,15 @@ function submitQuiz() {
 }
 
 function getGrade(pQuizCorrect) {
-  var image = document.getElementById("pQuizResultImgWrap");
+  var image = document.getElementById("pQuizResultWrap");
   var downloadLink = document.getElementById("downloadLink");
-  var gradeText = document.getElementById("pQuizResultGradeWrap");
   if (pQuizCorrect / pQuizSize >= 0.8) {
-    image.style.background = "url('./image/smile.png') no-repeat";
+    image.style.background = "url('./image/great.png') no-repeat";
     image.style.backgroundSize = "cover";
     downloadLink.href = "./download/[사전진단학습] 수준별 학습자료 - 우수.pdf";
-    gradeText.textContent = "\"우수\"";
-    return "우수";
   } else {
-    image.style.background = "url('./image/neutral.png') no-repeat";
+    image.style.background = "url('./image/commonly.png') no-repeat";
     image.style.backgroundSize = "cover";
     downloadLink.href = "./download/[사전진단학습] 수준별 학습자료 - 미흡.pdf";
-    gradeText.textContent = "\"미흡\"";
-    return "미흡";
   }
 }
