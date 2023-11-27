@@ -443,15 +443,15 @@ body {
 }
 
 .screenButtonStyle {
-  width: 150px;
-  height: 50px;
+  width: 200px;
+  height: 80px;
   position: absolute;
   right: 560px;
-  bottom: 120px;
+  bottom: 60px;
   background-color: #222222;
   color: #fff;
   border-radius: 50px;
-  font-size: 15px;
+  font-size: 30px;
   font-family: "NanumSquareRound", sans-serif;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
