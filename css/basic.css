@@ -1177,6 +1177,18 @@ body {
   display: none;
 }
 
+.bubbleBoxDownload {
+  position: absolute;
+  top: -140px;
+  /* 말풍선의 위치 - 조절 필요 */
+  left: 690px;
+  /* 말풍선의 위치 - 조절 필요 */
+  padding: 20px;
+  animation: shake 1s infinite;
+  pointer-events: none;
+  display: none;
+}
+
 .playAlarm {
   position: relative;
   margin: 50px;

@@ -18,6 +18,12 @@
   <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="./js/videoplayer.js"></script>
   <script src="./js/index.js"></script>
+  <script>
+    window.onload = function () {
+      var bubbleBoxDownload = document.querySelector('.bubbleBoxDownload');
+      bubbleBoxDownload.style.display = 'block';
+    };
+  </script>
 </head>
 
 <body scroll="no" ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
@@ -55,10 +61,11 @@
                 <div class="bubbleBox">
                   <div class="playAlarm gr">재생버튼을<br> 눌러주세요.</div>
                 </div>
-                <!--말풍선 추가 -->
-                <!-- 말풍선 추가 -->
                 <div class="bubbleBoxNext">
                   <div class="playAlarm gr">다음 버튼을<br> 눌러주세요.</div>
+                </div>
+                <div class="bubbleBoxDownload">
+                  <div class="playAlarm gr">학습자료<br>다운로드</div>
                 </div>
                 <!--말풍선 추가 -->
                 <div class="play" id="video-play-btn"></div>
