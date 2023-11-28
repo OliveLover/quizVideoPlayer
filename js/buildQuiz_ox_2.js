@@ -5,6 +5,7 @@ var selectAnswerFlag = false;
 var questionNumber = 1;
 var userAnswer = 0;
 var chance = 1;
+var voice;
 var quizSize = Object.keys(quizInfo_ox_2).length;
 var quizRecord = Array.from({ length: quizSize }, () => ({
   userAnswer: 0,
@@ -28,6 +29,13 @@ function createScreenView() {
   startQuizButton.className = "screenButtonStyle";
   startQuizButton.innerText = "퀴즈시작";
   startQuizButton.onclick = function () {
+    var audio = new Audio("./mp3/click.mp3");
+    audio.play();
+
+    if (voice && !voice.paused) {
+      voice.pause();
+    }
+
     screenView.style.display = "none";
     createQuiz(questionNumber);
   };
@@ -327,5 +335,9 @@ function showWrongAnswer(answer) {
 }
 
 window.onload = function () {
+  voice = new Audio("./mp3/quizVoice.mp3");
+  voice.play().catch(function (error) {
+    console.log("소리 재생 중 오류가 발생했습니다:", error);
+  });
   createScreenView();
 }
