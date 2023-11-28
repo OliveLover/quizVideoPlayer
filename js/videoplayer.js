@@ -36,23 +36,6 @@ $(document).ready(function () {
     }
   });
 
-  // pip모드
-  let toggleBtn = document.getElementById("pipmode");
-  toggleBtn.addEventListener("click", togglePiPMode);
-  async function togglePiPMode() {
-    try {
-      const video = document.getElementById("video-player"); // 비디오 요소의 ID를 적절히 변경해주세요
-      if (!document.pictureInPictureElement) {
-        await video.requestPictureInPicture();
-      } else {
-        await document.exitPictureInPicture();
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-
   // 타이머 업데이트
   var videoPlayer = document.getElementById("video-player");
   var timer = document.getElementById("timer");
