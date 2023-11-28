@@ -88,7 +88,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="explainOXQuiz"></div>';
   document.getElementById("quizWrap").innerHTML = quiz_txt;
 
-  var backgroundImage = "url('./image/afterQuiz.png')";
+  var backgroundImage = "url('./image/quizBg.png')";
   document.getElementById("quizWrap").style.backgroundImage = backgroundImage;
 }
 
