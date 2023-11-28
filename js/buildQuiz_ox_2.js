@@ -16,13 +16,13 @@ var quizRecord = Array.from({ length: quizSize }, () => ({
  ****************************************/
 function createScreenView() {
   var screen_txt = "";
-  screen_txt += "<div id='screenView_2'>";
-  screen_txt += "<div class=screenViewWrap_2>";
+  screen_txt += "<div id='screenView_1'>";
+  screen_txt += "<div class=screenViewWrap_1>";
   screen_txt += "</div>";
   screen_txt += "</div >";
   document.getElementById("quizWrap").innerHTML = screen_txt;
 
-  var screenView = document.getElementById("screenView_2");
+  var screenView = document.getElementById("screenView_1");
 
   var startQuizButton = document.createElement("button");
   startQuizButton.className = "screenButtonStyle";
@@ -32,7 +32,7 @@ function createScreenView() {
     createQuiz(questionNumber);
   };
 
-  var buttonContainer = document.getElementById("screenView_2");
+  var buttonContainer = document.getElementById("screenView_1");
   buttonContainer.appendChild(startQuizButton);
 }
 
@@ -57,24 +57,25 @@ function createQuiz(questionNumber) {
   quiz_txt += "<h2>" + quizInfo_ox_2[questionNumber][0].question + "</h2>";
   quiz_txt += "</div>";
   quiz_txt += '</div>';
-  quiz_txt += '<div class="multipleChoice">';
+  quiz_txt += '<div class="oxChoice">';
   quiz_txt += '<div class="choice check1">';
   quiz_txt += '<div class=viewAnswer1><p>정답</p></div>';
-  quiz_txt += '<div class="checkImg1"></div>';
-  quiz_txt += '<div class="choiceImg1" onclick="selectAnswer(1)"></div>'
+  quiz_txt += '<div class="checkOXImg1"></div>';
+  quiz_txt += '<div class="choiceOXImg1" onclick="selectAnswer(1)"></div>'
   quiz_txt +=
-    '<p class="look1" onclick="selectAnswer(1)">' +
+    '<p class="look1" onclick="selectAnswer(1)" style="font-size:50px">' +
     quizInfo_ox_2[questionNumber][1].select +
     "</p>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="choice check2">';
   quiz_txt += '<div class=viewAnswer2><p>정답</p></div>';
-  quiz_txt += '<div class="checkImg2"></div>';
-  quiz_txt += '<div class="choiceImg2" onclick="selectAnswer(2)"></div>'
+  quiz_txt += '<div class="checkOXImg2"></div>';
+  quiz_txt += '<div class="choiceOXImg2" onclick="selectAnswer(2)"></div>'
   quiz_txt +=
-    '<p class="look2" onclick="selectAnswer(2)">' +
+    '<p class="look2" onclick="selectAnswer(2)" style="font-size:50px">' +
     quizInfo_ox_2[questionNumber][2].select +
     "</p>";
+  quiz_txt += "</div>";
   quiz_txt += "</div>";
   quiz_txt += '<div class="explainOXQuiz"></div>';
   document.getElementById("quizWrap").innerHTML = quiz_txt;
@@ -139,7 +140,7 @@ function createResult() {
   replayQuizBtn.className = "quizButtonStyle2";
   replayQuizBtn.innerText = "다시 풀기";
   replayQuizBtn.onclick = function () {
-    window.location.href = "09.html";
+    window.location.href = "05.html";
   };
 
   var buttonContainer = document.getElementById("quizWrap");
@@ -149,7 +150,7 @@ function createResult() {
   nextPageButton.className = "quizButtonStyle";
   nextPageButton.innerText = "다음페이지로 이동";
   nextPageButton.onclick = function () {
-    window.location.href = "10.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
+    window.location.href = "06.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
   };
 
   var buttonContainer = document.getElementById("quizWrap");
@@ -158,17 +159,17 @@ function createResult() {
 
 function selectAnswer(number) {
   if (!selectAnswerFlag) {
-    var checkImage1 = document.querySelector('.checkImg1');
-    var checkImage2 = document.querySelector('.checkImg2');
+    var checkOXImage1 = document.querySelector('.checkOXImg1');
+    var checkOXImage2 = document.querySelector('.checkOXImg2');
 
-    checkImage1.style.display = "none";
-    checkImage2.style.display = "none";
+    checkOXImage1.style.display = "none";
+    checkOXImage2.style.display = "none";
 
-    var choiceImg1 = document.querySelector('.choiceImg1');
-    var choiceImg2 = document.querySelector('.choiceImg2');
+    var choiceOXImg1 = document.querySelector('.choiceOXImg1');
+    var choiceOXImg2 = document.querySelector('.choiceOXImg2');
 
-    choiceImg1.style.backgroundImage = 'url("./image/choice1.png")';
-    choiceImg2.style.backgroundImage = 'url("./image/choice2.png")';
+    choiceOXImg1.style.backgroundImage = 'url("./image/choice1.png")';
+    choiceOXImg2.style.backgroundImage = 'url("./image/choice2.png")';
 
     var look1 = document.querySelector('.look1');
     var look2 = document.querySelector('.look2');
@@ -179,11 +180,11 @@ function selectAnswer(number) {
     userAnswer = number;
 
     // 체크 이미지 표시
-    var checkImg = document.querySelector('.checkImg' + number);
-    checkImg.style.display = 'block';
+    var checkOXImg = document.querySelector('.checkOXImg' + number);
+    checkOXImg.style.display = 'block';
 
     // 체크한 숫자 표시
-    var selectChoiceImg = document.querySelector('.choiceImg' + number);
+    var selectChoiceImg = document.querySelector('.choiceOXImg' + number);
     selectChoiceImg.style.backgroundImage = 'url("./image/selected' + number + '.png")';
 
     // 체크한 답안 표시
