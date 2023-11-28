@@ -482,6 +482,7 @@ body {
   height: 100px;
   align-items: center;
   margin-left: 70px;
+  margin-top: 13px;
   text-align: center;
 }
 
@@ -503,8 +504,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 70px;
   color: red;
 }
 
@@ -516,8 +517,9 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 35px;
 }
 
 .choice {
@@ -786,23 +788,18 @@ body {
   margin-bottom: 0px;
 }
 
-.ox {
-  width: 100px;
-  height: 200px;
-  background-color: #8289ff;
-}
 
 .choiceOXImg1 {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   background: url(../image/choice1.png) no-repeat center;
   background-size: cover;
   margin-right: 10px;
 }
 
 .choiceOXImg2 {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   background: url(../image/choice2.png) no-repeat center;
   background-size: cover;
   margin-right: 10px;
@@ -811,14 +808,13 @@ body {
 .choice.check1 .checkOXImg1,
 .choice.check2 .checkOXImg2 {
   display: none;
-  background-color: green;
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
   background: url(../image/check.png) no-repeat;
   background-size: cover;
   position: absolute;
-  top: 80px;
-  left: 50px;
+  top: 200px;
+  left: 100px;
 }
 
 /****************************************
