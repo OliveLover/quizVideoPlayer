@@ -148,7 +148,7 @@ function createResult() {
   replayQuizBtn.className = "quizButtonStyle2";
   replayQuizBtn.innerText = "다시 풀기";
   replayQuizBtn.onclick = function () {
-    window.location.href = "05.html";
+    window.location.href = "09.html";
   };
 
   var buttonContainer = document.getElementById("quizWrap");
@@ -158,7 +158,7 @@ function createResult() {
   nextPageButton.className = "quizButtonStyle";
   nextPageButton.innerText = "다음페이지로 이동";
   nextPageButton.onclick = function () {
-    window.location.href = "06.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
+    window.location.href = "10.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
   };
 
   var buttonContainer = document.getElementById("quizWrap");
