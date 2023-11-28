@@ -1,6 +1,17 @@
 $(document).ready(function () {
   // 재생,정지
 
+  $("#video-player").on("play", function () {
+    $(".bubbleBox").hide();
+    $("#video-play-btn").hide();
+    $("#video-pause-btn").show();
+  });
+
+  $("#video-player").on("pause", function () {
+    $("#video-play-btn").show();
+    $("#video-pause-btn").hide();
+  });
+
   $("#video-play-btn").on("click", function () {
     $(".bubbleBox").hide();
     $("#video-player").get(0).play();
@@ -12,6 +23,13 @@ $(document).ready(function () {
     $("#video-player").get(0).pause();
     $("#video-play-btn").show();
     $("#video-pause-btn").hide();
+  });
+
+  // 재생이 완료되면 재생, 일시정지 버튼은 사라지고 reload-btn이 나오도록 수정
+  $("#video-player").on("ended", function () {
+    $("#video-play-btn").hide();
+    $("#video-pause-btn").hide();
+    $("#video-reload-btn").show();
   });
 
   // 영상 다시 시작 버튼 클릭 이벤트
@@ -120,4 +138,6 @@ $(document).ready(function () {
     var progress = (currentTime / duration) * 100;
     progressBar.style.width = progress + "%";
   });
+
+
 });
