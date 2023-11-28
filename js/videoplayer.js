@@ -55,7 +55,10 @@ $(document).ready(function () {
     var formattedDuration = formatTime(duration);
     timer.textContent = formattedCurrentTime + " / " + formattedDuration;
 
-    // 영상을 다 본 경우 콘솔에 메시지 출력
+    if (currentTime !== 0) {
+      $(".bubbleBox").hide();
+    }
+
     if (currentTime === duration) {
       var bubbleBoxNext = document.querySelector(".bubbleBoxNext");
       bubbleBoxNext.style.display = "block";
