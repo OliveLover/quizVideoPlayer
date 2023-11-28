@@ -134,7 +134,7 @@ function submitQuiz() {
 
     // "다음페이지로 이동" 버튼 생성
     var nextPageButton = document.createElement("button");
-    nextPageButton.className = "pQuizButtonStyle";
+    nextPageButton.className = "pQuizButtonStyle_2";
     nextPageButton.innerText = "다음페이지로 이동";
     nextPageButton.onclick = function () {
       window.location.href = "03.html"; // 다음 페이지의 URL을 여기에 입력해주세요.

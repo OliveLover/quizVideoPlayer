@@ -242,9 +242,25 @@ body {
   background-color: #222222;
   color: #fff;
   border-radius: 50px;
-  font-size: 15px;
+  font-size: 30px;
   font-family: "NanumSquareRound", sans-serif;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.pQuizButtonStyle_2 {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  right: 570px;
+  bottom: 15px;
+  background-color: #222222;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 17px;
+  font-family: "NanumSquareRound", sans-serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
 .emoticon {
@@ -418,6 +434,7 @@ body {
   font-size: 30px;
   font-family: "NanumSquareRound", sans-serif;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
 /****************************************
@@ -511,6 +528,7 @@ body {
   margin: 0px auto;
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .choice.check1,
@@ -624,23 +642,40 @@ body {
   background-color: #222222;
   color: #fff;
   border-radius: 50px;
-  font-size: 15px;
+  font-size: 17px;
   font-family: "NanumSquareRound", sans-serif;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
-.quizButtonStyle2 {
+.quizButtonStyle_2 {
   width: 150px;
   height: 50px;
   position: absolute;
-  right: 565px;
+  right: 0px;
   bottom: 10px;
   background-color: #222222;
   color: #fff;
   border-radius: 50px;
-  font-size: 15px;
+  font-size: 30px;
   font-family: "NanumSquareRound", sans-serif;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.quizButtonStyle_3 {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  right: 0px;
+  bottom: 10px;
+  background-color: #222222;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 17px;
+  font-family: "NanumSquareRound", sans-serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
 .createResultBackground {

@@ -146,7 +146,7 @@ function createResult() {
   document.getElementById("quizWrap").innerHTML = result_txt;
 
   var replayQuizBtn = document.createElement("button");
-  replayQuizBtn.className = "quizButtonStyle2";
+  replayQuizBtn.className = "quizButtonStyle_2";
   replayQuizBtn.innerText = "다시 풀기";
   replayQuizBtn.onclick = function () {
     window.location.href = "05.html";
@@ -156,7 +156,7 @@ function createResult() {
   buttonContainer.appendChild(replayQuizBtn);
 
   var nextPageButton = document.createElement("button");
-  nextPageButton.className = "quizButtonStyle";
+  nextPageButton.className = "quizButtonStyle_3";
   nextPageButton.innerText = "다음페이지로 이동";
   nextPageButton.onclick = function () {
     window.location.href = "06.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
@@ -275,6 +275,7 @@ function solutionQUiz() {
 
     if (completeQuiz) {
       nextButton.id = "resultButton";
+      nextButton.className = "quizButtonStyle_2";
       nextButton.innerText = "결과 확인";
       nextButton.onclick = function () {
         createResult();

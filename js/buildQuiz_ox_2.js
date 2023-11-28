@@ -59,7 +59,7 @@ function createQuiz(questionNumber) {
   }
 
   var quiz_txt = "";
-  quiz_txt += '<div class = "quizTitle">2차시: </div>';
+  quiz_txt += '<div class = "quizTitle">1차시: </div>';
   quiz_txt += '<div class = "questionWrap">';
   quiz_txt += '<div class="answerResultCheck"></div>';
   quiz_txt += '<div class="quizQuestion" >';
@@ -146,17 +146,17 @@ function createResult() {
   document.getElementById("quizWrap").innerHTML = result_txt;
 
   var replayQuizBtn = document.createElement("button");
-  replayQuizBtn.className = "quizButtonStyle2";
+  replayQuizBtn.className = "quizButtonStyle_2";
   replayQuizBtn.innerText = "다시 풀기";
   replayQuizBtn.onclick = function () {
-    window.location.href = "09.html";
+    window.location.href = "0.9html";
   };
 
   var buttonContainer = document.getElementById("quizWrap");
   buttonContainer.appendChild(replayQuizBtn);
 
   var nextPageButton = document.createElement("button");
-  nextPageButton.className = "quizButtonStyle";
+  nextPageButton.className = "quizButtonStyle_3";
   nextPageButton.innerText = "다음페이지로 이동";
   nextPageButton.onclick = function () {
     window.location.href = "10.html"; // 다음 페이지의 URL을 여기에 입력해주세요.
@@ -275,6 +275,7 @@ function solutionQUiz() {
 
     if (completeQuiz) {
       nextButton.id = "resultButton";
+      nextButton.className = "quizButtonStyle_2";
       nextButton.innerText = "결과 확인";
       nextButton.onclick = function () {
         createResult();
@@ -328,11 +329,11 @@ function showWrongAnswer(answer) {
 
     var answerView = document.querySelector(".viewAnswer" + answer + ">p");
     answerView.style.display = "flex";
-
-    var audio = new Audio("./mp3/incorrect.wav");
-    audio.play();
   }
   answerFlag = false;
+
+  var audio = new Audio("./mp3/incorrect.wav");
+  audio.play();
 }
 
 window.onload = function () {
