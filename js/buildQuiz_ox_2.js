@@ -63,7 +63,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="checkOXImg1"></div>';
   quiz_txt += '<div class="choiceOXImg1" onclick="selectAnswer(1)"></div>'
   quiz_txt +=
-    '<p class="look1" onclick="selectAnswer(1)" style="font-size:50px">' +
+    '<p class="look1" onclick="selectAnswer(1)" style="font-size:75px; margin-left:10px">' +
     quizInfo_ox_2[questionNumber][1].select +
     "</p>";
   quiz_txt += "</div>";
@@ -72,7 +72,7 @@ function createQuiz(questionNumber) {
   quiz_txt += '<div class="checkOXImg2"></div>';
   quiz_txt += '<div class="choiceOXImg2" onclick="selectAnswer(2)"></div>'
   quiz_txt +=
-    '<p class="look2" onclick="selectAnswer(2)" style="font-size:50px">' +
+    '<p class="look2" onclick="selectAnswer(2)" style="font-size:75px; margin-left:10px">' +
     quizInfo_ox_2[questionNumber][2].select +
     "</p>";
   quiz_txt += "</div>";
