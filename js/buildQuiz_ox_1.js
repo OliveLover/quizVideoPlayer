@@ -302,6 +302,9 @@ function showCorrectAnswer(answer) {
 
     var answerView = document.querySelector(".viewAnswer" + answer + ">p");
     answerView.style.display = "flex";
+
+    var audio = new Audio("./mp3/correct.wav");
+    audio.play();
   }
 
   answerFlag = false;
@@ -318,6 +321,9 @@ function showWrongAnswer(answer) {
     answerView.style.display = "flex";
   }
   answerFlag = false;
+
+  var audio = new Audio("./mp3/incorrect.wav");
+  audio.play();
 }
 
 window.onload = function () {
