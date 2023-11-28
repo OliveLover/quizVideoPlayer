@@ -59,6 +59,7 @@ function createQuiz(questionNumber) {
   }
 
   var quiz_txt = "";
+  quiz_txt += '<div class = "quizTitle">2차시: </div>';
   quiz_txt += '<div class = "questionWrap">';
   quiz_txt += '<div class="answerResultCheck"></div>';
   quiz_txt += '<div class="quizQuestion" >';

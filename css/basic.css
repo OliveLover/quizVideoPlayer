@@ -434,9 +434,17 @@ body {
   background-size: cover;
 }
 
+.quizTitle {
+  width: 300px;
+  height: 100px;
+  margin-right: 950px;
+  font-size: 40px;
+  color: white;
+}
+
 .questionWrap {
   display: flex;
-  margin-top: 150px;
+  margin-top: 60px;
   margin-bottom: 30px;
   height: 100px;
   width: 1110px;
